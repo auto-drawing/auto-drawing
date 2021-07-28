@@ -1,6 +1,7 @@
 import { BezierCurve, BezierCurveShape } from 'zrender'
+import { BaseShape } from '../index'
 
-type IBezierCurveOptions = BaseShape<BezierCurveShape>
+export type IBezierCurveOptions = BaseShape<BezierCurveShape>
 
 /**
  *  创建贝塞尔曲线

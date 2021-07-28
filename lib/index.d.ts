@@ -8,6 +8,8 @@ import createCompoundPath from './core/compoundPath';
 import createPolygon from './core/polygon';
 import createText from './core/text';
 import createBezierCurve from './core/bezierCurve';
+import { ZRenderInitOptions, ZRenderType, ShapeCoreType, AllShape, ZRenderGroup, CallbackType } from './types';
+export * from './types';
 export * from './utils';
 export { zrender, Group, createLine, createRect, createCircle, createArc, createCompoundPath, createPolygon, createText, createBezierCurve };
 /**
@@ -16,12 +18,12 @@ export { zrender, Group, createLine, createRect, createCircle, createArc, create
  * @param options
  * @returns
  */
-export declare function createCanvas(element: HTMLElement | string, options?: ZRenderInitOptions | undefined): CustomZRender;
+export declare function createCanvas(element: HTMLElement | string, options?: ZRenderInitOptions | undefined): ZRenderType;
 /**
  * 销毁容器
  * @param zr
  */
-export declare function disposeCanvas(zr: CustomZRender): void;
+export declare function disposeCanvas(zr: ZRenderType): void;
 /**
  *  根据数据生成图
  * @param group
@@ -36,7 +38,7 @@ export declare function generateShape(item: ShapeCoreType, _index?: number): All
  * @param options `scale：是否需要缩放 translate：是否需要平移`
  * @default options =  { scale: false, translate: true }
  */
-export declare function renderCanvas(zr: CustomZRender, group: ZRenderGroup, data: ShapeCoreType[], options?: Partial<{
+export declare function renderCanvas(zr: ZRenderType, group: ZRenderGroup, data: ShapeCoreType[], options?: Partial<{
     scale: boolean;
     translate: boolean;
     callback: CallbackType;

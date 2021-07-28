@@ -1,4 +1,5 @@
 import { Line, LineShape } from 'zrender';
+import { BaseShape } from '../index';
 export declare type ILineOptions = BaseShape<LineShape & {
     zlevel?: number;
 }>;

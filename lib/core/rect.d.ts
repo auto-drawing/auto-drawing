@@ -1,5 +1,6 @@
 import { Rect, RectShape } from 'zrender';
-declare type IRectOptions = BaseShape<RectShape>;
+import { BaseShape } from '../index';
+export declare type IRectOptions = BaseShape<RectShape>;
 /**
  *  创建矩形
  * @param options

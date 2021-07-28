@@ -1,5 +1,6 @@
 import { CompoundPath, CompoundPathShape } from 'zrender';
-declare type ICompoundPathOptions = BaseShape<CompoundPathShape> & {
+import { BaseShape } from '../index';
+export declare type ICompoundPathOptions = BaseShape<CompoundPathShape> & {
     /**
      * 路径集合，默认不闭合
      */

@@ -14,6 +14,16 @@ import createText from './core/text'
 import createBezierCurve from './core/bezierCurve'
 import createSector from './core/sector'
 import { translateGroup, scaleGroup } from './utils'
+import {
+  ZRenderInitOptions,
+  ZRenderType,
+  ShapeCoreType,
+  AllShape,
+  ZRenderGroup,
+  CallbackType
+} from './types'
+
+export * from './types'
 
 // 导出utils下所有方法
 export * from './utils'
@@ -47,7 +57,7 @@ export {
 export function createCanvas(
   element: HTMLElement | string,
   options: ZRenderInitOptions | undefined = {}
-): CustomZRender {
+): ZRenderType {
   const el =
     element instanceof HTMLElement ? element : (document.getElementById(element) as HTMLElement)
   const ratio = window.devicePixelRatio
@@ -67,7 +77,7 @@ export function createCanvas(
  * 销毁容器
  * @param zr
  */
-export function disposeCanvas(zr: CustomZRender): void {
+export function disposeCanvas(zr: ZRenderType): void {
   zr && zr.dispose()
 }
 
@@ -168,7 +178,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
  * @default options =  { scale: false, translate: true }
  */
 export function renderCanvas(
-  zr: CustomZRender,
+  zr: ZRenderType,
   group: ZRenderGroup,
   data: ShapeCoreType[],
   options?: Partial<{

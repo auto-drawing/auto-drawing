@@ -1,6 +1,7 @@
 import { Polygon, PolygonShape } from 'zrender'
+import { BaseShape } from '../index'
 
-type IPolygonShapeOptions = BaseShape<PolygonShape>
+export type IPolygonShapeOptions = BaseShape<PolygonShape>
 
 /**
  *  创建闭合多边型

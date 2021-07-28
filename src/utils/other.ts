@@ -1,9 +1,11 @@
 /*eslint-disable @typescript-eslint/no-explicit-any */
+import { ZRenderType } from '../index'
+
 /**
  * 平移ZRender画布
  * @param zr  ZRender 实例
  */
-export function translateCanvas(zr: CustomZRender): void {
+export function translateCanvas(zr: ZRenderType): void {
   const state = { startX: 0, startY: 0 }
   zr.dragData = { drag: false, pos: [0, 0], group: null, target: null }
   zr.on('mousedown', (e: any) => {
@@ -30,7 +32,7 @@ export function translateCanvas(zr: CustomZRender): void {
  * @default options = {scaleMin:0.5,scaleMax:100}
  */
 export function scaleCanvas(
-  zr: CustomZRender,
+  zr: ZRenderType,
   options?: { scaleMin: number; scaleMax: number }
 ): void {
   const { scaleMin = 0.5, scaleMax = 100 } = options || {}

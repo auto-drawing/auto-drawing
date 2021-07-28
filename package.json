@@ -1,10 +1,10 @@
 {
   "name": "auto-drawing",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "zrender auto drawing",
-  "types": "src/lib/index.d.ts",
-  "module": "src/lib/index.esm.js",
-  "main": "src/lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.esm.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/l-x-f/auto-drawing.git"

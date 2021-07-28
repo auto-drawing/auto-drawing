@@ -1,6 +1,7 @@
 import { Text, TextStyleProps } from 'zrender'
+import { BaseShape } from '../index'
 
-type ITextOptions = BaseShape<TextStyleProps>
+export type ITextOptions = BaseShape<TextStyleProps>
 
 /**
  *  创建文字

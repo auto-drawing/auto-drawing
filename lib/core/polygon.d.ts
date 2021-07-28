@@ -1,5 +1,6 @@
 import { Polygon, PolygonShape } from 'zrender';
-declare type IPolygonShapeOptions = BaseShape<PolygonShape>;
+import { BaseShape } from '../index';
+export declare type IPolygonShapeOptions = BaseShape<PolygonShape>;
 /**
  *  创建闭合多边型
  * @param options

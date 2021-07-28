@@ -1,3 +1,4 @@
+import { ZRenderType, ZRenderGroup, CallbackType } from '../index';
 /**
  * 缩放ZRender Group
  * @param  zr  ZRender 实例
@@ -5,7 +6,7 @@
  * @param options  `{scaleMin:number, scaleMax:number}`  scaleMin：缩放最小值 scaleMax：缩放最大值
  * @default options = {scaleMin:0.5,scaleMax:100}
  */
-export declare function scaleGroup(zr: CustomZRender, group: ZRenderGroup, options?: Partial<{
+export declare function scaleGroup(zr: ZRenderType, group: ZRenderGroup, options?: Partial<{
     scaleMin: number;
     scaleMax: number;
     callback: CallbackType;
@@ -15,7 +16,7 @@ export declare function scaleGroup(zr: CustomZRender, group: ZRenderGroup, optio
  * @param zr  ZRender 实例
  * @param group  Group 实例
  */
-export declare function translateGroup(zr: CustomZRender, group: ZRenderGroup, options?: {
+export declare function translateGroup(zr: ZRenderType, group: ZRenderGroup, options?: {
     callback?: CallbackType;
 }): void;
 /**

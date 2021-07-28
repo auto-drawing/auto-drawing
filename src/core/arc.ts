@@ -1,6 +1,7 @@
 import { Arc, ArcShape } from 'zrender'
+import { BaseShape } from '../index'
 
-type IArcOptions = BaseShape<ArcShape> & { radius?: number; x?: number; y?: number }
+export type IArcOptions = BaseShape<ArcShape> & { radius?: number; x?: number; y?: number }
 
 /**
  *  创建圆弧

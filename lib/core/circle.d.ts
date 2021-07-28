@@ -1,5 +1,6 @@
 import { Circle, CircleShape } from 'zrender';
-declare type ICircleOptions = BaseShape<CircleShape & {
+import { BaseShape } from '../index';
+export declare type ICircleOptions = BaseShape<CircleShape & {
     radius: number;
     x: number;
     y: number;

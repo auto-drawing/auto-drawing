@@ -1,3 +1,3 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const Vayodrawing = require('../src/lib/index.common')
+const Vayodrawing = require('../lib/index.common')
 console.log(Vayodrawing)

@@ -1,6 +1,7 @@
 import { Sector, SectorShape } from 'zrender'
+import { BaseShape } from '../index'
 
-type ISectorOptions = BaseShape<SectorShape>
+export type ISectorOptions = BaseShape<SectorShape>
 
 /**
  *  创建圆

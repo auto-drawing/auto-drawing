@@ -10,7 +10,7 @@ import pkg from './package.json'
 
 const paths = {
   input: path.join(__dirname, '/src/index.ts'),
-  output: path.join(__dirname, '/src/lib')
+  output: path.join(__dirname, '/lib')
 }
 
 // rollup 配置项
@@ -70,7 +70,7 @@ const rollupConfig = {
           module: 'ES2015',
           sourceMap: true,
           // Use the esm d.ts
-          declaration: false
+          declaration: true
         }
       }
     }),

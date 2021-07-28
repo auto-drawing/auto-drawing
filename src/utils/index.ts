@@ -1,5 +1,6 @@
 /*eslint-disable @typescript-eslint/no-explicit-any */
 import cloneDeep from 'lodash/cloneDeep'
+import { ZRenderType, ZRenderGroup, CallbackType } from '../index'
 
 /**
  * 缩放ZRender Group
@@ -9,7 +10,7 @@ import cloneDeep from 'lodash/cloneDeep'
  * @default options = {scaleMin:0.5,scaleMax:100}
  */
 export function scaleGroup(
-  zr: CustomZRender,
+  zr: ZRenderType,
   group: ZRenderGroup,
   options?: Partial<{ scaleMin: number; scaleMax: number; callback: CallbackType }>
 ): void {
@@ -51,7 +52,7 @@ export function scaleGroup(
  * @param group  Group 实例
  */
 export function translateGroup(
-  zr: CustomZRender,
+  zr: ZRenderType,
   group: ZRenderGroup,
   options?: { callback?: CallbackType }
 ): void {
