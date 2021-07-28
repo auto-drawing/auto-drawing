@@ -1,0 +1,43 @@
+{
+  "name": "auto-drawing",
+  "version": "1.0.0",
+  "description": "zrender auto drawing",
+  "types": "src/lib/index.d.ts",
+  "module": "src/lib/index.esm.js",
+  "main": "src/lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/l-x-f/auto-drawing.git"
+  },
+  "scripts": {
+    "build": "rollup --c rollup.config.js"
+  },
+  "keywords": [
+    "canvas",
+    "2d",
+    "zrender",
+    "auto-drawing"
+  ],
+  "author": "xiaofei",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "zrender": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@types/lodash": "^4.14.171",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.31.0",
+    "rollup": "^2.54.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "string": "^3.3.3",
+    "typescript": "^4.3.5"
+  }
+}
