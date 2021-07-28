@@ -11,7 +11,7 @@ npm install --save auto-drawing
 ## 浏览器使用
 
 ```html
-<script src="../src/lib/index.browser.js"></script>
+<script src="node_modules/auto-drawing/index.browser.js"></script>
 
 console.log(vayoDrawing)
 ```
