@@ -105,7 +105,7 @@ export declare function renderCanvas(
 
 ```js
 import { createCanvas, createGroup, renderCanvas } from 'auto-drawing'
-const app = doucument.getElementId('app')
+const app = doucument.getElementById('app')
 const zr = createCanvas(app)
 const gp = createGroup({
   scaleX: 0.1,

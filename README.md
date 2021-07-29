@@ -174,7 +174,7 @@ npm install --save auto-drawing
 ```html
 <script type="module">
   import { createCanvas, createGroup, renderCanvas } from 'auto-drawing'
-  const app = doucument.getElementId('app')
+  const app = doucument.getElementById('app')
   const zr = createCanvas(app)
   const gp = createGroup()
   const data = [
@@ -261,7 +261,7 @@ npm install --save auto-drawing
 
 ```ts
 import { createCanvas, createGroup, ZRenderType, ZRenderGroup, ShapeCoreType } from 'auto-drawing'
-const app = doucument.getElementId('app')
+const app = doucument.getElementById('app')
 const zr: ZRenderType = createCanvas(app)
 const gp: ZRenderGroup = createGroup()
 
