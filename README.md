@@ -348,9 +348,9 @@ renderCanvas(zr, gp, data)
 
 [auto-drawing](https://github.com/l-x-f/auto-drawing)
 
-[json 画图](https://github.com/l-x-f/auto-drawing/doc/index.md)
+[json 画图](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md)
 
-[api](https://github.com/l-x-f/auto-drawing/api.md)
+[api](https://github.com/l-x-f/auto-drawing/blob/main/doc/api.md)
 
 ## 友情链接
 
