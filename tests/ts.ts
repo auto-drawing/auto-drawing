@@ -1,11 +1,12 @@
 import {
   createCanvas,
+  createGroup,
   ShapeCoreType,
   Nullable,
   ZRenderType,
   ZRenderGroup,
   CallbackData
-} from '../lib/index'
+} from '../dist/index'
 
 const data: ShapeCoreType[] = [
   {
@@ -138,6 +139,12 @@ interface IState {
 
 const state: Partial<IState> = {}
 
+const group = createGroup({
+  scaleX: 0.1,
+  scaleY: 0.1
+})
+
+console.log(group)
 console.log(originData)
 console.log(data)
 console.log(state)

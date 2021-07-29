@@ -1,4 +1,4 @@
-import { Group } from 'zrender';
+import { GroupProps } from 'zrender';
 import * as zrender from 'zrender';
 import createLine from './core/line';
 import createRect from './core/rect';
@@ -11,12 +11,12 @@ import createBezierCurve from './core/bezierCurve';
 import { ZRenderInitOptions, ZRenderType, ShapeCoreType, AllShape, ZRenderGroup, CallbackType } from './types';
 export * from './types';
 export * from './utils';
-export { zrender, Group, createLine, createRect, createCircle, createArc, createCompoundPath, createPolygon, createText, createBezierCurve };
+export { zrender, createLine, createRect, createCircle, createArc, createCompoundPath, createPolygon, createText, createBezierCurve };
 /**
  * 创建容器
- * @param -
- * @param options
- * @returns
+ * @param element  HTML元素本身 或者 HTML的id
+ * @param options 初始参数
+ * @returns zrender 实例
  */
 export declare function createCanvas(element: HTMLElement | string, options?: ZRenderInitOptions | undefined): ZRenderType;
 /**
@@ -24,6 +24,10 @@ export declare function createCanvas(element: HTMLElement | string, options?: ZR
  * @param zr
  */
 export declare function disposeCanvas(zr: ZRenderType): void;
+/**
+ * 创建Group
+ */
+export declare function createGroup(options?: GroupProps): ZRenderGroup;
 /**
  *  根据数据生成图
  * @param group

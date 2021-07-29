@@ -11,7 +11,6 @@ module.exports = {
     es6: true
   },
   parserOptions: {
-    // project: './tsconfig.eslint.json',
     ecmaVersion: 2019,
     sourceType: 'module',
     ecmaFeatures: {
@@ -25,5 +24,5 @@ module.exports = {
         argsIgnorePattern: '^_'
       }
     ]
-  } // 自定义
+  }
 }

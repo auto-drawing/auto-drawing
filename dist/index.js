@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['auto-drawing'] = {}));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.AutoDrawing = {}));
 }(this, (function (exports) { 'use strict';
 
     /*! *****************************************************************************
@@ -19322,9 +19322,9 @@
     registerPainter('svg', SVGPainter);
     /**
      * 创建容器
-     * @param -
-     * @param options
-     * @returns
+     * @param element  HTML元素本身 或者 HTML的id
+     * @param options 初始参数
+     * @returns zrender 实例
      */
 
     function createCanvas(element) {
@@ -19348,6 +19348,14 @@
 
     function disposeCanvas(zr) {
       zr && zr.dispose();
+    }
+    /**
+     * 创建Group
+     */
+
+    function createGroup(options) {
+      var group = new Group(options);
+      return group;
     }
     /**
      *  根据数据生成图
@@ -19515,13 +19523,13 @@
       zr.add(group);
     }
 
-    exports.Group = Group;
     exports.copyArrayByCount = copyArrayByCount;
     exports.createArc = createArc;
     exports.createBezierCurve = createBezierCurve;
     exports.createCanvas = createCanvas;
     exports.createCircle = createCircle;
     exports.createCompoundPath = createCompoundPath;
+    exports.createGroup = createGroup;
     exports.createLine = createLine;
     exports.createPolygon = createPolygon;
     exports.createRect = createRect;

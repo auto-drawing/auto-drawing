@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="../lib/index.browser.js"></script>
+    <script src="../dist/index.min.js"></script>
   </head>
   <body style="background-color: #000">
     <div id="div"></div>
     <script>
-      const { createCanvas, Group, renderCanvas } = vayoDrawing
-      const canvas = createCanvas('div')
-      const group = new Group()
+      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+      const zr = createCanvas('div')
+      const gp = createGroup({
+        scaleX: 0.1,
+        scaleY: 0.1
+      })
       const data = [
         {
           type: 'group',
@@ -95,17 +98,55 @@
         },
         {
           type: 'sector',
-          cx: 100,
-          cy: 96,
+          cx: 150,
+          cy: 150,
           r: 100,
           r0: 0,
           startAngle: 0,
           endAngle: 90,
           fill: 'yellow',
           clockwise: true
+        },
+        {
+          type: 'arc',
+          cx: 300,
+          cy: 150,
+          r: 100,
+          startAngle: 0,
+          endAngle: 90,
+          fill: 'green',
+          clockwise: true
+        },
+        {
+          type: 'circle',
+          cx: 350,
+          cy: 350,
+          r: 50,
+          fill: 'green'
+        },
+        {
+          type: 'polygon',
+          points: [
+            [350, 0],
+            [500, 0],
+            [350, 100]
+          ],
+          fill: 'red',
+          stroke: 'none'
+        },
+        {
+          type: 'text',
+          x: 600,
+          y: 600,
+          text: '你好',
+          fontSize: 50,
+          fontWeight: 400
         }
       ]
-      renderCanvas(canvas, group, data)
+      renderCanvas(zr, gp, data, {
+        scale: true,
+        translate: true
+      })
     </script>
   </body>
 </html>

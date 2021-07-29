@@ -2,7 +2,7 @@
 /*eslint-disable no-case-declarations  */
 import CanvasPainter from 'zrender/lib/canvas/Painter'
 import SvgPainter from 'zrender/lib/svg/Painter'
-import { init, Group, registerPainter } from 'zrender'
+import { init, Group, registerPainter, GroupProps } from 'zrender'
 import * as zrender from 'zrender'
 import createLine from './core/line'
 import createRect from './core/rect'
@@ -36,7 +36,6 @@ registerPainter('svg', SvgPainter as any)
 
 export {
   zrender,
-  Group,
   // 导出核心生成图形方法
   createLine,
   createRect,
@@ -50,9 +49,9 @@ export {
 
 /**
  * 创建容器
- * @param -
- * @param options
- * @returns
+ * @param element  HTML元素本身 或者 HTML的id
+ * @param options 初始参数
+ * @returns zrender 实例
  */
 export function createCanvas(
   element: HTMLElement | string,
@@ -79,6 +78,14 @@ export function createCanvas(
  */
 export function disposeCanvas(zr: ZRenderType): void {
   zr && zr.dispose()
+}
+
+/**
+ * 创建Group
+ */
+export function createGroup(options?: GroupProps): ZRenderGroup {
+  const group = new Group(options)
+  return group
 }
 
 /**
