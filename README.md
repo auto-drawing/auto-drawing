@@ -10,7 +10,13 @@ npm install --save auto-drawing
 
 ## 使用 cdn （暴露全局变量 `AutoDrawing`）
 
-[https://unpkg.com/browse/auto-drawing@0.0.1-beta.3/dist/index.min.js](https://unpkg.com/browse/auto-drawing@0.0.1-beta.3/dist/index.min.js)
+**使用最新版本**
+
+[https://cdn.jsdelivr.net/npm/auto-drawing/dist/index.min.js](https://cdn.jsdelivr.net/npm/auto-drawing/dist/index.min.js)
+
+\*_使用时建议加上版本号 如使用`0.0.1-beta.4`版本_
+
+[https://cdn.jsdelivr.net/npm/auto-drawing@0.0.1-beta.4/dist/index.min.js](https://cdn.jsdelivr.net/npm/auto-drawing@0.0.1-beta.4/dist/index.min.js)
 
 ## 浏览器使用
 
@@ -22,7 +28,7 @@ npm install --save auto-drawing
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://unpkg.com/browse/auto-drawing@0.0.1-beta.3/dist/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/auto-drawing/dist/index.min.js"></script>
   </head>
   <body style="background-color: #000">
     <div id="app"></div>
