@@ -1,4 +1,4 @@
-import { ZRenderType as type, Group, ZRenderInitOpt, Line, Arc, CompoundPath, Circle, Polygon, Rect, Text, PathStyleProps, BezierCurve, Sector } from 'zrender';
+import { ZRenderType as type, Group, ZRenderInitOpt, Line, Arc, CompoundPath, Circle, Polygon, Polyline, Rect, Image, Text, PathStyleProps, BezierCurve, Sector } from 'zrender';
 /**
  * init 参数
  */
@@ -23,7 +23,7 @@ export declare type ZRenderType = type & {
 /**
  * 所有基本形状
  */
-export declare type AllShape = Line | Circle | Arc | CompoundPath | Polygon | Rect | Text | BezierCurve | Sector | undefined;
+export declare type AllShape = Line | Circle | Arc | CompoundPath | Polygon | Polyline | Rect | Text | BezierCurve | Sector | Image | undefined;
 /**
  *
  * 组的类型
@@ -36,7 +36,7 @@ export declare type ShapeCoreType = Partial<{
     /**
      * 图形类型
      */
-    type: 'arc' | 'circle' | 'compoundPath' | 'line' | 'polygon' | 'rect' | 'text' | 'bezierCurve' | 'sector' | 'group';
+    type: 'arc' | 'circle' | 'compoundPath' | 'line' | 'polygon' | 'polyline' | 'rect' | 'text' | 'image' | 'bezierCurve' | 'sector' | 'group';
     /**
      * 线宽
      */
@@ -105,6 +105,10 @@ export declare type ShapeCoreType = Partial<{
      * 矩形高
      */
     height: number;
+    /**
+     * 图片
+     */
+    image: string | HTMLImageElement | HTMLCanvasElement;
     /**
      * 半径
      */

@@ -28,6 +28,13 @@ const rollupConfig = {
       format: 'umd',
       name
     },
+    {
+      // 输出 esm 规范的代码
+      file: join(output, 'index.esm.js'),
+      format: 'esm',
+      plugins: [terser()],
+      name
+    },
     // 输出 umd 规范的压缩代码
     {
       file: join(output, 'index.min.js'),

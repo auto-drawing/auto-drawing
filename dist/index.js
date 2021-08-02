@@ -16490,6 +16490,32 @@
     }
 
     /**
+     *  创建不闭合多边型
+     * @param options
+     * @returns
+     */
+
+    function createPolyline(options) {
+      var _ref = options || {},
+          _ref$points = _ref.points,
+          points = _ref$points === void 0 ? [] : _ref$points,
+          _ref$zlevel = _ref.zlevel,
+          zlevel = _ref$zlevel === void 0 ? 0 : _ref$zlevel;
+
+      var shape = new Polyline({
+        zlevel: zlevel,
+        shape: {
+          points: points
+        },
+        style: Object.assign({
+          fill: 'none',
+          stroke: '#0f0'
+        }, options)
+      });
+      return shape;
+    }
+
+    /**
      *  创建文字
      * @param options
      * @returns
@@ -16605,6 +16631,43 @@
           clockwise: clockwise
         },
         style: Object.assign({
+          fill: 'none',
+          stroke: 'none'
+        }, rest)
+      });
+      return shape;
+    }
+
+    /**
+     *  创建图片
+     * @param options
+     * @returns
+     */
+
+    function createImage(options) {
+      var _a = options || {},
+          _a$x = _a.x,
+          x = _a$x === void 0 ? 0 : _a$x,
+          _a$y = _a.y,
+          y = _a$y === void 0 ? 0 : _a$y,
+          _a$width = _a.width,
+          width = _a$width === void 0 ? 0 : _a$width,
+          _a$height = _a.height,
+          height = _a$height === void 0 ? 0 : _a$height,
+          _a$zlevel = _a.zlevel,
+          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
+          _a$image = _a.image,
+          image = _a$image === void 0 ? '' : _a$image,
+          rest = __rest(_a, ["x", "y", "width", "height", "zlevel", "image"]);
+
+      var shape = new ZRImage({
+        zlevel: zlevel,
+        style: Object.assign({
+          x: x,
+          y: y,
+          width: width,
+          height: height,
+          image: image,
           fill: 'none',
           stroke: 'none'
         }, rest)
@@ -19389,7 +19452,8 @@
           data = item.data,
           id = item.id,
           paths = item.paths,
-          options = __rest(item, ["type", "x1", "y1", "x2", "y2", "x", "y", "cx", "cy", "cpx1", "cpy1", "cpx2", "cpy2", "width", "height", "r", "r0", "points", "startAngle", "endAngle", "text", "data", "id", "paths"]);
+          image = item.image,
+          options = __rest(item, ["type", "x1", "y1", "x2", "y2", "x", "y", "cx", "cy", "cpx1", "cpy1", "cpx2", "cpy2", "width", "height", "r", "r0", "points", "startAngle", "endAngle", "text", "data", "id", "paths", "image"]);
 
       var shape = undefined;
 
@@ -19426,6 +19490,12 @@
           }, options));
           break;
 
+        case 'polyline':
+          shape = createPolygon(Object.assign({
+            points: points
+          }, options));
+          break;
+
         case 'arc':
           shape = createArc(Object.assign({
             cx: cx,
@@ -19452,6 +19522,16 @@
             r0: r0,
             startAngle: startAngle,
             endAngle: endAngle
+          }, options));
+          break;
+
+        case 'image':
+          shape = createImage(Object.assign({
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            image: image
           }, options));
           break;
 
@@ -19530,8 +19610,10 @@
     exports.createCircle = createCircle;
     exports.createCompoundPath = createCompoundPath;
     exports.createGroup = createGroup;
+    exports.createImage = createImage;
     exports.createLine = createLine;
     exports.createPolygon = createPolygon;
+    exports.createPolyline = createPolyline;
     exports.createRect = createRect;
     exports.createText = createText;
     exports.disposeCanvas = disposeCanvas;

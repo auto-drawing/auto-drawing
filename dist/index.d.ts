@@ -6,12 +6,14 @@ import createCircle from './core/circle';
 import createArc from './core/arc';
 import createCompoundPath from './core/compoundPath';
 import createPolygon from './core/polygon';
+import createPolyline from './core/polyline';
 import createText from './core/text';
 import createBezierCurve from './core/bezierCurve';
+import createImage from './core/image';
 import { ZRenderInitOptions, ZRenderType, ShapeCoreType, AllShape, ZRenderGroup, CallbackType } from './types';
 export * from './types';
 export * from './utils';
-export { zrender, createLine, createRect, createCircle, createArc, createCompoundPath, createPolygon, createText, createBezierCurve };
+export { zrender, createLine, createRect, createCircle, createArc, createPolygon, createPolyline, createText, createBezierCurve, createImage, createCompoundPath };
 /**
  * 创建容器
  * @param element  HTML元素本身 或者 HTML的id

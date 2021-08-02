@@ -9,13 +9,16 @@
   </head>
   <body style="background-color: #000">
     <div id="div"></div>
+
     <script>
       const { createCanvas, createGroup, renderCanvas } = AutoDrawing
       const zr = createCanvas('div')
-      const gp = createGroup({
-        scaleX: 0.1,
-        scaleY: 0.1
-      })
+      const gp = createGroup()
+      const img = new Image()
+      img.width = 600
+      img.height = 600
+      img.src = './img.jpg'
+
       const data = [
         {
           type: 'group',
@@ -138,9 +141,17 @@
           type: 'text',
           x: 600,
           y: 600,
-          text: '你好',
+          text: '你好,我是文字',
           fontSize: 50,
           fontWeight: 400
+        },
+        {
+          type: 'image',
+          x: 0,
+          y: 600,
+          width: 600,
+          height: 600,
+          image: img
         }
       ]
       renderCanvas(zr, gp, data, {

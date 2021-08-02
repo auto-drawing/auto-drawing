@@ -8,7 +8,9 @@ import {
   CompoundPath,
   Circle,
   Polygon,
+  Polyline,
   Rect,
+  Image,
   Text,
   PathStyleProps,
   BezierCurve,
@@ -46,10 +48,12 @@ export type AllShape =
   | Arc
   | CompoundPath
   | Polygon
+  | Polyline
   | Rect
   | Text
   | BezierCurve
   | Sector
+  | Image
   | undefined
 
 /**
@@ -71,8 +75,10 @@ export type ShapeCoreType = Partial<{
     | 'compoundPath'
     | 'line'
     | 'polygon'
+    | 'polyline'
     | 'rect'
     | 'text'
+    | 'image'
     | 'bezierCurve'
     | 'sector'
     | 'group'
@@ -160,6 +166,11 @@ export type ShapeCoreType = Partial<{
    * 矩形高
    */
   height: number
+
+  /**
+   * 图片
+   */
+  image: string | HTMLImageElement | HTMLCanvasElement
 
   /**
    * 半径

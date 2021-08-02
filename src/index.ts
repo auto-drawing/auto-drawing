@@ -4,15 +4,20 @@ import CanvasPainter from 'zrender/lib/canvas/Painter'
 import SvgPainter from 'zrender/lib/svg/Painter'
 import { init, Group, registerPainter, GroupProps } from 'zrender'
 import * as zrender from 'zrender'
+
+// 基本绘图方法
 import createLine from './core/line'
 import createRect from './core/rect'
 import createCircle from './core/circle'
 import createArc from './core/arc'
 import createCompoundPath from './core/compoundPath'
 import createPolygon from './core/polygon'
+import createPolyline from './core/polyline'
 import createText from './core/text'
 import createBezierCurve from './core/bezierCurve'
 import createSector from './core/sector'
+import createImage from './core/image'
+
 import { translateGroup, scaleGroup } from './utils'
 import {
   ZRenderInitOptions,
@@ -23,6 +28,7 @@ import {
   CallbackType
 } from './types'
 
+// 导出类型
 export * from './types'
 
 // 导出utils下所有方法
@@ -41,10 +47,12 @@ export {
   createRect,
   createCircle,
   createArc,
-  createCompoundPath,
   createPolygon,
+  createPolyline,
   createText,
-  createBezierCurve
+  createBezierCurve,
+  createImage,
+  createCompoundPath
 }
 
 /**
@@ -121,6 +129,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
     data,
     id,
     paths,
+    image,
     ...options
   } = item
   let shape: AllShape = undefined
@@ -137,6 +146,9 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
     case 'polygon':
       shape = createPolygon({ points, ...options })
       break
+    case 'polyline':
+      shape = createPolygon({ points, ...options })
+      break
     case 'arc':
       shape = createArc({ cx, cy, r, startAngle, endAngle, ...options })
       break
@@ -145,6 +157,9 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       break
     case 'sector':
       shape = createSector({ cx, cy, r, r0, startAngle, endAngle, ...options } as any)
+      break
+    case 'image':
+      shape = createImage({ x, y, width, height, image, ...options } as any)
       break
     case 'compoundPath':
       shape = createCompoundPath({ paths, ...options } as any)
