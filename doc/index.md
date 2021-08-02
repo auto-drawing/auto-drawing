@@ -198,14 +198,14 @@
 
 ## 9. 图片
 
-| 字段名称 | 默认值  | 字段解释     | 数据类型 | 是否必填         | 可选值            | 备注 |
-| -------- | ------- | ------------ | -------- | ---------------- | ----------------- | ---- |
-| type     | "image" | 图的类型     | string   | 是               | "image"           |      |
-| x        | 0       | 起始点横坐标 | number   | 是               |                   |      |
-| y        | 0       | 起始点纵坐标 | number   | 是               |                   |      |
-| width    | 0       | 图片宽       | number   | 是               |                   |      |
-| height   | 0       | 图片高       | number   | 是               |                   |      |
-| image    | 0       | 图片         | string   | HTMLImageElement | HTMLCanvasElement | 是   |
+| 字段名称 | 默认值  | 字段解释     | 数据类型                                  | 是否必填 | 可选值  | 备注 |
+| -------- | ------- | ------------ | ----------------------------------------- | -------- | ------- | ---- |
+| type     | "image" | 图的类型     | string                                    | 是       | "image" |      |
+| x        | 0       | 起始点横坐标 | number                                    | 是       |         |      |
+| y        | 0       | 起始点纵坐标 | number                                    | 是       |         |      |
+| width    | 0       | 图片宽       | number                                    | 是       |         |      |
+| height   | 0       | 图片高       | number                                    | 是       |         |      |
+| image    | 0       | 图片         | string HTMLImageElement HTMLCanvasElement | 是       |
 
 ### 示例
 
@@ -238,12 +238,15 @@
 
 ```json
 {
-  "type": "image",
-  "x": 0,
-  "y": 0,
-  "width": 100,
-  "height": 100,
-  "image": "./img.jpg"
+  "type": "bezierCurve",
+  "x1": 0,
+  "y1": 0,
+  "cpx1": 50,
+  "cpy1": 50,
+  "cpx2": 150,
+  "cpy2": 150,
+  "x2": 200,
+  "y2": 200
 }
 ```
 
