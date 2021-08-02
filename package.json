@@ -1,6 +1,6 @@
 {
   "name": "auto-drawing",
-  "version": "0.0.1-beta.5",
+  "version": "0.0.1-beta.6",
   "description": "auto-drawing based zrender",
   "types": "dist/index.d.ts",
   "module": "dist/index.esm.js",

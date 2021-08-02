@@ -4,7 +4,7 @@ import { BaseShape } from '../index'
 export type ISectorOptions = BaseShape<SectorShape>
 
 /**
- *  创建圆
+ *  创建扇形
  * @param options
  * @returns
  */

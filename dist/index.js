@@ -16593,7 +16593,7 @@
     }
 
     /**
-     *  创建圆
+     *  创建扇形
      * @param options
      * @returns
      */

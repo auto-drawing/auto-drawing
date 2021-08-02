@@ -246,7 +246,7 @@ renderCanvas(zr, gp, data, {
 
 ## createLine 创建直线
 
-[创建直线文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderline)
+[创建直线文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#1-%E7%9B%B4%E7%BA%BF)
 
 ```ts
 /**
@@ -275,7 +275,7 @@ app.add(line)
 
 ## createRect 创建矩形
 
-[创建矩形文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderrect)
+[创建矩形文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#2-%E7%9F%A9%E5%BD%A2)
 
 ```ts
 /**
@@ -304,7 +304,7 @@ app.add(shape)
 
 ## createCircle 创建圆
 
-[创建圆文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrendercircle)
+[创建圆文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#6-%E5%9C%86)
 
 ```ts
 /**
@@ -332,7 +332,7 @@ app.add(shape)
 
 ## createArc 创建圆弧
 
-[创建圆弧文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderarc)
+[创建圆弧文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#5-%E5%9C%86%E5%BC%A7)
 
 ```ts
 /**
@@ -363,7 +363,7 @@ app.add(shape)
 
 ## createPolygon 创建闭合多边型
 
-[创建闭合多边型文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderpolygon)
+[创建闭合多边型文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#3-%E9%97%AD%E5%90%88%E5%A4%9A%E8%BE%B9%E5%BD%A2)
 
 ```ts
 /**
@@ -393,7 +393,7 @@ app.add(shape)
 
 ## createPolyline 创建不闭合多边型
 
-[创建不闭合多边型文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderpolyline)
+[创建不闭合多边型文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#4-%E4%B8%8D%E9%97%AD%E5%90%88%E5%A4%9A%E8%BE%B9%E5%BD%A2)
 
 ```ts
 /**
@@ -423,7 +423,7 @@ app.add(shape)
 
 ## createText 创建文本
 
-[创建文本文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrendertext)
+[创建文本文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#8-%E6%96%87%E6%9C%AC)
 
 ```ts
 /**
@@ -453,7 +453,7 @@ app.add(shape)
 
 ## createBezierCurve 创建贝塞尔曲线
 
-[创建贝塞尔曲线文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderbeziercurve)
+[创建贝塞尔曲线文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#10-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF)
 
 ```ts
 /**
@@ -486,7 +486,7 @@ app.add(shape)
 
 ## createImage 创建图片
 
-[创建图片文档](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderimage)
+[创建图片文档](https://github.com/l-x-f/auto-drawing/blob/main/doc/index.md#9-%E5%9B%BE%E7%89%87)
 
 ```ts
 /**
