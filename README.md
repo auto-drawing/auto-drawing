@@ -16,7 +16,7 @@ npm install --save auto-drawing
 yarn add  auto-drawing
 ```
 
-## 使用 cdn （暴露全局变量 `AutoDrawing`）
+`cdn`
 
 **使用最新版本**
 
