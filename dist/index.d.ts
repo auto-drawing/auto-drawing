@@ -42,7 +42,7 @@ export declare function generateShape(item: ShapeCoreType, _index?: number): All
  * @param group
  * @param data
  * @param options `scale：是否需要缩放 translate：是否需要平移`
- * @default options =  { scale: false, translate: true }
+ * @default options =  { scale: false, translate: false }
  */
 export declare function renderCanvas(zr: ZRenderType, group: ZRenderGroup, data: ShapeCoreType[], options?: Partial<{
     scale: boolean;

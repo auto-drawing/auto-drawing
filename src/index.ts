@@ -197,7 +197,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
  * @param group
  * @param data
  * @param options `scale：是否需要缩放 translate：是否需要平移`
- * @default options =  { scale: false, translate: true }
+ * @default options =  { scale: false, translate: false }
  */
 export function renderCanvas(
   zr: ZRenderType,
@@ -209,7 +209,7 @@ export function renderCanvas(
     callback: CallbackType
   }>
 ): void {
-  const translate = options?.translate ?? true
+  const translate = options?.translate ?? false
   const scale = options?.scale ?? false
   const shapes = data.map((item, index: number) => generateShape(item, index))
   shapes.forEach(item => item && group.add(item))

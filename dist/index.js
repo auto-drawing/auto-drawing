@@ -19580,13 +19580,13 @@
      * @param group
      * @param data
      * @param options `scale：是否需要缩放 translate：是否需要平移`
-     * @default options =  { scale: false, translate: true }
+     * @default options =  { scale: false, translate: false }
      */
 
     function renderCanvas(zr, group, data, options) {
       var _a, _b;
 
-      var translate = (_a = options === null || options === void 0 ? void 0 : options.translate) !== null && _a !== void 0 ? _a : true;
+      var translate = (_a = options === null || options === void 0 ? void 0 : options.translate) !== null && _a !== void 0 ? _a : false;
       var scale = (_b = options === null || options === void 0 ? void 0 : options.scale) !== null && _b !== void 0 ? _b : false;
       var shapes = data.map(function (item, index) {
         return generateShape(item);
