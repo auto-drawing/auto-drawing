@@ -1,6 +1,6 @@
 {
   "name": "auto-drawing",
-  "version": "0.0.1-beta.7",
+  "version": "0.0.1",
   "description": "auto-drawing based zrender",
   "types": "dist/index.d.ts",
   "module": "dist/index.esm.js",
@@ -22,13 +22,13 @@
   "author": "xiaofei",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "zrender": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
-    "@types/lodash": "^4.14.171",
+    "@types/lodash-es": "^4.17.4",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "eslint": "^7.31.0",

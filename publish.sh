@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+npm run build
+
 # 修改npm源地址
 npm config get registry
 npm config set registry=http://registry.npmjs.org
