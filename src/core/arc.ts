@@ -16,11 +16,13 @@ function createArc(options?: IArcOptions): Arc {
     startAngle = 0,
     endAngle = 360,
     zlevel = 0,
+    draggable = false,
     clockwise = true,
     ...rest
   } = options || {}
   const shape = new Arc({
     zlevel,
+    draggable,
     shape: {
       cx,
       cy,

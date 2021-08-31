@@ -9,9 +9,10 @@ export type IPolygonShapeOptions = BaseShape<PolygonShape>
  * @returns
  */
 function createPolygon(options?: IPolygonShapeOptions): Polygon {
-  const { points = [], zlevel = 0 } = options || {}
+  const { points = [], zlevel = 0, draggable = false } = options || {}
   const shape = new Polygon({
     zlevel,
+    draggable,
     shape: {
       points
     },

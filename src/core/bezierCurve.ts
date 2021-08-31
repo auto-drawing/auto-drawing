@@ -9,9 +9,23 @@ export type IBezierCurveOptions = BaseShape<BezierCurveShape>
  * @returns
  */
 function createBezierCurve(options?: IBezierCurveOptions): BezierCurve {
-  const { x1, y1, x2, y2, cpx1, cpy1, cpx2, cpy2, percent = 1, zlevel = 0, ...rest } = options || {}
+  const {
+    x1,
+    y1,
+    x2,
+    y2,
+    cpx1,
+    cpy1,
+    cpx2,
+    cpy2,
+    percent = 1,
+    zlevel = 0,
+    draggable = false,
+    ...rest
+  } = options || {}
   const shape = new BezierCurve({
     zlevel,
+    draggable,
     shape: {
       // 必选参数
       x1,

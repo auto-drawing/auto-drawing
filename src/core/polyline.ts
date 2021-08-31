@@ -9,9 +9,10 @@ export type IPolylineShapeOptions = BaseShape<PolylineShape>
  * @returns
  */
 function createPolyline(options?: IPolylineShapeOptions): Polyline {
-  const { points = [], zlevel = 0 } = options || {}
+  const { points = [], zlevel = 0, draggable = false } = options || {}
   const shape = new Polyline({
     zlevel,
+    draggable,
     shape: {
       points
     },

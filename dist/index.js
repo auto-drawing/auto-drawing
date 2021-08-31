@@ -16297,10 +16297,13 @@
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
           _a$percent = _a.percent,
           percent = _a$percent === void 0 ? 1 : _a$percent,
-          rest = __rest(_a, ["x1", "y1", "x2", "y2", "zlevel", "percent"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["x1", "y1", "x2", "y2", "zlevel", "percent", "draggable"]);
 
       var shape = new Line({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           x1: x1,
           y1: y1,
@@ -16335,9 +16338,12 @@
           height = _a$height === void 0 ? 0 : _a$height,
           _a$zlevel = _a.zlevel,
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          rest = __rest(_a, ["x", "y", "width", "height", "zlevel"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["x", "y", "width", "height", "zlevel", "draggable"]);
 
       var shape = new Rect({
+        draggable: draggable,
         zlevel: zlevel,
         shape: {
           x: x,
@@ -16369,10 +16375,13 @@
           cy = _a$cy === void 0 ? 0 : _a$cy,
           _a$zlevel = _a.zlevel,
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          rest = __rest(_a, ["r", "cx", "cy", "zlevel"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["r", "cx", "cy", "zlevel", "draggable"]);
 
       var shape = new Circle({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           cx: cx,
           cy: cy,
@@ -16406,12 +16415,15 @@
           endAngle = _a$endAngle === void 0 ? 360 : _a$endAngle,
           _a$zlevel = _a.zlevel,
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
           _a$clockwise = _a.clockwise,
           clockwise = _a$clockwise === void 0 ? true : _a$clockwise,
-          rest = __rest(_a, ["r", "cx", "cy", "startAngle", "endAngle", "zlevel", "clockwise"]);
+          rest = __rest(_a, ["r", "cx", "cy", "startAngle", "endAngle", "zlevel", "draggable", "clockwise"]);
 
       var shape = new Arc({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           cx: cx,
           cy: cy,
@@ -16443,11 +16455,14 @@
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
           _a$isClose = _a.isClose,
           isClose = _a$isClose === void 0 ? true : _a$isClose,
-          rest = __rest(_a, ["paths", "zlevel", "isClose"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["paths", "zlevel", "isClose", "draggable"]);
 
       var PathShape = isClose ? Polygon : Polyline;
       var shape = new CompoundPath({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           paths: [new PathShape({
             shape: {
@@ -16474,10 +16489,13 @@
           _ref$points = _ref.points,
           points = _ref$points === void 0 ? [] : _ref$points,
           _ref$zlevel = _ref.zlevel,
-          zlevel = _ref$zlevel === void 0 ? 0 : _ref$zlevel;
+          zlevel = _ref$zlevel === void 0 ? 0 : _ref$zlevel,
+          _ref$draggable = _ref.draggable,
+          draggable = _ref$draggable === void 0 ? false : _ref$draggable;
 
       var shape = new Polygon({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           points: points
         },
@@ -16500,10 +16518,13 @@
           _ref$points = _ref.points,
           points = _ref$points === void 0 ? [] : _ref$points,
           _ref$zlevel = _ref.zlevel,
-          zlevel = _ref$zlevel === void 0 ? 0 : _ref$zlevel;
+          zlevel = _ref$zlevel === void 0 ? 0 : _ref$zlevel,
+          _ref$draggable = _ref.draggable,
+          draggable = _ref$draggable === void 0 ? false : _ref$draggable;
 
       var shape = new Polyline({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           points: points
         },
@@ -16530,10 +16551,13 @@
           y = _a$y === void 0 ? 0 : _a$y,
           _a$zlevel = _a.zlevel,
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          rest = __rest(_a, ["text", "x", "y", "zlevel"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["text", "x", "y", "zlevel", "draggable"]);
 
       var shape = new ZRText({
         zlevel: zlevel,
+        draggable: draggable,
         style: Object.assign({
           x: x,
           y: y,
@@ -16567,10 +16591,13 @@
           percent = _a$percent === void 0 ? 1 : _a$percent,
           _a$zlevel = _a.zlevel,
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          rest = __rest(_a, ["x1", "y1", "x2", "y2", "cpx1", "cpy1", "cpx2", "cpy2", "percent", "zlevel"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["x1", "y1", "x2", "y2", "cpx1", "cpy1", "cpx2", "cpy2", "percent", "zlevel", "draggable"]);
 
       var shape = new BezierCurve({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           // 必选参数
           x1: x1,
@@ -16616,10 +16643,13 @@
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
           _a$clockwise = _a.clockwise,
           clockwise = _a$clockwise === void 0 ? true : _a$clockwise,
-          rest = __rest(_a, ["r", "cx", "cy", "r0", "startAngle", "endAngle", "zlevel", "clockwise"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["r", "cx", "cy", "r0", "startAngle", "endAngle", "zlevel", "clockwise", "draggable"]);
 
       var shape = new Sector({
         zlevel: zlevel,
+        draggable: draggable,
         shape: {
           cx: cx,
           cy: cy,
@@ -16658,10 +16688,13 @@
           zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
           _a$image = _a.image,
           image = _a$image === void 0 ? '' : _a$image,
-          rest = __rest(_a, ["x", "y", "width", "height", "zlevel", "image"]);
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          rest = __rest(_a, ["x", "y", "width", "height", "zlevel", "image", "draggable"]);
 
       var shape = new ZRImage({
         zlevel: zlevel,
+        draggable: draggable,
         style: Object.assign({
           x: x,
           y: y,

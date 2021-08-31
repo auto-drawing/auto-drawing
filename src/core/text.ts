@@ -9,9 +9,10 @@ export type ITextOptions = BaseShape<TextStyleProps>
  * @returns
  */
 function createText(options?: ITextOptions): Text {
-  const { text, x = 0, y = 0, zlevel = 0, ...rest } = options || {}
+  const { text, x = 0, y = 0, zlevel = 0, draggable = false, ...rest } = options || {}
   const shape = new Text({
     zlevel,
+    draggable,
     style: {
       x,
       y,

@@ -9,9 +9,19 @@ export type ILineOptions = BaseShape<LineShape & { zlevel?: number }>
  * @returns
  */
 function createLine(options?: ILineOptions): Line {
-  const { x1 = 0, y1 = 0, x2 = 0, y2 = 0, zlevel = 0, percent = 1, ...rest } = options || {}
+  const {
+    x1 = 0,
+    y1 = 0,
+    x2 = 0,
+    y2 = 0,
+    zlevel = 0,
+    percent = 1,
+    draggable = false,
+    ...rest
+  } = options || {}
   const shape = new Line({
     zlevel,
+    draggable,
     shape: { x1, y1, x2, y2, percent },
     style: {
       lineWidth: 1,

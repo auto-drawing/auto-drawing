@@ -12,7 +12,7 @@ echo '登录'
 npm login
 
 echo "发布中..."
-npm publish
+npm publish ./dist
 
 # 改回npm源地址
 npm config set registry=https://registry.npm.taobao.org

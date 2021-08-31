@@ -18,10 +18,12 @@ function createSector(options?: ISectorOptions): Sector {
     endAngle = 0,
     zlevel = 0,
     clockwise = true,
+    draggable = false,
     ...rest
   } = options || {}
   const shape = new Sector({
     zlevel,
+    draggable,
     shape: {
       cx,
       cy,

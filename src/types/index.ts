@@ -27,7 +27,7 @@ export interface ZRenderInitOptions extends ZRenderInitOpt {
 /**
  * 创建图形的基本类型
  */
-export type BaseShape<T> = Partial<T & { zlevel: number }> & PathStyleProps
+export type BaseShape<T> = Partial<T & { zlevel: number; draggable: boolean }> & PathStyleProps
 
 /**
  * 自定义ZRenderType

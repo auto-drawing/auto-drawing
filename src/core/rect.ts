@@ -9,8 +9,17 @@ export type IRectOptions = BaseShape<RectShape>
  * @returns
  */
 function createRect(options?: IRectOptions): Rect {
-  const { x = 0, y = 0, width = 0, height = 0, zlevel = 0, ...rest } = options || {}
+  const {
+    x = 0,
+    y = 0,
+    width = 0,
+    height = 0,
+    zlevel = 0,
+    draggable = false,
+    ...rest
+  } = options || {}
   const shape = new Rect({
+    draggable,
     zlevel,
     shape: {
       x,

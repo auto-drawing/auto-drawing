@@ -9,9 +9,19 @@ export type IImageOptions = BaseShape<ImageStyleProps>
  * @returns
  */
 function createImage(options?: IImageOptions): ZRImage {
-  const { x = 0, y = 0, width = 0, height = 0, zlevel = 0, image = '', ...rest } = options || {}
+  const {
+    x = 0,
+    y = 0,
+    width = 0,
+    height = 0,
+    zlevel = 0,
+    image = '',
+    draggable = false,
+    ...rest
+  } = options || {}
   const shape = new ZRImage({
     zlevel,
+    draggable,
     style: {
       x,
       y,

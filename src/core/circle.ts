@@ -9,9 +9,10 @@ export type ICircleOptions = BaseShape<CircleShape & { radius: number; x: number
  * @returns
  */
 function createCircle(options?: ICircleOptions): Circle {
-  const { r = 0, cx = 0, cy = 0, zlevel = 0, ...rest } = options || {}
+  const { r = 0, cx = 0, cy = 0, zlevel = 0, draggable = false, ...rest } = options || {}
   const shape = new Circle({
     zlevel,
+    draggable,
     shape: {
       cx,
       cy,

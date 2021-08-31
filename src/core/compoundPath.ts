@@ -18,10 +18,11 @@ export type ICompoundPathOptions = BaseShape<CompoundPathShape> & {
  * @returns
  */
 function createCompoundPath(options?: ICompoundPathOptions): CompoundPath {
-  const { paths = [], zlevel = 0, isClose = true, ...rest } = options || {}
+  const { paths = [], zlevel = 0, isClose = true, draggable = false, ...rest } = options || {}
   const PathShape = isClose ? Polygon : Polyline
   const shape = new CompoundPath({
     zlevel,
+    draggable,
     shape: {
       paths: [
         new PathShape({
