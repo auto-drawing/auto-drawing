@@ -22,9 +22,9 @@ yarn add  auto-drawing
 
 [https://cdn.jsdelivr.net/npm/auto-drawing/dist/index.min.js](https://cdn.jsdelivr.net/npm/auto-drawing/dist/index.min.js)
 
-\*_使用时建议加上版本号 如使用`0.0.1-beta.4`版本_
+\*_使用时建议加上版本号 如使用`0.0.3`版本_
 
-[https://cdn.jsdelivr.net/npm/auto-drawing@0.0.1-beta.4/dist/index.min.js](https://cdn.jsdelivr.net/npm/auto-drawing@0.0.1-beta.4/dist/index.min.js)
+[https://cdn.jsdelivr.net/npm/auto-drawing@0.0.3/dist/index.min.js](https://cdn.jsdelivr.net/npm/auto-drawing@0.0.1-beta.4/dist/index.min.js)
 
 ## 文档
 
