@@ -1,6 +1,6 @@
 {
   "name": "auto-drawing",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "auto-drawing based zrender",
   "types": "dist/index.d.ts",
   "module": "dist/index.esm.js",
@@ -63,9 +63,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,vue}": [
-      "npm run lint",
-      "git add"
+    "src/**/*.{js,ts}": [
+      "npm run lint"
     ]
   }
 }

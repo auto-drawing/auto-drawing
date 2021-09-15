@@ -19199,6 +19199,9 @@
 
     function createCanvas(element) {
       var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var _a;
+
       var el = element instanceof HTMLElement ? element : document.getElementById(element);
       var ratio = window.devicePixelRatio;
       var height = window.innerHeight * ratio;
@@ -19208,7 +19211,9 @@
         devicePixelRatio: ratio,
         width: width,
         height: height
-      }, options));
+      }, options)); // 画布默认设置为黑色
+
+      (_a = Canvas === null || Canvas === void 0 ? void 0 : Canvas.painter) === null || _a === void 0 ? void 0 : _a.setBackgroundColor('#000');
       return Canvas;
     }
     /**
@@ -19366,7 +19371,7 @@
           var shapes = data === null || data === void 0 ? void 0 : data.map(function (item) {
             return generateShape(item);
           });
-          var group = new Group();
+          var group = createGroup();
 
           if (id) {
             group.id = id;

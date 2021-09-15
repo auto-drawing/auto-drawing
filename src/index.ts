@@ -77,6 +77,8 @@ export function createCanvas(
     height: height,
     ...options
   } as ZRenderInitOptions)
+  // 画布默认设置为黑色
+  Canvas?.painter?.setBackgroundColor('#000')
   return Canvas
 }
 
@@ -180,7 +182,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       break
     case 'group':
       const shapes = data?.map((item: any) => generateShape(item))
-      const group = new Group()
+      const group = createGroup()
       if (id) {
         group.id = id as number
       }

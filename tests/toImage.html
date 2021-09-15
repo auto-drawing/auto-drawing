@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../dist/index.js"></script>
+  </head>
+  <body>
+    <div id="div"></div>
+
+    <script>
+      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+      const zr = createCanvas('div')
+      const gp = createGroup()
+      const img = new Image()
+      img.width = 600
+      img.height = 600
+      img.src = './img.jpg'
+
+      const data = [
+        {
+          type: 'group',
+          data: [
+            {
+              type: 'line',
+              zlevel: 1,
+              x1: 32,
+              y1: 62,
+              x2: 168,
+              y2: 62,
+              stroke: '#f8f8b8'
+            },
+            {
+              type: 'line',
+              zlevel: 1,
+              x1: 168,
+              y1: 62,
+              x2: 168,
+              y2: 139,
+              stroke: '#f8f8b8'
+            },
+            {
+              type: 'line',
+              zlevel: 1,
+              x1: 168,
+              y1: 139,
+              x2: 32,
+              y2: 139,
+              stroke: '#f8f8b8'
+            },
+            {
+              type: 'line',
+              zlevel: 1,
+              x1: 32,
+              y1: 139,
+              x2: 32,
+              y2: 62,
+              stroke: '#f8f8b8'
+            }
+          ]
+        },
+        {
+          type: 'rect',
+          zlevel: 0,
+          x: 26,
+          y: 76,
+          width: 40,
+          height: 50,
+          fill: '#ff8041',
+          stroke: '#ff8041'
+        },
+        {
+          type: 'rect',
+          zlevel: 0,
+          x: 135,
+          y: 76,
+          width: 40,
+          height: 50,
+          fill: '#00ff01',
+          stroke: '#00ff01'
+        },
+        {
+          type: 'line',
+          zlevel: 0,
+          x1: 96,
+          y1: 100,
+          x2: 104,
+          y2: 100,
+          stroke: '#f8f9b7'
+        },
+        {
+          type: 'line',
+          zlevel: 0,
+          x1: 100,
+          y1: 96,
+          x2: 100,
+          y2: 104,
+          stroke: '#f8f9b7'
+        },
+        {
+          type: 'sector',
+          cx: 150,
+          cy: 150,
+          r: 100,
+          r0: 0,
+          startAngle: 0,
+          endAngle: 90,
+          fill: 'yellow',
+          clockwise: true
+        },
+        {
+          type: 'arc',
+          cx: 300,
+          cy: 150,
+          r: 100,
+          startAngle: 0,
+          endAngle: 90,
+          fill: 'green',
+          clockwise: true
+        },
+        {
+          type: 'circle',
+          cx: 350,
+          cy: 350,
+          r: 50,
+          fill: 'green'
+        },
+        {
+          type: 'polygon',
+          points: [
+            [350, 0],
+            [500, 0],
+            [350, 100]
+          ],
+          fill: 'red',
+          stroke: 'none'
+        },
+        {
+          type: 'text',
+          x: 600,
+          y: 600,
+          text: '你好,我是文字',
+          fontSize: 50,
+          fontWeight: 400
+        },
+        {
+          type: 'image',
+          x: 800,
+          y: 100,
+          width: 160,
+          height: 160,
+          image: img
+        }
+      ]
+      renderCanvas(zr, gp, data, {
+        scale: true,
+        translate: true
+      })
+
+      zr.painter.getRenderedCanvas().toBlob(blob => {
+        console.log(blob)
+        const imgUrl = URL.createObjectURL(blob)
+        console.log(imgUrl)
+      })
+    </script>
+  </body>
+</html>
