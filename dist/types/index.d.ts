@@ -29,7 +29,9 @@ export declare type AllShape = Line | Circle | Arc | CompoundPath | Polygon | Po
  *
  * 组的类型
  */
-export declare type ZRenderGroup = Group;
+export declare type ZRenderGroup = Group & {
+    params?: Record<string, any>;
+};
 /**
  * 图形数据类型
  */
@@ -166,6 +168,10 @@ export declare type ShapeCoreType = Partial<{
      * 组id
      */
     id: number;
+    /**
+     * 附加参数
+     */
+    params: Record<string, any>;
 }> & PathStyleProps;
 /**
  * 缩放平移回调数据

@@ -60,7 +60,7 @@ export type AllShape =
  *
  * 组的类型
  */
-export type ZRenderGroup = Group
+export type ZRenderGroup = Group & { params?: Record<string, any> }
 
 /**
  * 图形数据类型
@@ -241,6 +241,11 @@ export type ShapeCoreType = Partial<{
    * 组id
    */
   id: number
+
+  /**
+   * 附加参数
+   */
+  params: Record<string, any>
 }> &
   PathStyleProps
 

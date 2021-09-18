@@ -132,6 +132,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
     id,
     paths,
     image,
+    params = {},
     ...options
   } = item
   let shape: AllShape = undefined
@@ -186,10 +187,15 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       if (id) {
         group.id = id as number
       }
+      if (params) {
+        Reflect.set(group, 'params', params)
+      }
+
       shapes?.forEach((item: any) => group.add(item))
       shape = group as any
       break
   }
+
   return shape
 }
 

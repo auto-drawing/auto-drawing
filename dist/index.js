@@ -19265,7 +19265,9 @@
           id = item.id,
           paths = item.paths,
           image = item.image,
-          options = __rest(item, ["type", "x1", "y1", "x2", "y2", "x", "y", "cx", "cy", "cpx1", "cpy1", "cpx2", "cpy2", "width", "height", "r", "r0", "points", "startAngle", "endAngle", "text", "data", "id", "paths", "image"]);
+          _item$params = item.params,
+          params = _item$params === void 0 ? {} : _item$params,
+          options = __rest(item, ["type", "x1", "y1", "x2", "y2", "x", "y", "cx", "cy", "cpx1", "cpy1", "cpx2", "cpy2", "width", "height", "r", "r0", "points", "startAngle", "endAngle", "text", "data", "id", "paths", "image", "params"]);
 
       var shape = undefined;
 
@@ -19375,6 +19377,10 @@
 
           if (id) {
             group.id = id;
+          }
+
+          if (params) {
+            Reflect.set(group, 'params', params);
           }
 
           shapes === null || shapes === void 0 ? void 0 : shapes.forEach(function (item) {
