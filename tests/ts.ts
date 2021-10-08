@@ -1,12 +1,5 @@
-import {
-  createCanvas,
-  createGroup,
-  ShapeCoreType,
-  Nullable,
-  ZRenderType,
-  ZRenderGroup,
-  CallbackData
-} from '../dist/index'
+import { createCanvas, createGroup } from '../dist/auto-drawing'
+import { ShapeCoreType, Nullable, ZRenderType, ZRenderGroup, CallbackData } from '../dist/index'
 
 const data: ShapeCoreType[] = [
   {

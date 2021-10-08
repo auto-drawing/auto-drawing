@@ -24,20 +24,20 @@ const rollupConfig = {
   output: [
     // 输出 umd 规范的代码
     {
-      file: join(output, 'index.js'),
+      file: join(output, 'auto-drawing.js'),
       format: 'umd',
       name
     },
     {
       // 输出 esm 规范的代码
-      file: join(output, 'index.esm.js'),
+      file: join(output, 'auto-drawing.esm.js'),
       format: 'esm',
       plugins: [terser()],
       name
     },
     // 输出 umd 规范的压缩代码
     {
-      file: join(output, 'index.min.js'),
+      file: join(output, 'auto-drawing.min.js'),
       format: 'umd',
       plugins: [terser()],
       name

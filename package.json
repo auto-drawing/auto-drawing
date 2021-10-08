@@ -1,10 +1,12 @@
 {
   "name": "auto-drawing",
-  "version": "0.0.31",
+  "version": "0.0.4",
   "description": "auto-drawing based zrender",
   "types": "dist/index.d.ts",
-  "module": "dist/index.esm.js",
-  "main": "dist/index.js",
+  "module": "dist/auto-drawing.esm.js",
+  "main": "dist/auto-drawing.js",
+  "author": "xiaofei",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/l-x-f/auto-drawing.git"
@@ -21,8 +23,6 @@
     "2d",
     "zrender"
   ],
-  "author": "xiaofei",
-  "license": "ISC",
   "dependencies": {
     "lodash-es": "^4.17.21",
     "zrender": "^5.1.1"
