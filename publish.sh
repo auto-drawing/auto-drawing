@@ -15,7 +15,7 @@ echo "发布中..."
 npm publish
 
 # 改回npm源地址
-npm config set registry=https://registry.npm.taobao.org
+npm config set registry=https://registry.npmmirror.com/
 echo -e "\n发布成功\n"
 exit
 
