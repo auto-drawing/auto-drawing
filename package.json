@@ -6,7 +6,7 @@
   "module": "dist/auto-drawing.esm.js",
   "main": "dist/auto-drawing.js",
   "author": "xiaofei",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/l-x-f/auto-drawing.git"
