@@ -120,3 +120,24 @@ export function copyArrayByCount<T>(arr: T[], count = 1): T[] {
   })
   return res
 }
+
+/**
+ * canvas转成图片
+ */
+export const canvasToImage = (zr: ZRenderType): Promise<{ blob: Blob; base64: string }> => {
+  return new Promise((resolve, reject) => {
+    try {
+      if (zr) {
+        const canvas = (zr.painter as any).getRenderedCanvas()
+        const base64 = canvas.toDataURL('image/jpeg', 1.0)
+        canvas.toBlob((blob: Blob) => {
+          resolve({ blob, base64 })
+        })
+      } else {
+        reject()
+      }
+    } catch (error) {
+      reject()
+    }
+  })
+}

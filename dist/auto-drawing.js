@@ -19183,6 +19183,30 @@
       });
       return res;
     }
+    /**
+     * canvas转成图片
+     */
+
+    var canvasToImage = function canvasToImage(zr) {
+      return new Promise(function (resolve, reject) {
+        try {
+          if (zr) {
+            var canvas = zr.painter.getRenderedCanvas();
+            var base64 = canvas.toDataURL('image/jpeg', 1.0);
+            canvas.toBlob(function (blob) {
+              resolve({
+                blob: blob,
+                base64: base64
+              });
+            });
+          } else {
+            reject();
+          }
+        } catch (error) {
+          reject();
+        }
+      });
+    };
 
     /**
      * 注册画布，解决打包后出现 `Renderer 'undefined' is not imported. Please import it first` 的问题
@@ -19421,6 +19445,7 @@
       zr.add(group);
     }
 
+    exports.canvasToImage = canvasToImage;
     exports.copyArrayByCount = copyArrayByCount;
     exports.createArc = createArc;
     exports.createBezierCurve = createBezierCurve;

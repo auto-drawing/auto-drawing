@@ -33,3 +33,10 @@ export declare const getMiddle: ([x1, y1]: [number, number], [x2, y2]: [number, 
  * @returns
  */
 export declare function copyArrayByCount<T>(arr: T[], count?: number): T[];
+/**
+ * canvas转成图片
+ */
+export declare const canvasToImage: (zr: ZRenderType) => Promise<{
+    blob: Blob;
+    base64: string;
+}>;
