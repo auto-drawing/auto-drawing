@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../dist/auto-drawing.js"></script>
+    <!-- 导入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus@2.1.8/dist/index.css" />
+    <!-- 导入 Vue 3 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.33/vue.global.prod.js"></script>
+    <!-- 导入组件库 -->
+    <script src="https://unpkg.com/element-plus@2.1.8"></script>
+    <!-- coreData -->
+    <script src="./data.js"></script>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="zr"></div>
+    </div>
+
+    <script>
+      const { ref, reactive, onMounted, createApp, toRefs, nextTick } = Vue
+      const { createCanvas, createGroup, renderCanvas, createRect } = AutoDrawing
+
+      const App = {
+        setup(props) {
+          const state = reactive({
+            zr: null,
+            group: null,
+            selectGroup: null,
+            currentId: null,
+            currentRect: null
+          })
+          const baseOptions = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+
+          // 阻止默认事件
+          const preventDefault = () => {
+            const canvasList = document.getElementsByTagName('canvas')
+            const data = Array.from(canvasList)
+            data.forEach(item => {
+              item.oncontextmenu = e => {
+                e.preventDefault()
+                e.stopPropagation()
+              }
+            })
+          }
+
+          const data = coreData
+          const handleSelectBox = () => {
+            // 鼠标按下标志
+            let flag = false
+            // 起点坐标组
+            let startPos = []
+            // 终点坐标组
+            let endPos = []
+            // 给画布添加鼠标事件
+            state.zr.on('mousedown', e => {
+              preventDefault()
+              // 移除之前的绘制
+              state.currentRect && state.selectGroup.remove(state.currentRect)
+              // 判断点击的是鼠标右键
+              if (e.event.button !== 2) {
+                flag = false
+                return
+              }
+              // 鼠标按下，获取按下的坐标点
+              flag = true
+              startPos = [e.event.zrX, e.event.zrY]
+            })
+            state.zr.on('mousemove', e => {
+              if (!flag) return false
+              endPos = [e.event.zrX, e.event.zrY]
+              // group遍历所有子节点移除当前id对应的元素
+              state.selectGroup.eachChild(el => {
+                if (el.id === state.currentId) {
+                  state.selectGroup.remove(el)
+                }
+              })
+              // 创建一个圆矩形
+              const rect = createRect({
+                // 起点横坐标
+                x: startPos[0],
+                // 起点纵坐标
+                y: startPos[1],
+                // 宽
+                width: endPos[0] - startPos[0],
+                // 高
+                height: endPos[1] - startPos[1],
+                //  填充颜色
+                fill: 'transparent',
+                // 描边颜色
+                stroke: '#fff',
+                // 线宽，
+                lineWidth: 1,
+                // 线类型
+                lineDash: 'dashed',
+                zlevel: 100000
+              })
+              // 保存图形数据
+              state.currentId = rect.id
+              state.currentRect = rect
+              console.log(state.currentRect, 'rect')
+
+              // 添加到group里
+              state.selectGroup.add(rect)
+              state.zr.add(state.selectGroup)
+            })
+            state.zr.on('mouseup', e => {
+              // 鼠标抬起的时候，把最后一次赋值的id清空掉，保证画布上可以留下鼠标事件中最后一个new的实例
+              state.currentId = null
+              flag = false
+              preventDefault()
+            })
+          }
+          onMounted(() => {
+            state.zr = createCanvas('zr')
+            state.group = createGroup(baseOptions)
+            state.selectGroup = createGroup()
+            renderCanvas(state.zr, state.group, data, {
+              scale: true,
+              translate: true
+            })
+
+            // 阻止默认事件
+            preventDefault()
+            // 开始框选
+            handleSelectBox()
+          })
+
+          return {
+            ...toRefs(state)
+          }
+        }
+      }
+
+      const app = createApp(App)
+      app.use(ElementPlus).mount('#app')
+    </script>
+  </body>
+</html>

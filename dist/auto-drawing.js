@@ -19101,18 +19101,20 @@
       var state = {
         startX: 0,
         startY: 0,
-        isDown: false
+        canTranslate: false
       };
       zr.on('mousedown', function (e) {
         var _e$event = e.event,
             startX = _e$event.clientX,
             startY = _e$event.clientY;
         state.startX = startX;
-        state.startY = startY;
-        state.isDown = true;
+        state.startY = startY; // 判断用户点击的是否是鼠标左键 左键可以平移
+
+        state.canTranslate = e.event.button === 0 ? true : false;
       });
 
       function move(e) {
+        if (!state.canTranslate) return;
         var _e$event2 = e.event,
             clientX = _e$event2.clientX,
             clientY = _e$event2.clientY;
@@ -19138,7 +19140,7 @@
 
       zr.on('mouseup', function (e) {
         move(e);
-        state.isDown = true;
+        state.canTranslate = false;
       });
     }
     /**

@@ -1,0 +1,86 @@
+<template>
+  <div class="zrender">
+    <div id="zrender-canvas"></div>
+  </div>
+</template>
+
+<script>
+  import zrender from 'zrender'
+  export default {
+    name: 'zrender',
+    data() {
+      return {
+        zr: null,
+        group: null,
+        currentId: null
+      }
+    },
+    created() {},
+    mounted() {
+      this.init()
+    },
+    methods: {
+      init() {
+        this.zr = zrender.init(document.getElementById('zrender-canvas'))
+        this.group = new zrender.Group()
+        this.zr.add(this.group)
+        this.handleMouse()
+      },
+      handleMouse() {
+        // 设置三个变量flag鼠标按下标志、起点坐标组、终点坐标组
+        let flag = false
+        let startPos = null
+        let endPos = null
+        // 给画布添加鼠标事件
+        this.zr.on('mousedown', e => {
+          // 鼠标按下，获取按下的坐标点
+          flag = true
+          startPos = [e.event.zrX, e.event.zrY]
+        })
+        this.zr.on('mousemove', e => {
+          // 鼠标移动时
+          if (!flag) return false
+          // 在鼠标按下的情况下执行以下操作
+          // 获取鼠标移动的坐标点
+          endPos = [e.event.zrX, e.event.zrY]
+          // group遍历所有子节点移除当前id对应的元素(此处可跳过先看下文)
+          this.group.eachChild(el => {
+            if (el.id === this.currentId) {
+              this.group.remove(el)
+            }
+          })
+          // 创建一个圆矩形
+          let rect = new zrender.Rect({
+            shape: {
+              x: startPos[0], // 起点横坐标
+              y: startPos[1], // 起点纵坐标
+              width: endPos[0] - startPos[0], // 宽
+              height: endPos[1] - startPos[1] // 高
+            },
+            style: {
+              fill: 'transparent', // 填充颜色，默认#000
+              stroke: '#000', // 描边颜色，默认null
+              lineWidth: 1 // 线宽， 默认1
+            }
+          })
+          // 每一个new出来的实例都有一个自己的id,赋值给currentId
+          // 确保鼠标移动过程中不停的new,同时再移除掉
+          this.currentId = rect.id
+          // 添加圆到group里
+          this.group.add(rect)
+        })
+        this.zr.on('mouseup', e => {
+          // 鼠标抬起的时候，把最后一次赋值的id清空掉，保证画布上可以留下鼠标事件中最后一个new的实例
+          this.currentId = null
+          flag = false
+        })
+      }
+    }
+  }
+</script>
+
+<style>
+  #zrender-canvas {
+    height: 700px;
+  }
+</style>

@@ -56,7 +56,7 @@ const rollupConfig = {
 
     // 使得 rollup 支持 commonjs 规范，识别 commonjs 规范的依赖
     commonjs(),
-    // 配合 commnjs 解析第三方模块
+    // 配合 commonjs 解析第三方模块
     resolve({
       // 将自定义选项传递给解析插件
       customResolveOptions: {

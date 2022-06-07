@@ -56,14 +56,16 @@ export function translateGroup(
   group: ZRenderGroup,
   options?: { callback?: CallbackType }
 ): void {
-  const state = { startX: 0, startY: 0, isDown: false }
+  const state = { startX: 0, startY: 0, canTranslate: false }
   zr.on('mousedown', (e: any) => {
     const { clientX: startX, clientY: startY } = e.event
     state.startX = startX
     state.startY = startY
-    state.isDown = true
+    // 判断用户点击的是否是鼠标左键 左键可以平移
+    state.canTranslate = e.event.button === 0 ? true : false
   })
   function move(e: any) {
+    if (!state.canTranslate) return
     const { clientX, clientY } = e.event
     const stepX = clientX - state.startX
     const stepY = clientY - state.startY
@@ -87,7 +89,7 @@ export function translateGroup(
   }
   zr.on('mouseup', (e: any) => {
     move(e)
-    state.isDown = true
+    state.canTranslate = false
   })
 }
 
