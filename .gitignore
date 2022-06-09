@@ -4,6 +4,7 @@ node_modules
 yarn-error.log
 package-lock.json
 coverage
+dist
 
 # Editor directories and files
 .idea

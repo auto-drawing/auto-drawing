@@ -7,29 +7,83 @@
     <title>Document</title>
     <script src="../dist/auto-drawing.js"></script>
     <!-- 导入样式 -->
-    <link rel="stylesheet" href="https://unpkg.com/element-plus@2.1.8/dist/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/element-plus/2.2.4/index.min.css"
+    />
     <!-- 导入 Vue 3 -->
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.33/vue.global.prod.js"></script>
     <!-- 导入组件库 -->
-    <script src="https://unpkg.com/element-plus@2.1.8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/element-plus/2.2.4/index.full.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.17.21/lodash.js"></script>
+
     <!-- coreData -->
     <script src="./data.js"></script>
+    <script src="./np.js"></script>
 
     <style>
       * {
         padding: 0;
         margin: 0;
       }
+
+      #app {
+        position: relative;
+      }
+
+      .contextmenu {
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 2px 2px 3px 0 rgb(0 0 0 / 30%);
+        color: #333;
+        font-size: 12px;
+        font-weight: 400;
+        list-style-type: none;
+        margin: 0;
+        padding: 5px 0;
+        position: absolute;
+        width: 350px;
+        z-index: 1001;
+      }
+
+      .contextmenu li {
+        cursor: pointer;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0 16px;
+        user-select: none;
+      }
+
+      .contextmenu li:hover {
+        background: #eee;
+        color: #1756f6;
+      }
     </style>
   </head>
+
   <body>
     <div id="app">
       <div id="zr"></div>
+      <ul
+        v-show="visible"
+        class="contextmenu"
+        :style="{
+          left: offsetX + 'px',
+          top: offsetY + 'px'         
+        }"
+      >
+        <li @click="handleRemoveSelectBox">取消选框</li>
+        <li @click="handleSetCenter">设置图形中心</li>
+        <li>{{startPos}} {{endPos}}</li>
+        <li>{{rect}}</li>
+      </ul>
     </div>
 
     <script>
-      const { ref, reactive, onMounted, createApp, toRefs, nextTick } = Vue
-      const { createCanvas, createGroup, renderCanvas, createRect } = AutoDrawing
+      const { ref, reactive, onMounted, createApp, toRefs, nextTick, computed } = Vue
+      const { zrender, createCanvas, createGroup, renderCanvas, createRect, generateShape } =
+        AutoDrawing
 
       const App = {
         setup(props) {
@@ -37,10 +91,34 @@
             zr: null,
             group: null,
             selectGroup: null,
+            targetGroup: null,
+            targetShapeId: null,
             currentId: null,
-            currentRect: null
+            currentRect: null,
+            visible: false,
+            offsetX: 572,
+            offsetY: 249,
+            hasSelectBox: false,
+            startPos: [],
+            endPos: [],
+            callbackData: {
+              scale: 1,
+              x: 0,
+              y: 0
+            }
           })
           const baseOptions = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+
+          const rect = computed(() => {
+            const topLeft = [state.startPos[0], -state.startPos[1]]
+            const bottomRight = [state.endPos[0], -state.endPos[1]]
+            const topRight = [bottomRight[0], topLeft[1]]
+            const bottomLeft = [topLeft[0], bottomRight[1]]
+
+            console.log([topLeft, topRight, bottomLeft, bottomRight])
+
+            return [topLeft, topRight, bottomLeft, bottomRight]
+          })
 
           // 阻止默认事件
           const preventDefault = () => {
@@ -65,6 +143,7 @@
             // 给画布添加鼠标事件
             state.zr.on('mousedown', e => {
               preventDefault()
+              state.visible = false
               // 移除之前的绘制
               state.currentRect && state.selectGroup.remove(state.currentRect)
               // 判断点击的是鼠标右键
@@ -72,20 +151,23 @@
                 flag = false
                 return
               }
+              state.hasSelectBox = false
               // 鼠标按下，获取按下的坐标点
               flag = true
               startPos = [e.event.zrX, e.event.zrY]
+              state.startPos = startPos
             })
             state.zr.on('mousemove', e => {
               if (!flag) return false
               endPos = [e.event.zrX, e.event.zrY]
+              state.endPos = endPos
               // group遍历所有子节点移除当前id对应的元素
               state.selectGroup.eachChild(el => {
                 if (el.id === state.currentId) {
                   state.selectGroup.remove(el)
                 }
               })
-              // 创建一个圆矩形
+              // 创建一个矩形
               const rect = createRect({
                 // 起点横坐标
                 x: startPos[0],
@@ -103,29 +185,131 @@
                 lineWidth: 1,
                 // 线类型
                 lineDash: 'dashed',
-                zlevel: 100000
+                zlevel: 1000
               })
               // 保存图形数据
               state.currentId = rect.id
               state.currentRect = rect
-              console.log(state.currentRect, 'rect')
 
               // 添加到group里
               state.selectGroup.add(rect)
               state.zr.add(state.selectGroup)
+              state.hasSelectBox = true
             })
             state.zr.on('mouseup', e => {
+              // 判断鼠标是否是右键
+              if (e.event.button !== 2) {
+                flag = false
+                return
+              }
+
+              // 判断是否有选框
+              if (state.hasSelectBox) {
+                state.offsetX = e.offsetX
+                state.offsetY = e.offsetY
+                state.visible = true
+              }
+
               // 鼠标抬起的时候，把最后一次赋值的id清空掉，保证画布上可以留下鼠标事件中最后一个new的实例
               state.currentId = null
               flag = false
+
               preventDefault()
+            })
+
+            state.zr.on('click', e => {
+              const { shape, type, style, parent } = e?.target || {}
+              if (!shape || !type || !style) return
+
+              const data = {
+                type,
+                ...shape,
+                ...style,
+                fill: '#fff',
+                stroke: '#fff',
+                zlevel: 10002,
+                params: parent.params
+              }
+
+              const g = {
+                type: 'group',
+                params: {
+                  ...parent.params
+                },
+                data: [
+                  {
+                    ...data
+                  }
+                ]
+              }
+              // 移除之前的图形
+              state.targetGroup.removeAll()
+
+              renderCanvas(state.zr, state.targetGroup, [g], {
+                scale: true,
+                translate: true
+              })
+
+              //  旋转图形
+              const dataChildren = state.targetGroup.children()
+              const hasRotation = true
+              hasRotation &&
+                dataChildren.forEach(item => {
+                  if (!_.isEmpty(item.params)) {
+                    const { X, Y, PinAngle } = item.params
+                    if (!_.isEmpty(item.params) && X && Y && PinAngle) {
+                      // item.params.X * state.rate
+                      item.attr('originX', NP.times(Number(item.params.X), 22))
+                      // y轴给出负的
+                      // -item.params.Y * state.rate
+                      item.attr('originY', NP.times(-Number(item.params.Y), 22))
+                      item.attr(
+                        'rotation',
+                        NP.times(Math.PI / 180, NP.minus(360, Number(item.params.PinAngle)))
+                      )
+                    }
+                  }
+                })
             })
           }
           onMounted(() => {
             state.zr = createCanvas('zr')
             state.group = createGroup(baseOptions)
+            state.targetGroup = createGroup(baseOptions)
+
             state.selectGroup = createGroup()
             renderCanvas(state.zr, state.group, data, {
+              scale: true,
+              translate: true,
+              callback(data) {
+                state.callbackData = data
+              }
+            })
+
+            // 封装引脚旋转
+            const dataChildren = state.group.children()
+            console.log(dataChildren, 'dataChildren')
+
+            const hasRotation = true
+            hasRotation &&
+              dataChildren.forEach(item => {
+                if (!_.isEmpty(item.params)) {
+                  const { X, Y, PinAngle } = item.params
+                  if (!_.isEmpty(item.params) && X && Y && PinAngle) {
+                    // item.params.X * state.rate
+                    item.attr('originX', NP.times(Number(item.params.X), 22))
+                    // y轴给出负的
+                    // -item.params.Y * state.rate
+                    item.attr('originY', NP.times(-Number(item.params.Y), 22))
+                    item.attr(
+                      'rotation',
+                      NP.times(Math.PI / 180, NP.minus(360, Number(item.params.PinAngle)))
+                    )
+                  }
+                }
+              })
+
+            renderCanvas(state.zr, state.targetGroup, [], {
               scale: true,
               translate: true
             })
@@ -136,7 +320,22 @@
             handleSelectBox()
           })
 
+          // 移除选框
+          const handleRemoveSelectBox = () => {
+            state.currentRect && state.selectGroup.remove(state.currentRect)
+            state.visible = false
+          }
+          // 设置选中图形中心
+          const handleSetCenter = () => {
+            ElementPlus.ElMessage.closeAll()
+            ElementPlus.ElMessage.success('设置成功！')
+            handleRemoveSelectBox()
+          }
+
           return {
+            handleRemoveSelectBox,
+            handleSetCenter,
+            rect,
             ...toRefs(state)
           }
         }
