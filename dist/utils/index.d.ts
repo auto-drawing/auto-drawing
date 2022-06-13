@@ -1,5 +1,13 @@
 import { ZRenderType, ZRenderGroup, CallbackType } from '../index';
 /**
+ * 鼠标键的映射
+ */
+export declare enum mouseMap {
+    left = 0,
+    middle = 1,
+    right = 2
+}
+/**
  * 缩放ZRender Group
  * @param  zr  ZRender 实例
  * @param  group  Group 实例
@@ -18,6 +26,7 @@ export declare function scaleGroup(zr: ZRenderType, group: ZRenderGroup, options
  */
 export declare function translateGroup(zr: ZRenderType, group: ZRenderGroup, options?: {
     callback?: CallbackType;
+    mouse?: keyof typeof mouseMap;
 }): void;
 /**
  * 求两点之间的中点坐标

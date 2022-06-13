@@ -204,8 +204,8 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
  * @param zr
  * @param group
  * @param data
- * @param options `scale：是否需要缩放 translate：是否需要平移`
- * @default options =  { scale: false, translate: false }
+ * @param options `scale：是否需要缩放 translate：是否需要平移  mouse：平移响应的鼠标键 默认鼠标左键`
+ * @default options =  { scale: false, translate: false, mouse:'left'}
  */
 export function renderCanvas(
   zr: ZRenderType,
@@ -215,13 +215,14 @@ export function renderCanvas(
     scale: boolean
     translate: boolean
     callback: CallbackType
+    mouse: 'left' | 'middle' | 'right'
   }>
 ): void {
   const translate = options?.translate ?? false
   const scale = options?.scale ?? false
   const shapes = data.map((item, index: number) => generateShape(item, index))
   shapes.forEach(item => item && group.add(item))
-  translate && translateGroup(zr, group, { callback: options?.callback })
+  translate && translateGroup(zr, group, { callback: options?.callback, mouse: options?.mouse })
   scale && scaleGroup(zr, group, { callback: options?.callback })
   zr.add(group)
 }

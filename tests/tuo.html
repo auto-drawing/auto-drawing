@@ -42,7 +42,7 @@
         margin: 0;
         padding: 5px 0;
         position: absolute;
-        width: 350px;
+        width: 500px;
         z-index: 1001;
       }
 
@@ -75,15 +75,25 @@
       >
         <li @click="handleRemoveSelectBox">取消选框</li>
         <li @click="handleSetCenter">设置图形中心</li>
-        <li>{{startPos}} {{endPos}}</li>
-        <li>{{rect}}</li>
+        <li>{{startPosition}} {{endPosition}}</li>
+        <li>{{rectCoordinate}}</li>
+        <li>{{centerOffsetCoordinate}}</li>
       </ul>
     </div>
 
     <script>
+      NP.enableBoundaryChecking(false)
       const { ref, reactive, onMounted, createApp, toRefs, nextTick, computed } = Vue
-      const { zrender, createCanvas, createGroup, renderCanvas, createRect, generateShape } =
-        AutoDrawing
+      const {
+        zrender,
+        createCanvas,
+        createGroup,
+        renderCanvas,
+        createRect,
+        createPolygon,
+        generateShape,
+        getMiddle
+      } = AutoDrawing
 
       const App = {
         setup(props) {
@@ -99,25 +109,38 @@
             offsetX: 572,
             offsetY: 249,
             hasSelectBox: false,
-            startPos: [],
-            endPos: [],
+            startPosition: [],
+            endPosition: [],
             callbackData: {
               scale: 1,
               x: 0,
               y: 0
             }
           })
-          const baseOptions = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+          const baseOptions = {
+            x: window.innerWidth / 2,
+            y: window.innerHeight / 2
+          }
+          console.log(baseOptions, 'baseOptions')
 
-          const rect = computed(() => {
-            const topLeft = [state.startPos[0], -state.startPos[1]]
-            const bottomRight = [state.endPos[0], -state.endPos[1]]
+          const rectCoordinate = computed(() => {
+            const topLeft = [state.startPosition[0], state.startPosition[1]]
+            const bottomRight = [state.endPosition[0], state.endPosition[1]]
             const topRight = [bottomRight[0], topLeft[1]]
             const bottomLeft = [topLeft[0], bottomRight[1]]
 
-            console.log([topLeft, topRight, bottomLeft, bottomRight])
+            const data = [topLeft, topRight, bottomRight, bottomLeft]
 
-            return [topLeft, topRight, bottomLeft, bottomRight]
+            const res = data.map(item => [item[0] - baseOptions.x, -(item[1] - baseOptions.y)])
+
+            return res
+          })
+
+          const centerOffsetCoordinate = computed(() => {
+            const [o0, o1, o2] = rectCoordinate.value
+            const x1 = getMiddle(o0, o1)
+            const x2 = getMiddle(o1, o2)
+            return [x1[0], x2[1]]
           })
 
           // 阻止默认事件
@@ -137,9 +160,9 @@
             // 鼠标按下标志
             let flag = false
             // 起点坐标组
-            let startPos = []
+            let startPosition = []
             // 终点坐标组
-            let endPos = []
+            let endPosition = []
             // 给画布添加鼠标事件
             state.zr.on('mousedown', e => {
               preventDefault()
@@ -154,13 +177,13 @@
               state.hasSelectBox = false
               // 鼠标按下，获取按下的坐标点
               flag = true
-              startPos = [e.event.zrX, e.event.zrY]
-              state.startPos = startPos
+              startPosition = [e.event.zrX, e.event.zrY]
+              state.startPosition = startPosition
             })
             state.zr.on('mousemove', e => {
               if (!flag) return false
-              endPos = [e.event.zrX, e.event.zrY]
-              state.endPos = endPos
+              endPosition = [e.event.zrX, e.event.zrY]
+              state.endPosition = endPosition
               // group遍历所有子节点移除当前id对应的元素
               state.selectGroup.eachChild(el => {
                 if (el.id === state.currentId) {
@@ -170,13 +193,13 @@
               // 创建一个矩形
               const rect = createRect({
                 // 起点横坐标
-                x: startPos[0],
+                x: startPosition[0],
                 // 起点纵坐标
-                y: startPos[1],
+                y: startPosition[1],
                 // 宽
-                width: endPos[0] - startPos[0],
+                width: endPosition[0] - startPosition[0],
                 // 高
-                height: endPos[1] - startPos[1],
+                height: endPosition[1] - startPosition[1],
                 //  填充颜色
                 fill: 'transparent',
                 // 描边颜色
@@ -208,6 +231,42 @@
                 state.offsetX = e.offsetX
                 state.offsetY = e.offsetY
                 state.visible = true
+
+                // 判断是否在选框中
+                const containData = []
+                // 用选框的数据构造出一个矩形
+                const transformSelectBoxShape = createPolygon({
+                  points: rectCoordinate.value,
+                  fill: '#000'
+                })
+
+                const dataChildren = state.group.children()
+                dataChildren.forEach(item => {
+                  const shapeData = item.children ? item.children()[0] : null
+
+                  if (shapeData) {
+                    // 判断多边形路径
+                    if (shapeData.type === 'polygon' || shapeData.type === 'polyline') {
+                      const points = shapeData.shape.points
+                      // 判断包含
+                      const isContain = points.every(item =>
+                        transformSelectBoxShape.contain(item[0], item[1])
+                      )
+                      if (isContain) {
+                        containData.push(shapeData)
+                      }
+                    }
+                    // 判断矩形
+                    else if (shapeData.type === 'rect') {
+                      const { height, width, x, y } = shapeData.shape
+                      const x1 = [x + width, y]
+                      const x2 = [x + width, y - height]
+                      const x3 = [x, y - height]
+                      const points = [[x, y], x1, x2, x3]
+                      console.log(shapeData, points, 'rect')
+                    }
+                  }
+                })
               }
 
               // 鼠标抬起的时候，把最后一次赋值的id清空掉，保证画布上可以留下鼠标事件中最后一个new的实例
@@ -220,6 +279,7 @@
             state.zr.on('click', e => {
               const { shape, type, style, parent } = e?.target || {}
               if (!shape || !type || !style) return
+              console.log(e?.target, ' e?.target')
 
               const data = {
                 type,
@@ -233,14 +293,8 @@
 
               const g = {
                 type: 'group',
-                params: {
-                  ...parent.params
-                },
-                data: [
-                  {
-                    ...data
-                  }
-                ]
+                params: { ...parent.params },
+                data: [{ ...data }]
               }
               // 移除之前的图形
               state.targetGroup.removeAll()
@@ -252,24 +306,22 @@
 
               //  旋转图形
               const dataChildren = state.targetGroup.children()
-              const hasRotation = true
-              hasRotation &&
-                dataChildren.forEach(item => {
-                  if (!_.isEmpty(item.params)) {
-                    const { X, Y, PinAngle } = item.params
-                    if (!_.isEmpty(item.params) && X && Y && PinAngle) {
-                      // item.params.X * state.rate
-                      item.attr('originX', NP.times(Number(item.params.X), 22))
-                      // y轴给出负的
-                      // -item.params.Y * state.rate
-                      item.attr('originY', NP.times(-Number(item.params.Y), 22))
-                      item.attr(
-                        'rotation',
-                        NP.times(Math.PI / 180, NP.minus(360, Number(item.params.PinAngle)))
-                      )
-                    }
+              dataChildren.forEach(item => {
+                if (!_.isEmpty(item.params)) {
+                  const { X, Y, PinAngle } = item.params
+                  if (!_.isEmpty(item.params) && X && Y && PinAngle) {
+                    // item.params.X * state.rate
+                    item.attr('originX', NP.times(Number(item.params.X), 22))
+                    // y轴给出负的
+                    // -item.params.Y * state.rate
+                    item.attr('originY', NP.times(-Number(item.params.Y), 22))
+                    item.attr(
+                      'rotation',
+                      NP.times(Math.PI / 180, NP.minus(360, Number(item.params.PinAngle)))
+                    )
                   }
-                })
+                }
+              })
             })
           }
           onMounted(() => {
@@ -280,19 +332,22 @@
             state.selectGroup = createGroup()
             renderCanvas(state.zr, state.group, data, {
               scale: true,
-              translate: true,
-              callback(data) {
-                state.callbackData = data
-              }
+              translate: true
             })
 
             // 封装引脚旋转
             const dataChildren = state.group.children()
-            console.log(dataChildren, 'dataChildren')
+            // console.log(dataChildren, 'dataChildren')
 
             const hasRotation = true
             hasRotation &&
               dataChildren.forEach(item => {
+                const shape = item.children ? item.children()[0] : null
+
+                if (shape && shape.contain(77, 77)) {
+                  console.log(shape, 'shape')
+                }
+
                 if (!_.isEmpty(item.params)) {
                   const { X, Y, PinAngle } = item.params
                   if (!_.isEmpty(item.params) && X && Y && PinAngle) {
@@ -333,10 +388,11 @@
           }
 
           return {
+            rectCoordinate,
+            centerOffsetCoordinate,
+            ...toRefs(state),
             handleRemoveSelectBox,
-            handleSetCenter,
-            rect,
-            ...toRefs(state)
+            handleSetCenter
           }
         }
       }

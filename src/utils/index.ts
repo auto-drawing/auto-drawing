@@ -3,6 +3,15 @@ import { cloneDeep } from 'lodash-es'
 import { ZRenderType, ZRenderGroup, CallbackType } from '../index'
 
 /**
+ * 鼠标键的映射
+ */
+export enum mouseMap {
+  left = 0,
+  middle = 1,
+  right = 2
+}
+
+/**
  * 缩放ZRender Group
  * @param  zr  ZRender 实例
  * @param  group  Group 实例
@@ -46,6 +55,18 @@ export function scaleGroup(
   })
 }
 
+// 阻止鼠标右键默认事件
+const preventDefault = (zr: ZRenderType) => {
+  const canvasList = zr.dom.getElementsByTagName('canvas')
+  const data = Array.from(canvasList)
+  data.forEach(item => {
+    item.oncontextmenu = e => {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  })
+}
+
 /**
  * 平移ZRender Group
  * @param zr  ZRender 实例
@@ -54,15 +75,19 @@ export function scaleGroup(
 export function translateGroup(
   zr: ZRenderType,
   group: ZRenderGroup,
-  options?: { callback?: CallbackType }
+  options?: { callback?: CallbackType; mouse?: keyof typeof mouseMap }
 ): void {
   const state = { startX: 0, startY: 0, canTranslate: false }
+  const { mouse = 'left' } = options || {}
   zr.on('mousedown', (e: any) => {
     const { clientX: startX, clientY: startY } = e.event
     state.startX = startX
     state.startY = startY
     // 判断用户点击的是否是鼠标左键 左键可以平移
-    state.canTranslate = e.event.button === 0 ? true : false
+    state.canTranslate = e.event.button === mouseMap[mouse] ? true : false
+    if (mouse === 'right') {
+      preventDefault(zr)
+    }
   })
   function move(e: any) {
     if (!state.canTranslate) return

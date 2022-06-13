@@ -19046,12 +19046,24 @@
     }
 
     /**
+     * 鼠标键的映射
+     */
+
+    exports.mouseMap = void 0;
+
+    (function (mouseMap) {
+      mouseMap[mouseMap["left"] = 0] = "left";
+      mouseMap[mouseMap["middle"] = 1] = "middle";
+      mouseMap[mouseMap["right"] = 2] = "right";
+    })(exports.mouseMap || (exports.mouseMap = {}));
+    /**
      * 缩放ZRender Group
      * @param  zr  ZRender 实例
      * @param  group  Group 实例
      * @param options  `{scaleMin:number, scaleMax:number}`  scaleMin：缩放最小值 scaleMax：缩放最大值
      * @default options = {scaleMin:0.5,scaleMax:100}
      */
+
 
     function scaleGroup(zr, group, options) {
       var _ref = options || {},
@@ -19090,12 +19102,24 @@
           }
         });
       });
-    }
+    } // 阻止鼠标右键默认事件
+
+    var preventDefault = function preventDefault(zr) {
+      var canvasList = zr.dom.getElementsByTagName('canvas');
+      var data = Array.from(canvasList);
+      data.forEach(function (item) {
+        item.oncontextmenu = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        };
+      });
+    };
     /**
      * 平移ZRender Group
      * @param zr  ZRender 实例
      * @param group  Group 实例
      */
+
 
     function translateGroup(zr, group, options) {
       var state = {
@@ -19103,6 +19127,11 @@
         startY: 0,
         canTranslate: false
       };
+
+      var _ref2 = options || {},
+          _ref2$mouse = _ref2.mouse,
+          mouse = _ref2$mouse === void 0 ? 'left' : _ref2$mouse;
+
       zr.on('mousedown', function (e) {
         var _e$event = e.event,
             startX = _e$event.clientX,
@@ -19110,7 +19139,11 @@
         state.startX = startX;
         state.startY = startY; // 判断用户点击的是否是鼠标左键 左键可以平移
 
-        state.canTranslate = e.event.button === 0 ? true : false;
+        state.canTranslate = e.event.button === exports.mouseMap[mouse] ? true : false;
+
+        if (mouse === 'right') {
+          preventDefault(zr);
+        }
       });
 
       function move(e) {
@@ -19150,18 +19183,18 @@
      * @returns
      */
 
-    var getMiddle = function getMiddle(_ref2, _ref3) {
-      var _ref4 = _slicedToArray(_ref2, 2),
-          _ref4$ = _ref4[0],
-          x1 = _ref4$ === void 0 ? 0 : _ref4$,
-          _ref4$2 = _ref4[1],
-          y1 = _ref4$2 === void 0 ? 0 : _ref4$2;
-
+    var getMiddle = function getMiddle(_ref3, _ref4) {
       var _ref5 = _slicedToArray(_ref3, 2),
           _ref5$ = _ref5[0],
-          x2 = _ref5$ === void 0 ? 0 : _ref5$,
+          x1 = _ref5$ === void 0 ? 0 : _ref5$,
           _ref5$2 = _ref5[1],
-          y2 = _ref5$2 === void 0 ? 0 : _ref5$2;
+          y1 = _ref5$2 === void 0 ? 0 : _ref5$2;
+
+      var _ref6 = _slicedToArray(_ref4, 2),
+          _ref6$ = _ref6[0],
+          x2 = _ref6$ === void 0 ? 0 : _ref6$,
+          _ref6$2 = _ref6[1],
+          y2 = _ref6$2 === void 0 ? 0 : _ref6$2;
 
       var x0 = (x1 + x2) / 2;
       var y0 = (y1 + y2) / 2;
@@ -19423,8 +19456,8 @@
      * @param zr
      * @param group
      * @param data
-     * @param options `scale：是否需要缩放 translate：是否需要平移`
-     * @default options =  { scale: false, translate: false }
+     * @param options `scale：是否需要缩放 translate：是否需要平移  mouse：平移响应的鼠标键 默认鼠标左键`
+     * @default options =  { scale: false, translate: false, mouse:'left'}
      */
 
     function renderCanvas(zr, group, data, options) {
@@ -19439,7 +19472,8 @@
         return item && group.add(item);
       });
       translate && translateGroup(zr, group, {
-        callback: options === null || options === void 0 ? void 0 : options.callback
+        callback: options === null || options === void 0 ? void 0 : options.callback,
+        mouse: options === null || options === void 0 ? void 0 : options.mouse
       });
       scale && scaleGroup(zr, group, {
         callback: options === null || options === void 0 ? void 0 : options.callback

@@ -41,11 +41,12 @@ export declare function generateShape(item: ShapeCoreType, _index?: number): All
  * @param zr
  * @param group
  * @param data
- * @param options `scale：是否需要缩放 translate：是否需要平移`
- * @default options =  { scale: false, translate: false }
+ * @param options `scale：是否需要缩放 translate：是否需要平移  mouse：平移响应的鼠标键 默认鼠标左键`
+ * @default options =  { scale: false, translate: false, mouse:'left'}
  */
 export declare function renderCanvas(zr: ZRenderType, group: ZRenderGroup, data: ShapeCoreType[], options?: Partial<{
     scale: boolean;
     translate: boolean;
     callback: CallbackType;
+    mouse: 'left' | 'middle' | 'right';
 }>): void;
