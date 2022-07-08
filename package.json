@@ -1,6 +1,6 @@
 {
   "name": "auto-drawing",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "auto-drawing based zrender",
   "types": "dist/index.d.ts",
   "module": "dist/auto-drawing.esm.js",

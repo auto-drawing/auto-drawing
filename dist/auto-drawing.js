@@ -19364,7 +19364,7 @@
           break;
 
         case 'polyline':
-          shape = createPolygon(Object.assign({
+          shape = createPolyline(Object.assign({
             points: points
           }, options));
           break;
@@ -19447,6 +19447,10 @@
           });
           shape = group;
           break;
+      }
+
+      if (params) {
+        Reflect.set(shape, 'params', params);
       }
 
       return shape;

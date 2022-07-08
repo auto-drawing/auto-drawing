@@ -150,7 +150,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       shape = createPolygon({ points, ...options })
       break
     case 'polyline':
-      shape = createPolygon({ points, ...options })
+      shape = createPolyline({ points, ...options })
       break
     case 'arc':
       shape = createArc({ cx, cy, r, startAngle, endAngle, ...options })
@@ -194,6 +194,10 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       shapes?.forEach((item: any) => group.add(item))
       shape = group as any
       break
+  }
+
+  if (params) {
+    Reflect.set(shape as any, 'params', params)
   }
 
   return shape
