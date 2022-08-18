@@ -47,7 +47,7 @@ export const getCommonParams = (options?: Record<string, any>) => {
     /**
      * 是否渐进式渲染。当图形元素过多时才使用，用大于 0 的数字表示渲染顺序。  默认 -1
      */
-    progressive = 1,
+    progressive = -1,
     /**
      * 	是否使用包围盒检验鼠标是否移动到物体。false 则检测元素实际的内容。 默认 false
      */

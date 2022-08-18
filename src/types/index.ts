@@ -70,7 +70,7 @@ export type ZRenderGroup = Group & { params?: Record<string, any> }
  */
 export type CommonType = {
   /**
-   * 旋转的角度。 zender是弧度 这里已经做了装换 转成了角度   默认 0
+   * 旋转的角度。 zender是弧度 这里已经做了转换 转成了角度   默认 0
    */
   rotation: number
   /**
