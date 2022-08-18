@@ -16304,7 +16304,7 @@
           _a$invisible = _a.invisible,
           invisible = _a$invisible === void 0 ? false : _a$invisible,
           _a$progressive = _a.progressive,
-          progressive = _a$progressive === void 0 ? 1 : _a$progressive,
+          progressive = _a$progressive === void 0 ? -1 : _a$progressive,
           _a$rectHover = _a.rectHover,
           rectHover = _a$rectHover === void 0 ? false : _a$rectHover,
           _a$silent = _a.silent,
