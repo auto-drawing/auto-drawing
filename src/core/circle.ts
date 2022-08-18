@@ -1,5 +1,6 @@
 import { Circle, CircleShape } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type ICircleOptions = BaseShape<CircleShape & { radius: number; x: number; y: number }>
 
@@ -9,10 +10,10 @@ export type ICircleOptions = BaseShape<CircleShape & { radius: number; x: number
  * @returns
  */
 function createCircle(options?: ICircleOptions): Circle {
-  const { r = 0, cx = 0, cy = 0, zlevel = 0, draggable = false, ...rest } = options || {}
+  const { common, other } = getCommonParams(options)
+  const { r = 0, cx = 0, cy = 0, ...rest } = other
   const shape = new Circle({
-    zlevel,
-    draggable,
+    ...common,
     shape: {
       cx,
       cy,

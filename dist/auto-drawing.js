@@ -16278,32 +16278,92 @@
     });
 
     /**
+     *
+     * @param options
+     * @returns
+     */
+
+    var getCommonParams = function getCommonParams(options) {
+      var _a = options || {},
+          _a$rotation = _a.rotation,
+          rotation = _a$rotation === void 0 ? 0 : _a$rotation,
+          _a$originX = _a.originX,
+          originX = _a$originX === void 0 ? 0 : _a$originX,
+          _a$originY = _a.originY,
+          originY = _a$originY === void 0 ? 0 : _a$originY,
+          _a$scaleX = _a.scaleX,
+          scaleX = _a$scaleX === void 0 ? 1 : _a$scaleX,
+          _a$scaleY = _a.scaleY,
+          scaleY = _a$scaleY === void 0 ? 1 : _a$scaleY,
+          _a$culling = _a.culling,
+          culling = _a$culling === void 0 ? false : _a$culling,
+          _a$cursor = _a.cursor,
+          cursor = _a$cursor === void 0 ? 'pointer' : _a$cursor,
+          _a$draggable = _a.draggable,
+          draggable = _a$draggable === void 0 ? false : _a$draggable,
+          _a$invisible = _a.invisible,
+          invisible = _a$invisible === void 0 ? false : _a$invisible,
+          _a$progressive = _a.progressive,
+          progressive = _a$progressive === void 0 ? 1 : _a$progressive,
+          _a$rectHover = _a.rectHover,
+          rectHover = _a$rectHover === void 0 ? false : _a$rectHover,
+          _a$silent = _a.silent,
+          silent = _a$silent === void 0 ? false : _a$silent,
+          _a$z = _a.z,
+          z = _a$z === void 0 ? 0 : _a$z,
+          _a$z2 = _a.z2,
+          z2 = _a$z2 === void 0 ? 0 : _a$z2,
+          _a$zlevel = _a.zlevel,
+          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
+          other = __rest(_a, ["rotation", "originX", "originY", "scaleX", "scaleY", "culling", "cursor", "draggable", "invisible", "progressive", "rectHover", "silent", "z", "z2", "zlevel"]);
+
+      var common = {
+        rotation: Math.PI / 180 * rotation,
+        originX: originX,
+        originY: originY,
+        scaleX: scaleX,
+        scaleY: scaleY,
+        culling: culling,
+        cursor: cursor,
+        draggable: draggable,
+        invisible: invisible,
+        progressive: progressive,
+        rectHover: rectHover,
+        silent: silent,
+        z: z,
+        z2: z2,
+        zlevel: zlevel
+      };
+      return {
+        common: common,
+        other: other
+      };
+    };
+
+    /**
      *  创建直线
      * @param options
      * @returns
      */
 
     function createLine(options) {
-      var _a = options || {},
-          _a$x = _a.x1,
-          x1 = _a$x === void 0 ? 0 : _a$x,
-          _a$y = _a.y1,
-          y1 = _a$y === void 0 ? 0 : _a$y,
-          _a$x2 = _a.x2,
-          x2 = _a$x2 === void 0 ? 0 : _a$x2,
-          _a$y2 = _a.y2,
-          y2 = _a$y2 === void 0 ? 0 : _a$y2,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$percent = _a.percent,
-          percent = _a$percent === void 0 ? 1 : _a$percent,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["x1", "y1", "x2", "y2", "zlevel", "percent", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new Line({
-        zlevel: zlevel,
-        draggable: draggable,
+      var _other$x = other.x1,
+          x1 = _other$x === void 0 ? 0 : _other$x,
+          _other$y = other.y1,
+          y1 = _other$y === void 0 ? 0 : _other$y,
+          _other$x2 = other.x2,
+          x2 = _other$x2 === void 0 ? 0 : _other$x2,
+          _other$y2 = other.y2,
+          y2 = _other$y2 === void 0 ? 0 : _other$y2,
+          _other$percent = other.percent,
+          percent = _other$percent === void 0 ? 1 : _other$percent,
+          rest = __rest(other, ["x1", "y1", "x2", "y2", "percent"]);
+
+      var shape = new Line(Object.assign(Object.assign({}, common), {
         shape: {
           x1: x1,
           y1: y1,
@@ -16316,7 +16376,7 @@
           lineCap: 'square',
           stroke: '#0f0'
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16327,24 +16387,21 @@
      */
 
     function createRect(options) {
-      var _a = options || {},
-          _a$x = _a.x,
-          x = _a$x === void 0 ? 0 : _a$x,
-          _a$y = _a.y,
-          y = _a$y === void 0 ? 0 : _a$y,
-          _a$width = _a.width,
-          width = _a$width === void 0 ? 0 : _a$width,
-          _a$height = _a.height,
-          height = _a$height === void 0 ? 0 : _a$height,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["x", "y", "width", "height", "zlevel", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new Rect({
-        draggable: draggable,
-        zlevel: zlevel,
+      var _other$x = other.x,
+          x = _other$x === void 0 ? 0 : _other$x,
+          _other$y = other.y,
+          y = _other$y === void 0 ? 0 : _other$y,
+          _other$width = other.width,
+          width = _other$width === void 0 ? 0 : _other$width,
+          _other$height = other.height,
+          height = _other$height === void 0 ? 0 : _other$height,
+          rest = __rest(other, ["x", "y", "width", "height"]);
+
+      var shape = new Rect(Object.assign(Object.assign({}, common), {
         shape: {
           x: x,
           y: y,
@@ -16355,7 +16412,7 @@
           fill: 'none',
           stroke: '#fff'
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16366,22 +16423,19 @@
      */
 
     function createCircle(options) {
-      var _a = options || {},
-          _a$r = _a.r,
-          r = _a$r === void 0 ? 0 : _a$r,
-          _a$cx = _a.cx,
-          cx = _a$cx === void 0 ? 0 : _a$cx,
-          _a$cy = _a.cy,
-          cy = _a$cy === void 0 ? 0 : _a$cy,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["r", "cx", "cy", "zlevel", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new Circle({
-        zlevel: zlevel,
-        draggable: draggable,
+      var _other$r = other.r,
+          r = _other$r === void 0 ? 0 : _other$r,
+          _other$cx = other.cx,
+          cx = _other$cx === void 0 ? 0 : _other$cx,
+          _other$cy = other.cy,
+          cy = _other$cy === void 0 ? 0 : _other$cy,
+          rest = __rest(other, ["r", "cx", "cy"]);
+
+      var shape = new Circle(Object.assign(Object.assign({}, common), {
         shape: {
           cx: cx,
           cy: cy,
@@ -16391,7 +16445,7 @@
           fill: 'none',
           stroke: '#00f'
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16402,28 +16456,25 @@
      */
 
     function createArc(options) {
-      var _a = options || {},
-          _a$r = _a.r,
-          r = _a$r === void 0 ? 0 : _a$r,
-          _a$cx = _a.cx,
-          cx = _a$cx === void 0 ? 0 : _a$cx,
-          _a$cy = _a.cy,
-          cy = _a$cy === void 0 ? 0 : _a$cy,
-          _a$startAngle = _a.startAngle,
-          startAngle = _a$startAngle === void 0 ? 0 : _a$startAngle,
-          _a$endAngle = _a.endAngle,
-          endAngle = _a$endAngle === void 0 ? 360 : _a$endAngle,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          _a$clockwise = _a.clockwise,
-          clockwise = _a$clockwise === void 0 ? true : _a$clockwise,
-          rest = __rest(_a, ["r", "cx", "cy", "startAngle", "endAngle", "zlevel", "draggable", "clockwise"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new Arc({
-        zlevel: zlevel,
-        draggable: draggable,
+      var _other$r = other.r,
+          r = _other$r === void 0 ? 0 : _other$r,
+          _other$cx = other.cx,
+          cx = _other$cx === void 0 ? 0 : _other$cx,
+          _other$cy = other.cy,
+          cy = _other$cy === void 0 ? 0 : _other$cy,
+          _other$startAngle = other.startAngle,
+          startAngle = _other$startAngle === void 0 ? 0 : _other$startAngle,
+          _other$endAngle = other.endAngle,
+          endAngle = _other$endAngle === void 0 ? 360 : _other$endAngle,
+          _other$clockwise = other.clockwise,
+          clockwise = _other$clockwise === void 0 ? true : _other$clockwise,
+          rest = __rest(other, ["r", "cx", "cy", "startAngle", "endAngle", "clockwise"]);
+
+      var shape = new Arc(Object.assign(Object.assign({}, common), {
         shape: {
           cx: cx,
           cy: cy,
@@ -16437,7 +16488,7 @@
           fill: 'none',
           stroke: 'rgba(0,0,255,0.5)'
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16448,21 +16499,18 @@
      */
 
     function createCompoundPath(options) {
-      var _a = options || {},
-          _a$paths = _a.paths,
-          paths = _a$paths === void 0 ? [] : _a$paths,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$isClose = _a.isClose,
-          isClose = _a$isClose === void 0 ? true : _a$isClose,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["paths", "zlevel", "isClose", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
+
+      var _other$paths = other.paths,
+          paths = _other$paths === void 0 ? [] : _other$paths,
+          _other$isClose = other.isClose,
+          isClose = _other$isClose === void 0 ? true : _other$isClose,
+          rest = __rest(other, ["paths", "isClose"]);
 
       var PathShape = isClose ? Polygon : Polyline;
-      var shape = new CompoundPath({
-        zlevel: zlevel,
-        draggable: draggable,
+      var shape = new CompoundPath(Object.assign(Object.assign({}, common), {
         shape: {
           paths: [new PathShape({
             shape: {
@@ -16474,7 +16522,7 @@
           fill: 'none',
           stroke: '#fff'
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16485,17 +16533,13 @@
      */
 
     function createPolygon(options) {
-      var _ref = options || {},
-          _ref$points = _ref.points,
-          points = _ref$points === void 0 ? [] : _ref$points,
-          _ref$zlevel = _ref.zlevel,
-          zlevel = _ref$zlevel === void 0 ? 0 : _ref$zlevel,
-          _ref$draggable = _ref.draggable,
-          draggable = _ref$draggable === void 0 ? false : _ref$draggable;
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new Polygon({
-        zlevel: zlevel,
-        draggable: draggable,
+      var _other$points = other.points,
+          points = _other$points === void 0 ? [] : _other$points;
+      var shape = new Polygon(Object.assign(Object.assign({}, common), {
         shape: {
           points: points
         },
@@ -16503,7 +16547,7 @@
           fill: 'none',
           stroke: '#0f0'
         }, options)
-      });
+      }));
       return shape;
     }
 
@@ -16514,17 +16558,13 @@
      */
 
     function createPolyline(options) {
-      var _ref = options || {},
-          _ref$points = _ref.points,
-          points = _ref$points === void 0 ? [] : _ref$points,
-          _ref$zlevel = _ref.zlevel,
-          zlevel = _ref$zlevel === void 0 ? 0 : _ref$zlevel,
-          _ref$draggable = _ref.draggable,
-          draggable = _ref$draggable === void 0 ? false : _ref$draggable;
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new Polyline({
-        zlevel: zlevel,
-        draggable: draggable,
+      var _other$points = other.points,
+          points = _other$points === void 0 ? [] : _other$points;
+      var shape = new Polyline(Object.assign(Object.assign({}, common), {
         shape: {
           points: points
         },
@@ -16532,7 +16572,7 @@
           fill: 'none',
           stroke: '#0f0'
         }, options)
-      });
+      }));
       return shape;
     }
 
@@ -16543,21 +16583,18 @@
      */
 
     function createText(options) {
-      var _a = options || {},
-          text = _a.text,
-          _a$x = _a.x,
-          x = _a$x === void 0 ? 0 : _a$x,
-          _a$y = _a.y,
-          y = _a$y === void 0 ? 0 : _a$y,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["text", "x", "y", "zlevel", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new ZRText({
-        zlevel: zlevel,
-        draggable: draggable,
+      var text = other.text,
+          _other$x = other.x,
+          x = _other$x === void 0 ? 0 : _other$x,
+          _other$y = other.y,
+          y = _other$y === void 0 ? 0 : _other$y,
+          rest = __rest(other, ["text", "x", "y"]);
+
+      var shape = new ZRText(Object.assign(Object.assign({}, common), {
         style: Object.assign({
           x: x,
           y: y,
@@ -16567,7 +16604,7 @@
           fontSize: 16,
           fontWeight: 400
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16578,26 +16615,23 @@
      */
 
     function createBezierCurve(options) {
-      var _a = options || {},
-          x1 = _a.x1,
-          y1 = _a.y1,
-          x2 = _a.x2,
-          y2 = _a.y2,
-          cpx1 = _a.cpx1,
-          cpy1 = _a.cpy1,
-          cpx2 = _a.cpx2,
-          cpy2 = _a.cpy2,
-          _a$percent = _a.percent,
-          percent = _a$percent === void 0 ? 1 : _a$percent,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["x1", "y1", "x2", "y2", "cpx1", "cpy1", "cpx2", "cpy2", "percent", "zlevel", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new BezierCurve({
-        zlevel: zlevel,
-        draggable: draggable,
+      var x1 = other.x1,
+          y1 = other.y1,
+          x2 = other.x2,
+          y2 = other.y2,
+          cpx1 = other.cpx1,
+          cpy1 = other.cpy1,
+          cpx2 = other.cpx2,
+          cpy2 = other.cpy2,
+          _other$percent = other.percent,
+          percent = _other$percent === void 0 ? 1 : _other$percent,
+          rest = __rest(other, ["x1", "y1", "x2", "y2", "cpx1", "cpy1", "cpx2", "cpy2", "percent"]);
+
+      var shape = new BezierCurve(Object.assign(Object.assign({}, common), {
         shape: {
           // 必选参数
           x1: x1,
@@ -16615,7 +16649,7 @@
           fill: 'none',
           stroke: '#0f0'
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16626,30 +16660,27 @@
      */
 
     function createSector(options) {
-      var _a = options || {},
-          _a$r = _a.r,
-          r = _a$r === void 0 ? 0 : _a$r,
-          _a$cx = _a.cx,
-          cx = _a$cx === void 0 ? 0 : _a$cx,
-          _a$cy = _a.cy,
-          cy = _a$cy === void 0 ? 0 : _a$cy,
-          _a$r2 = _a.r0,
-          r0 = _a$r2 === void 0 ? 0 : _a$r2,
-          _a$startAngle = _a.startAngle,
-          startAngle = _a$startAngle === void 0 ? 0 : _a$startAngle,
-          _a$endAngle = _a.endAngle,
-          endAngle = _a$endAngle === void 0 ? 0 : _a$endAngle,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$clockwise = _a.clockwise,
-          clockwise = _a$clockwise === void 0 ? true : _a$clockwise,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["r", "cx", "cy", "r0", "startAngle", "endAngle", "zlevel", "clockwise", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new Sector({
-        zlevel: zlevel,
-        draggable: draggable,
+      var _other$r = other.r,
+          r = _other$r === void 0 ? 0 : _other$r,
+          _other$cx = other.cx,
+          cx = _other$cx === void 0 ? 0 : _other$cx,
+          _other$cy = other.cy,
+          cy = _other$cy === void 0 ? 0 : _other$cy,
+          _other$r2 = other.r0,
+          r0 = _other$r2 === void 0 ? 0 : _other$r2,
+          _other$startAngle = other.startAngle,
+          startAngle = _other$startAngle === void 0 ? 0 : _other$startAngle,
+          _other$endAngle = other.endAngle,
+          endAngle = _other$endAngle === void 0 ? 0 : _other$endAngle,
+          _other$clockwise = other.clockwise,
+          clockwise = _other$clockwise === void 0 ? true : _other$clockwise,
+          rest = __rest(other, ["r", "cx", "cy", "r0", "startAngle", "endAngle", "clockwise"]);
+
+      var shape = new Sector(Object.assign(Object.assign({}, common), {
         shape: {
           cx: cx,
           cy: cy,
@@ -16664,7 +16695,7 @@
           fill: 'none',
           stroke: 'none'
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -16675,36 +16706,31 @@
      */
 
     function createImage(options) {
-      var _a = options || {},
-          _a$x = _a.x,
-          x = _a$x === void 0 ? 0 : _a$x,
-          _a$y = _a.y,
-          y = _a$y === void 0 ? 0 : _a$y,
-          _a$width = _a.width,
-          width = _a$width === void 0 ? 0 : _a$width,
-          _a$height = _a.height,
-          height = _a$height === void 0 ? 0 : _a$height,
-          _a$zlevel = _a.zlevel,
-          zlevel = _a$zlevel === void 0 ? 0 : _a$zlevel,
-          _a$image = _a.image,
-          image = _a$image === void 0 ? '' : _a$image,
-          _a$draggable = _a.draggable,
-          draggable = _a$draggable === void 0 ? false : _a$draggable,
-          rest = __rest(_a, ["x", "y", "width", "height", "zlevel", "image", "draggable"]);
+      var _getCommonParams = getCommonParams(options),
+          common = _getCommonParams.common,
+          other = _getCommonParams.other;
 
-      var shape = new ZRImage({
-        zlevel: zlevel,
-        draggable: draggable,
+      var _other$x = other.x,
+          x = _other$x === void 0 ? 0 : _other$x,
+          _other$y = other.y,
+          y = _other$y === void 0 ? 0 : _other$y,
+          _other$width = other.width,
+          width = _other$width === void 0 ? 0 : _other$width,
+          _other$height = other.height,
+          height = _other$height === void 0 ? 0 : _other$height,
+          _other$image = other.image,
+          image = _other$image === void 0 ? '' : _other$image,
+          rest = __rest(other, ["x", "y", "width", "height", "image"]);
+
+      var shape = new ZRImage(Object.assign(Object.assign({}, common), {
         style: Object.assign({
           x: x,
           y: y,
           width: width,
           height: height,
-          image: image,
-          fill: 'none',
-          stroke: 'none'
+          image: image
         }, rest)
-      });
+      }));
       return shape;
     }
 
@@ -19105,7 +19131,9 @@
     } // 阻止鼠标右键默认事件
 
     var preventDefault = function preventDefault(zr) {
-      var canvasList = zr.dom.getElementsByTagName('canvas');
+      var _a;
+
+      var canvasList = ((_a = zr.dom) === null || _a === void 0 ? void 0 : _a.getElementsByTagName('canvas')) || [];
       var data = Array.from(canvasList);
       data.forEach(function (item) {
         item.oncontextmenu = function (e) {

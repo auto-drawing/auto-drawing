@@ -1,5 +1,6 @@
 import { Polyline, PolylineShape } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type IPolylineShapeOptions = BaseShape<PolylineShape>
 
@@ -9,10 +10,10 @@ export type IPolylineShapeOptions = BaseShape<PolylineShape>
  * @returns
  */
 function createPolyline(options?: IPolylineShapeOptions): Polyline {
-  const { points = [], zlevel = 0, draggable = false } = options || {}
+  const { common, other } = getCommonParams(options)
+  const { points = [] } = other
   const shape = new Polyline({
-    zlevel,
-    draggable,
+    ...common,
     shape: {
       points
     },

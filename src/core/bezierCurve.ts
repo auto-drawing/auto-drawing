@@ -1,5 +1,6 @@
 import { BezierCurve, BezierCurveShape } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type IBezierCurveOptions = BaseShape<BezierCurveShape>
 
@@ -9,23 +10,10 @@ export type IBezierCurveOptions = BaseShape<BezierCurveShape>
  * @returns
  */
 function createBezierCurve(options?: IBezierCurveOptions): BezierCurve {
-  const {
-    x1,
-    y1,
-    x2,
-    y2,
-    cpx1,
-    cpy1,
-    cpx2,
-    cpy2,
-    percent = 1,
-    zlevel = 0,
-    draggable = false,
-    ...rest
-  } = options || {}
+  const { common, other } = getCommonParams(options)
+  const { x1, y1, x2, y2, cpx1, cpy1, cpx2, cpy2, percent = 1, ...rest } = other
   const shape = new BezierCurve({
-    zlevel,
-    draggable,
+    ...common,
     shape: {
       // 必选参数
       x1,

@@ -1,5 +1,6 @@
 import { Sector, SectorShape } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type ISectorOptions = BaseShape<SectorShape>
 
@@ -9,6 +10,7 @@ export type ISectorOptions = BaseShape<SectorShape>
  * @returns
  */
 function createSector(options?: ISectorOptions): Sector {
+  const { common, other } = getCommonParams(options)
   const {
     r = 0,
     cx = 0,
@@ -16,14 +18,11 @@ function createSector(options?: ISectorOptions): Sector {
     r0 = 0,
     startAngle = 0,
     endAngle = 0,
-    zlevel = 0,
     clockwise = true,
-    draggable = false,
     ...rest
-  } = options || {}
+  } = other
   const shape = new Sector({
-    zlevel,
-    draggable,
+    ...common,
     shape: {
       cx,
       cy,

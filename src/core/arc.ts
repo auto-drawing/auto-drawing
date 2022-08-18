@@ -1,5 +1,6 @@
 import { Arc, ArcShape } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type IArcOptions = BaseShape<ArcShape> & { radius?: number; x?: number; y?: number }
 
@@ -9,20 +10,10 @@ export type IArcOptions = BaseShape<ArcShape> & { radius?: number; x?: number; y
  * @returns
  */
 function createArc(options?: IArcOptions): Arc {
-  const {
-    r = 0,
-    cx = 0,
-    cy = 0,
-    startAngle = 0,
-    endAngle = 360,
-    zlevel = 0,
-    draggable = false,
-    clockwise = true,
-    ...rest
-  } = options || {}
+  const { common, other } = getCommonParams(options)
+  const { r = 0, cx = 0, cy = 0, startAngle = 0, endAngle = 360, clockwise = true, ...rest } = other
   const shape = new Arc({
-    zlevel,
-    draggable,
+    ...common,
     shape: {
       cx,
       cy,

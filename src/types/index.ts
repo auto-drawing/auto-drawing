@@ -27,7 +27,10 @@ export interface ZRenderInitOptions extends ZRenderInitOpt {
 /**
  * 创建图形的基本类型
  */
-export type BaseShape<T> = Partial<T & { zlevel: number; draggable: boolean }> & PathStyleProps
+export type BaseShape<T> = Partial<
+  T & { zlevel: number; draggable: boolean | 'horizontal' | 'vertical' }
+> &
+  PathStyleProps
 
 /**
  * 自定义ZRenderType
@@ -63,6 +66,72 @@ export type AllShape =
 export type ZRenderGroup = Group & { params?: Record<string, any> }
 
 /**
+ * 公共参数类型
+ */
+export type CommonType = {
+  /**
+   * 旋转的角度。 zender是弧度 这里已经做了装换 转成了角度   默认 0
+   */
+  rotation: number
+  /**
+   * 	旋转和缩放的原点X。默认  0
+   */
+  originX: number
+  /**
+   * 	旋转和缩放的原点Y。默认 0
+   */
+  originY: number
+  /**
+   * 缩放X。默认 1
+   */
+  scaleX: number
+  /**
+   * 缩放Y。默认 1
+   */
+  scaleY: number
+  /**
+   * 	是否进行裁剪。默认false
+   */
+  culling: boolean
+  /**
+   * 	鼠标移到元素上时的鼠标样式。 默认'pointer'
+   */
+  cursor: string
+  /**
+   * 	图形是否可拖曳。  默认false
+   */
+  draggable: boolean | 'horizontal' | 'vertical'
+  /**
+   * 图形是否不可见，为 true 时不绘制图形，但是仍能触发鼠标事件。  默认false
+   */
+  invisible: boolean
+  /**
+   * 是否渐进式渲染。当图形元素过多时才使用，用大于 0 的数字表示渲染顺序。  默认 -1
+   */
+  progressive: boolean
+  /**
+   * 	是否使用包围盒检验鼠标是否移动到物体。false 则检测元素实际的内容。 默认 false
+   */
+  rectHover: boolean
+  /**
+   * 	是否响应鼠标事件。 默认 false
+   */
+  silent: boolean
+  /**
+   * 控制图形的前后顺序。z 值小的图形会被 z 值大的图形覆盖。z 相比 zlevel 优先级更低，而且不会创建新的 Canvas。 默认 0
+   */
+  z: number
+  /**
+   * 0与 z 类似，优先级比 z 更低。 默认 0
+   */
+  z2: number
+  /**
+   * 图形层级  默认 0
+   */
+  zlevel: number
+}
+
+/**
  * 图形数据类型
  */
 export type ShapeCoreType = Partial<{
@@ -82,6 +151,7 @@ export type ShapeCoreType = Partial<{
     | 'bezierCurve'
     | 'sector'
     | 'group'
+
   /**
    * 线宽
    */
@@ -228,11 +298,6 @@ export type ShapeCoreType = Partial<{
   fontSize: number
 
   /**
-   * 图形层级
-   */
-  zlevel: number
-
-  /**
    * 组数据
    */
   data: ShapeCoreType[]
@@ -247,7 +312,8 @@ export type ShapeCoreType = Partial<{
    */
   params: Record<string, any>
 }> &
-  PathStyleProps
+  PathStyleProps &
+  Partial<CommonType>
 
 /**
  * 缩放平移回调数据

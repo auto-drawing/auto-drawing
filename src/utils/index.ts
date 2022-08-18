@@ -57,7 +57,7 @@ export function scaleGroup(
 
 // 阻止鼠标右键默认事件
 const preventDefault = (zr: ZRenderType) => {
-  const canvasList = zr.dom.getElementsByTagName('canvas')
+  const canvasList = zr.dom?.getElementsByTagName('canvas') || []
   const data = Array.from(canvasList)
   data.forEach(item => {
     item.oncontextmenu = e => {

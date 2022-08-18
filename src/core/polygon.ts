@@ -1,5 +1,6 @@
 import { Polygon, PolygonShape } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type IPolygonShapeOptions = BaseShape<PolygonShape>
 
@@ -9,10 +10,10 @@ export type IPolygonShapeOptions = BaseShape<PolygonShape>
  * @returns
  */
 function createPolygon(options?: IPolygonShapeOptions): Polygon {
-  const { points = [], zlevel = 0, draggable = false } = options || {}
+  const { common, other } = getCommonParams(options)
+  const { points = [] } = other
   const shape = new Polygon({
-    zlevel,
-    draggable,
+    ...common,
     shape: {
       points
     },

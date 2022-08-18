@@ -1,5 +1,6 @@
 import { CompoundPath, CompoundPathShape, Polygon, Polyline } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type ICompoundPathOptions = BaseShape<CompoundPathShape> & {
   /**
@@ -18,11 +19,11 @@ export type ICompoundPathOptions = BaseShape<CompoundPathShape> & {
  * @returns
  */
 function createCompoundPath(options?: ICompoundPathOptions): CompoundPath {
-  const { paths = [], zlevel = 0, isClose = true, draggable = false, ...rest } = options || {}
+  const { common, other } = getCommonParams(options)
+  const { paths = [], isClose = true, ...rest } = other
   const PathShape = isClose ? Polygon : Polyline
   const shape = new CompoundPath({
-    zlevel,
-    draggable,
+    ...common,
     shape: {
       paths: [
         new PathShape({

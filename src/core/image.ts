@@ -1,5 +1,6 @@
 import { Image as ZRImage, ImageStyleProps } from 'zrender'
 import { BaseShape } from '../index'
+import { getCommonParams } from '../utils/getCommonParams'
 
 export type IImageOptions = BaseShape<ImageStyleProps>
 
@@ -9,27 +10,16 @@ export type IImageOptions = BaseShape<ImageStyleProps>
  * @returns
  */
 function createImage(options?: IImageOptions): ZRImage {
-  const {
-    x = 0,
-    y = 0,
-    width = 0,
-    height = 0,
-    zlevel = 0,
-    image = '',
-    draggable = false,
-    ...rest
-  } = options || {}
+  const { common, other } = getCommonParams(options)
+  const { x = 0, y = 0, width = 0, height = 0, image = '', ...rest } = other
   const shape = new ZRImage({
-    zlevel,
-    draggable,
+    ...common,
     style: {
       x,
       y,
       width,
       height,
       image,
-      fill: 'none',
-      stroke: 'none',
       ...rest
     }
   })
