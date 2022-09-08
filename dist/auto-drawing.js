@@ -1,3 +1,11 @@
+/**
+ * name: auto-drawing
+ * version: v0.1.1
+ * description: auto-drawing based zrender
+ * author: xiaofei
+ * copyright: xiaofei
+ * license: MIT
+  */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :

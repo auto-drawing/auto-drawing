@@ -6,6 +6,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import { eslint } from 'rollup-plugin-eslint'
 import { DEFAULT_EXTENSIONS } from '@babel/core'
 import { terser } from 'rollup-plugin-terser'
+import banner2 from 'rollup-plugin-banner2'
 import S from 'string'
 import pkg from './package.json'
 
@@ -24,20 +25,20 @@ const rollupConfig = {
   output: [
     // 输出 umd 规范的代码
     {
-      file: join(output, 'auto-drawing.js'),
+      file: join(output, `${pkg.name}.js`),
       format: 'umd',
       name
     },
     {
       // 输出 esm 规范的代码
-      file: join(output, 'auto-drawing.esm.js'),
+      file: join(output, `${pkg.name}.esm.js`),
       format: 'esm',
       plugins: [terser()],
       name
     },
     // 输出 umd 规范的压缩代码
     {
-      file: join(output, 'auto-drawing.min.js'),
+      file: join(output, `${pkg.name}.min.js`),
       format: 'umd',
       plugins: [terser()],
       name
@@ -80,7 +81,11 @@ const rollupConfig = {
       exclude: 'node_modules/**',
       // babel 默认不支持 ts 需要手动添加
       extensions: [...DEFAULT_EXTENSIONS, '.ts']
-    })
+    }),
+    banner2(
+      () =>
+        `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * copyright: ${pkg.copyright}\n * license: ${pkg.license}\n  */\n`
+    )
   ]
 }
 

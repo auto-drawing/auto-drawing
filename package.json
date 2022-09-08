@@ -6,6 +6,7 @@
   "module": "dist/auto-drawing.esm.js",
   "main": "dist/auto-drawing.js",
   "author": "xiaofei",
+  "copyright": "xiaofei",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -48,6 +49,7 @@
     "prettier": "^2.4.1",
     "rollup": "^2.54.0",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
