@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星形</title>
+    <script src="../dist/auto-drawing.min.js"></script>
+  </head>
+  <body style="background-color: #000">
+    <div id="app"></div>
+    <script type="module">
+      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+      const zr = createCanvas('app')
+      const gp = createGroup()
+      const data = [
+        {
+          type: 'star',
+          cx: 100,
+          cy: 100,
+          n: 5,
+          r: 100,
+          r0: 50,
+          stroke: 'red',
+          fill: 'red'
+        }
+      ]
+      renderCanvas(zr, gp, data, {
+        scale: true,
+        translate: true
+      })
+    </script>
+  </body>
+</html>

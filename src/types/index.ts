@@ -14,7 +14,13 @@ import {
   Text,
   PathStyleProps,
   BezierCurve,
-  Sector
+  Sector,
+  Droplet,
+  Ellipse,
+  Heart,
+  Isogon,
+  Rose,
+  Star
 } from 'zrender'
 
 /**
@@ -57,6 +63,12 @@ export type AllShape =
   | BezierCurve
   | Sector
   | Image
+  | Droplet
+  | Ellipse
+  | Heart
+  | Isogon
+  | Rose
+  | Star
   | undefined
 
 /**
@@ -70,7 +82,7 @@ export type ZRenderGroup = Group & { params?: Record<string, any> }
  */
 export type CommonType = {
   /**
-   * 旋转的角度。 zender是弧度 这里已经做了转换 转成了角度   默认 0
+   * 旋转的角度。 zrender是弧度 这里已经做了转换 转成了角度   默认 0
    */
   rotation: number
   /**
@@ -151,6 +163,12 @@ export type ShapeCoreType = Partial<{
     | 'bezierCurve'
     | 'sector'
     | 'group'
+    | 'droplet'
+    | 'ellipse'
+    | 'heart'
+    | 'isogon'
+    | 'rose'
+    | 'star'
 
   /**
    * 线宽
@@ -218,6 +236,16 @@ export type ShapeCoreType = Partial<{
   cy: number
 
   /**
+   * 椭圆横向半径
+   */
+  rx: number
+
+  /**
+   * 椭圆纵向半径
+   */
+  ry: number
+
+  /**
    * 矩形 | 文字 起始x坐标
    */
   x: number
@@ -228,12 +256,22 @@ export type ShapeCoreType = Partial<{
   y: number
 
   /**
-   * 矩形宽
+   * 多边形边数 | 花瓣数
+   */
+  n: number
+
+  /**
+   * 玫瑰线参数
+   */
+  k: number
+
+  /**
+   *  `宽` 矩形 | 心形 | 水滴
    */
   width: number
 
   /**
-   * 矩形高
+   * `高`  矩形 | 心形 | 水滴
    */
   height: number
 
@@ -245,7 +283,7 @@ export type ShapeCoreType = Partial<{
   /**
    * 半径
    */
-  r: number
+  r: number | number[]
 
   /**
    * 内半径

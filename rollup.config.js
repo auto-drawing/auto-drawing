@@ -8,6 +8,7 @@ import { DEFAULT_EXTENSIONS } from '@babel/core'
 import { terser } from 'rollup-plugin-terser'
 import banner2 from 'rollup-plugin-banner2'
 import S from 'string'
+import replace from '@rollup/plugin-replace'
 import pkg from './package.json'
 
 // 合并路径
@@ -33,7 +34,6 @@ const rollupConfig = {
       // 输出 esm 规范的代码
       file: join(output, `${pkg.name}.esm.js`),
       format: 'esm',
-      plugins: [terser()],
       name
     },
     // 输出 umd 规范的压缩代码
@@ -85,7 +85,13 @@ const rollupConfig = {
     banner2(
       () =>
         `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * copyright: ${pkg.copyright}\n * license: ${pkg.license}\n  */\n`
-    )
+    ),
+    replace({
+      values: {
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      },
+      preventAssignment: true
+    })
   ]
 }
 

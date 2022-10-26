@@ -17,6 +17,13 @@ import createText from './core/text'
 import createBezierCurve from './core/bezierCurve'
 import createSector from './core/sector'
 import createImage from './core/image'
+import createDroplet from './core/droplet'
+import createEllipse from './core/ellipse'
+
+import createHeart from './core/heart'
+import createIsogon from './core/isogon'
+import createRose from './core/rose'
+import createStar from './core/star'
 
 import { translateGroup, scaleGroup } from './utils'
 import {
@@ -52,7 +59,9 @@ export {
   createText,
   createBezierCurve,
   createImage,
-  createCompoundPath
+  createCompoundPath,
+  createDroplet,
+  createEllipse
 }
 
 /**
@@ -117,6 +126,8 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
     cy,
     cpx1,
     cpy1,
+    rx,
+    ry,
     // 下面参数可选
     cpx2,
     cpy2,
@@ -124,6 +135,8 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
     height,
     r,
     r0,
+    n,
+    k,
     points,
     startAngle,
     endAngle,
@@ -141,7 +154,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       shape = createLine({ x1, y1, x2, y2, ...options })
       break
     case 'circle':
-      shape = createCircle({ cx, cy, r, ...options })
+      shape = createCircle({ cx, cy, r: r as number, ...options })
       break
     case 'rect':
       shape = createRect({ x, y, width, height, ...options })
@@ -153,16 +166,34 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       shape = createPolyline({ points, ...options })
       break
     case 'arc':
-      shape = createArc({ cx, cy, r, startAngle, endAngle, ...options })
+      shape = createArc({ cx, cy, r: r as number, startAngle, endAngle, ...options })
       break
     case 'text':
       shape = createText({ x, y, text, ...options } as any)
       break
     case 'sector':
-      shape = createSector({ cx, cy, r, r0, startAngle, endAngle, ...options } as any)
+      shape = createSector({ cx, cy, r: r as number, r0, startAngle, endAngle, ...options } as any)
       break
     case 'image':
       shape = createImage({ x, y, width, height, image, ...options } as any)
+      break
+    case 'droplet':
+      shape = createDroplet({ cx, cy, width, height, ...options } as any)
+      break
+    case 'ellipse':
+      shape = createEllipse({ cx, cy, rx, ry, ...options } as any)
+      break
+    case 'heart':
+      shape = createHeart({ cx, cy, width, height, ...options } as any)
+      break
+    case 'isogon':
+      shape = createIsogon({ x, y, r: r as number, n, ...options } as any)
+      break
+    case 'rose':
+      shape = createRose({ cx, cy, n, r: r as number[], k, ...options } as any)
+      break
+    case 'star':
+      shape = createStar({ cx, cy, n, r: r as number, r0, ...options } as any)
       break
     case 'compoundPath':
       shape = createCompoundPath({ paths, ...options } as any)

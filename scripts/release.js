@@ -73,7 +73,7 @@ async function main() {
     choices: versionIncrements.map(i => `${i} (${inc(getInc(i))})`).concat(['custom（自定义版本）'])
   })
 
-  if (release === 'custom') {
+  if (release.includes('custom')) {
     version = (
       await prompt({
         type: 'input',

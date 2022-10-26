@@ -25,7 +25,7 @@ function createArc(options?: IArcOptions): Arc {
     },
     style: {
       fill: 'none',
-      stroke: 'rgba(0,0,255,0.5)',
+      stroke: '#fff',
       ...rest
     }
   })

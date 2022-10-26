@@ -8,10 +8,11 @@
     <script src="../dist/auto-drawing.js"></script>
   </head>
   <body>
+    <div id="imageWrapper"></div>
     <div id="div"></div>
 
     <script>
-      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+      const { createCanvas, createGroup, renderCanvas, canvasToImage } = AutoDrawing
       const zr = createCanvas('div')
       const gp = createGroup()
       const img = new Image()
@@ -159,10 +160,18 @@
         translate: true
       })
 
-      zr.painter.getRenderedCanvas().toBlob(blob => {
-        console.log(blob)
-        const imgUrl = URL.createObjectURL(blob)
-        console.log(imgUrl)
+      canvasToImage(zr).then(res => {
+        console.log(res)
+        const imageWrapper = document.querySelector('#imageWrapper')
+        const image = new Image()
+        image.src = res.base64
+        image.width = 400
+        image.height = 200
+        image.title = '我是生成的图片'
+        imageWrapper.appendChild(image)
+
+        window.scrollTo(0, 0)
+        alert('图片生成成功')
       })
     </script>
   </body>

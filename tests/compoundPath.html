@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>复合路径</title>
+    <script src="../dist/auto-drawing.min.js"></script>
+  </head>
+  <body style="background-color: #000">
+    <div id="app"></div>
+    <script type="module">
+      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+      const zr = createCanvas('app')
+      const gp = createGroup()
+      const data = [
+        {
+          type: 'compoundPath',
+          paths: [
+            [350, 0],
+            [360, 50],
+            [500, 0],
+            [350, 100],
+            [360, 80]
+          ],
+          fill: 'red',
+          stroke: 'none'
+        }
+      ]
+      renderCanvas(zr, gp, data, {
+        scale: true,
+        translate: true
+      })
+    </script>
+  </body>
+</html>

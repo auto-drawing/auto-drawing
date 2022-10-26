@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>心形</title>
+    <script src="../dist/auto-drawing.min.js"></script>
+  </head>
+  <body style="background-color: #000">
+    <div id="app"></div>
+    <script type="module">
+      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+      const zr = createCanvas('app')
+      const gp = createGroup()
+      const data = [
+        {
+          type: 'heart',
+          cx: 100,
+          cy: 100,
+          width: 50,
+          height: 50,
+          stroke: 'yellow',
+          fill: 'yellow'
+        }
+      ]
+      renderCanvas(zr, gp, data, {
+        scale: true,
+        translate: true
+      })
+    </script>
+  </body>
+</html>

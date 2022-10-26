@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>矩形</title>
+    <script src="../dist/auto-drawing.min.js"></script>
+  </head>
+  <body style="background-color: #000">
+    <div id="app"></div>
+    <script type="module">
+      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+      const zr = createCanvas('app')
+      const gp = createGroup()
+      const data = [
+        {
+          type: 'rect',
+          zlevel: 0,
+          x: 26,
+          y: 76,
+          width: 40,
+          height: 50,
+          fill: '#ff8041',
+          stroke: '#ff8041'
+        }
+      ]
+      renderCanvas(zr, gp, data, {
+        scale: true,
+        translate: true
+      })
+    </script>
+  </body>
+</html>

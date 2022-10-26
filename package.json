@@ -1,6 +1,6 @@
 {
   "name": "auto-drawing",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "auto-drawing based zrender",
   "types": "dist/index.d.ts",
   "module": "dist/auto-drawing.esm.js",
@@ -8,13 +8,16 @@
   "author": "xiaofei",
   "copyright": "xiaofei",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/l-x-f/auto-drawing.git"
   },
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
+    "dev": "rollup -c -w --environment NODE_ENV:development",
+    "build": "rollup -c --environment NODE_ENV:production",
     "commit": "git-cz",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
     "release": "node ./scripts/release.js"
@@ -27,13 +30,14 @@
   ],
   "dependencies": {
     "lodash-es": "^4.17.21",
-    "zrender": "5.1.1"
+    "zrender": "^5.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@rollup/plugin-replace": "^5.0.1",
     "@types/lodash-es": "^4.17.4",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
@@ -47,14 +51,14 @@
     "husky": "^3.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.4.1",
-    "rollup": "^2.54.0",
+    "rollup": "2.79.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-typescript2": "^0.34.1",
     "semver": "^7.3.7",
     "string": "^3.3.3",
     "typescript": "^4.7.4"
