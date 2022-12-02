@@ -227,7 +227,7 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       break
   }
 
-  if (params) {
+  if (params && shape) {
     Reflect.set(shape as any, 'params', params)
   }
 
