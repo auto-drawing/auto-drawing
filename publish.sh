@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -e
-
 npm run build
 
 # 修改npm源地址
@@ -18,4 +17,3 @@ npm publish
 npm config set registry=https://registry.npmmirror.com/
 echo -e "\n发布成功\n"
 exit
-

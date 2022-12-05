@@ -3,7 +3,6 @@ node_modules
 *.local
 yarn-error.log
 package-lock.json
-coverage
 dist
 
 # Editor directories and files

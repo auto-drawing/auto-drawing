@@ -1,9 +1,6 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // 使用 ts 解析器
-  extends: [
-    'eslint:recommended', // eslint 推荐规则
-    'plugin:@typescript-eslint/recommended' // ts 推荐规则
-  ],
+  parser: '@typescript-eslint/parser',
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   plugins: ['@typescript-eslint'],
   env: {
     browser: true,

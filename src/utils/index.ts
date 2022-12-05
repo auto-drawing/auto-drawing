@@ -34,6 +34,8 @@ export function scaleGroup(
     const { x = 0, y } = group
     group.animateTo(
       {
+        originX: 0,
+        originY: 0,
         scaleX: scaleX * k,
         scaleY: scaleY * k,
         x: e.offsetX - (e.offsetX - x) * k,

@@ -20,7 +20,8 @@ module.exports = {
     },
     { value: 'perf', name: 'perf:优化相关，比如提升性能、体验' },
     { value: 'chore', name: 'chore:改变构建流程、或者增加依赖库、工具等' },
-    { value: 'revert', name: 'revert:代码回退' }
+    { value: 'revert', name: 'revert:代码回退' },
+    { value: 'release', name: 'release:发行版本' }
   ],
   // 构建对话
   messages: {
