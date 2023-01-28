@@ -147,6 +147,7 @@ export type CommonType = {
  * 图形数据类型
  */
 export type ShapeCoreType = Partial<{
+  [path: string]: any
   /**
    * 图形类型
    */
@@ -178,7 +179,7 @@ export type ShapeCoreType = Partial<{
   /**
    * 线的类型
    */
-  lineDash: string
+  lineDash: false | number[] | 'solid' | 'dashed' | 'dotted'
 
   /**
    * 线段起始横坐标

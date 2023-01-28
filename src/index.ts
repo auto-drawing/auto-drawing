@@ -19,7 +19,6 @@ import createSector from './core/sector'
 import createImage from './core/image'
 import createDroplet from './core/droplet'
 import createEllipse from './core/ellipse'
-
 import createHeart from './core/heart'
 import createIsogon from './core/isogon'
 import createRose from './core/rose'
@@ -113,7 +112,6 @@ export function createGroup(options?: GroupProps): ZRenderGroup {
  * @param item
  */
 export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
-  // console.log(index)
   const {
     type,
     x1,
@@ -172,31 +170,31 @@ export function generateShape(item: ShapeCoreType, _index?: number): AllShape {
       shape = createText({ x, y, text, ...options } as any)
       break
     case 'sector':
-      shape = createSector({ cx, cy, r: r as number, r0, startAngle, endAngle, ...options } as any)
+      shape = createSector({ cx, cy, r: r as number, r0, startAngle, endAngle, ...options })
       break
     case 'image':
-      shape = createImage({ x, y, width, height, image, ...options } as any)
+      shape = createImage({ x, y, width, height, image, ...options })
       break
     case 'droplet':
-      shape = createDroplet({ cx, cy, width, height, ...options } as any)
+      shape = createDroplet({ cx, cy, width, height, ...options })
       break
     case 'ellipse':
-      shape = createEllipse({ cx, cy, rx, ry, ...options } as any)
+      shape = createEllipse({ cx, cy, rx, ry, ...options })
       break
     case 'heart':
-      shape = createHeart({ cx, cy, width, height, ...options } as any)
+      shape = createHeart({ cx, cy, width, height, ...options })
       break
     case 'isogon':
-      shape = createIsogon({ x, y, r: r as number, n, ...options } as any)
+      shape = createIsogon({ x, y, r: r as number, n, ...options })
       break
     case 'rose':
-      shape = createRose({ cx, cy, n, r: r as number[], k, ...options } as any)
+      shape = createRose({ cx, cy, n, r: r as number[], k, ...options })
       break
     case 'star':
-      shape = createStar({ cx, cy, n, r: r as number, r0, ...options } as any)
+      shape = createStar({ cx, cy, n, r: r as number, r0, ...options })
       break
     case 'compoundPath':
-      shape = createCompoundPath({ paths, ...options } as any)
+      shape = createCompoundPath({ paths: paths as any, ...options })
       break
     case 'bezierCurve':
       shape = createBezierCurve({

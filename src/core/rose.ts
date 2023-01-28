@@ -5,7 +5,7 @@ import { getCommonParams } from '../utils/getCommonParams'
 export type IRoseOptions = BaseShape<RoseShape>
 
 /**
- *  玫瑰线
+ *  创建玫瑰线
  * @param options
  * @returns
  */
