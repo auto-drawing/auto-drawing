@@ -137,11 +137,11 @@ export const getMiddle = (
 
 /**
  * 复制数组元素几遍
- * @param {array} arr 原数组
- * @param {number} count 复制遍数 默认1
+ * @param   arr 原数组
+ * @param   count 复制遍数 默认1
  * @returns
  */
-export function copyArrayByCount<T>(arr: T[], count = 1): T[] {
+export function copyArrayByCount<T = any>(arr: T[], count = 1): T[] {
   let res: T[] = []
   const countArray: undefined[] = [...new Array(count)]
   countArray.forEach(() => {

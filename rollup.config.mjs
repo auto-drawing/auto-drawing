@@ -1,4 +1,5 @@
-import path from 'path'
+import fs from 'fs'
+import { fileURLToPath, URL } from 'url'
 import rollupTypescript from 'rollup-plugin-typescript2'
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
@@ -9,16 +10,17 @@ import { terser } from 'rollup-plugin-terser'
 import banner2 from 'rollup-plugin-banner2'
 import S from 'string'
 import replace from '@rollup/plugin-replace'
-import pkg from './package.json'
 
 // 合并路径
-const join = (dir, p) => path.join(dir, p)
+const join = dir => fileURLToPath(new URL(dir, import.meta.url))
+// package 信息
+const pkg = JSON.parse(fs.readFileSync(join('./package.json'), 'utf-8'))
 // 库名称 大驼峰 AutoDrawing
 const name = S(pkg.name).capitalize().camelize().toString()
 // 入口文件路径
-const input = join(__dirname, '/src/index.ts')
+const input = join('./src/index.ts')
 // 输打包后文件路径
-const output = join(__dirname, '/dist')
+const output = './dist/'
 
 // rollup 配置项
 const rollupConfig = {
@@ -26,19 +28,19 @@ const rollupConfig = {
   output: [
     // 输出 umd 规范的代码
     {
-      file: join(output, `${pkg.name}.js`),
+      file: join(output + `${pkg.name}.js`),
       format: 'umd',
       name
     },
     {
       // 输出 esm 规范的代码
-      file: join(output, `${pkg.name}.esm.js`),
+      file: join(output + `${pkg.name}.esm.js`),
       format: 'esm',
       name
     },
     // 输出 umd 规范的压缩代码
     {
-      file: join(output, `${pkg.name}.min.js`),
+      file: join(output + `${pkg.name}.min.js`),
       format: 'umd',
       plugins: [terser()],
       name
