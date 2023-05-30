@@ -2,8 +2,7 @@
 /*eslint-disable no-case-declarations  */
 import CanvasPainter from 'zrender/lib/canvas/Painter'
 import SvgPainter from 'zrender/lib/svg/Painter'
-import { init, Group, registerPainter, GroupProps } from 'zrender'
-import * as zrender from 'zrender'
+import { init, Group, GroupProps, registerPainter } from 'zrender'
 
 // 基本绘图方法
 import createLine from './core/line'
@@ -47,20 +46,24 @@ registerPainter('canvas', CanvasPainter as any)
 registerPainter('svg', SvgPainter as any)
 
 export {
-  zrender,
   // 导出核心生成图形方法
   createLine,
   createRect,
   createCircle,
   createArc,
+  createCompoundPath,
   createPolygon,
   createPolyline,
   createText,
   createBezierCurve,
+  createSector,
   createImage,
-  createCompoundPath,
   createDroplet,
-  createEllipse
+  createEllipse,
+  createHeart,
+  createIsogon,
+  createRose,
+  createStar
 }
 
 /**

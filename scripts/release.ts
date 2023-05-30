@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require('fs')
-const path = require('path')
-const chalk = require('chalk')
-const semver = require('semver')
-const { prompt } = require('enquirer')
-const execa = require('execa')
-const { version: currentVersion } = require('../package.json')
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import fs from 'fs'
+import path from 'path'
+import chalk from 'chalk'
+import semver from 'semver'
+import { prompt } from 'enquirer'
+import execa from 'execa'
+import { version as currentVersion } from '../package.json'
 
 //  版本列表
 const versionIncrements = [
@@ -19,19 +19,20 @@ const versionIncrements = [
 ]
 
 // 步骤打印
-const step = msg => console.log(chalk.green(msg))
+const step = (msg: string) => console.log(chalk.green(msg))
 
 // 增加版本号
-const inc = i => semver.inc(currentVersion, i)
+const inc = (i: string) => semver.inc(currentVersion, i)
 
 // 运行脚本
-const run = (bin, args, opts = {}) => execa(bin, args, { stdio: 'inherit', ...opts })
+const run = (bin: string, args: string[], opts = {}) =>
+  execa(bin, args, { stdio: 'inherit', ...opts })
 
 /**
  * 更新版本号
  * @param {string} version
  */
-function updatePackage(version) {
+function updatePackage(version: string) {
   const pkgPath = path.resolve(__dirname, '../package.json')
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'))
   pkg.version = version
@@ -39,16 +40,16 @@ function updatePackage(version) {
   step(`updated package.json version to ${version}\n`)
 }
 
-function getInc(value) {
+function getInc(value: string) {
   const r = /(\w+)/g
-  return r.exec(value)[0]
+  return r.exec(value)![0]
 }
 
 /**
  * 提交 打标签 推送到远程仓库
  * @param {string} version
  */
-async function publish(version) {
+async function publish(version: string) {
   try {
     await run('git', ['add', '-A'])
     await run('git', ['tag', '-a', version, '-m', `Release v${version}`])
@@ -66,7 +67,7 @@ async function publish(version) {
 async function main() {
   let version
 
-  const { release } = await prompt({
+  const { release } = await prompt<{ release: string }>({
     type: 'select',
     name: 'release',
     message: 'Select release type',
@@ -75,7 +76,7 @@ async function main() {
 
   if (release.includes('custom')) {
     version = (
-      await prompt({
+      await prompt<{ version: string }>({
         type: 'input',
         name: 'version',
         message: 'Input custom version',
@@ -83,7 +84,7 @@ async function main() {
       })
     ).version
   } else {
-    version = release.match(/\((.*)\)/)[1]
+    version = release.match(/\((.*)\)/)![1]
   }
 
   if (!semver.valid(version)) {

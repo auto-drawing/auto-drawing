@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2018",
     "lib": ["dom", "esnext"],
     "removeComments": false,
+    "module": "ESNext",
     "declaration": true,
     "sourceMap": true,
     "strict": true,

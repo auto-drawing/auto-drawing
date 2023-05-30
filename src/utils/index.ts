@@ -1,6 +1,18 @@
 /*eslint-disable @typescript-eslint/no-explicit-any */
-import { cloneDeep } from 'lodash-es'
 import { ZRenderType, ZRenderGroup, CallbackType } from '../index'
+
+export const cloneDeep = (obj: any) => {
+  if (obj === null) return null
+  const clone = Object.assign({}, obj)
+  Object.keys(clone).forEach(
+    key => (clone[key] = typeof obj[key] === 'object' ? cloneDeep(obj[key]) : obj[key])
+  )
+  if (Array.isArray(obj)) {
+    clone.length = obj.length
+    return Array.from(clone)
+  }
+  return clone
+}
 
 /**
  * 鼠标键的映射
