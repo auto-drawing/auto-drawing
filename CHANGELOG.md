@@ -1,3 +1,13 @@
+## [1.0.6](https://github.com/l-x-f/auto-drawing/compare/1.0.5...1.0.6) (2023-05-30)
+
+
+### ✨ Features
+
+* refactor build scripts,delete lodash-es and update eslint. ([7821875](https://github.com/l-x-f/auto-drawing/commit/7821875))
+* update zrender,rollup,typescript. ([a1e19cd](https://github.com/l-x-f/auto-drawing/commit/a1e19cd))
+
+
+
 ## [1.0.5](https://github.com/l-x-f/auto-drawing/compare/1.0.4...1.0.5) (2023-01-28)
 
 
