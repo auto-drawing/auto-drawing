@@ -22,7 +22,7 @@ const versionIncrements = [
 const step = (msg: string) => console.log(chalk.green(msg))
 
 // 增加版本号
-const inc = (i: string) => semver.inc(currentVersion, i)
+const inc = (i: semver.ReleaseType) => semver.inc(currentVersion, i)
 
 // 运行脚本
 const run = (bin: string, args: string[], opts = {}) =>
@@ -42,7 +42,7 @@ function updatePackage(version: string) {
 
 function getInc(value: string) {
   const r = /(\w+)/g
-  return r.exec(value)![0]
+  return r.exec(value)![0] as semver.ReleaseType
 }
 
 /**
