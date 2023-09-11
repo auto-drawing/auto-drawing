@@ -1,3 +1,21 @@
+## [1.0.8](https://github.com/l-x-f/auto-drawing/compare/1.0.7...1.0.8) (2023-09-11)
+
+
+### ✨ Features
+
+* refactor getMiddle utils ([79d0a26](https://github.com/l-x-f/auto-drawing/commit/79d0a26))
+
+
+
+## [1.0.7](https://github.com/l-x-f/auto-drawing/compare/1.0.6...1.0.7) (2023-09-11)
+
+
+### ✨ Features
+
+* add drawing utils ([2120f9c](https://github.com/l-x-f/auto-drawing/commit/2120f9c))
+
+
+
 ## [1.0.6](https://github.com/l-x-f/auto-drawing/compare/1.0.5...1.0.6) (2023-05-30)
 
 
