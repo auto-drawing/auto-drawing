@@ -51,6 +51,7 @@ function getInc(value: string) {
  */
 async function publish(version: string) {
   try {
+    await run('yarn', ['changelog'])
     await run('git', ['add', '-A'])
     await run('git', ['tag', '-a', version, '-m', `Release v${version}`])
     await run('yarn', ['commit', '-m', `release: v${version}`])
