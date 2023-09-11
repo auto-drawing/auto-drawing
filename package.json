@@ -32,7 +32,7 @@
     "url": "https://github.com/l-x-f/auto-drawing.git"
   },
   "scripts": {
-    "dev": "rollup -c -w",
+    "dev": "tsx watch ./scripts/build/index.ts",
     "build": "npm run clean && tsx ./scripts/build/index.ts",
     "commit": "git-cz",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
@@ -47,6 +47,7 @@
     "zrender"
   ],
   "dependencies": {
+    "number-precision": "^1.6.0",
     "zrender": "^5.4.3"
   },
   "devDependencies": {

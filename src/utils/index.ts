@@ -1,6 +1,8 @@
 /*eslint-disable @typescript-eslint/no-explicit-any */
 import { ZRenderType, ZRenderGroup, CallbackType } from '../index'
 
+export * from './drawing'
+
 export const cloneDeep = (obj: any) => {
   if (obj === null) return null
   const clone = Object.assign({}, obj)

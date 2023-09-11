@@ -1,10 +1,10 @@
-**English** | [中文](https://github.com/l-x-f/auto-drawing/blob/main/README.zh-CN.md)
+**中文** | [English](https://github.com/l-x-f/auto-drawing/blob/main/README.md)
 
 # auto-drawing
 
-Automatic drawing tool based on zrender, simple JSON configuration can draw complex graphics
+基于 zrender 的自动画图工具，简单的 json 配置就可画出复杂的图形
 
-## Install
+## 安装
 
 `npm`
 
@@ -20,18 +20,18 @@ yarn add  auto-drawing
 
 `cdn`
 
-**Use the latest version**
+**使用最新版本**
 
 [https://cdn.jsdelivr.net/npm/auto-drawing/dist/auto-drawing.min.js](https://cdn.jsdelivr.net/npm/auto-drawing/dist/auto-drawing.min.js)
 
-\*_It is recommended to add a version number when using, such as using the '0.0.8' version_
+\*_使用时建议加上版本号 如使用`0.0.8`版本_
 
 [https://cdn.jsdelivr.net/npm/auto-drawing@0.0.8/dist/auto-drawing.min.js](https://cdn.jsdelivr.net/npm/auto-drawing@0.0.4/dist/auto-drawing.min.js)
 
-## Document
+## 文档
 
 [auto-drawing-doc](https://l-x-f.github.io/auto-drawing-doc/)
 
-## Friendly Links
+## 友情链接
 
 [zrender](https://ecomfe.github.io/zrender-doc/public/)
