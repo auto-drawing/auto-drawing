@@ -135,21 +135,6 @@ export function translateGroup(
 }
 
 /**
- * 求两点之间的中点坐标
- * @param param0
- * @param param1
- * @returns
- */
-export const getMiddle = (
-  [x1 = 0, y1 = 0]: [number, number],
-  [x2 = 0, y2 = 0]: [number, number]
-): [x0: number, y0: number] => {
-  const x0 = (x1 + x2) / 2
-  const y0 = (y1 + y2) / 2
-  return [x0, y0]
-}
-
-/**
  * 复制数组元素几遍
  * @param   arr 原数组
  * @param   count 复制遍数 默认1
