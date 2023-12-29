@@ -1,3 +1,12 @@
+## [1.0.10](https://github.com/l-x-f/auto-drawing/compare/1.0.9...1.0.10) (2023-12-29)
+
+
+### 🐛 Bug Fixes
+
+* fix webpack issue , remove moduleExternal . ([3711424](https://github.com/l-x-f/auto-drawing/commit/3711424))
+
+
+
 ## [1.0.9](https://github.com/l-x-f/auto-drawing/compare/1.0.8...1.0.9) (2023-12-29)
 
 
