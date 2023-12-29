@@ -1,3 +1,12 @@
+## [1.0.9](https://github.com/l-x-f/auto-drawing/compare/1.0.8...1.0.9) (2023-12-29)
+
+
+### 🐛 Bug Fixes
+
+* fix scale bug. ([5364d7b](https://github.com/l-x-f/auto-drawing/commit/5364d7b))
+
+
+
 ## [1.0.8](https://github.com/l-x-f/auto-drawing/compare/1.0.7...1.0.8) (2023-09-11)
 
 
