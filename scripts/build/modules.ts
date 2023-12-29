@@ -1,7 +1,7 @@
 import { rollup, OutputOptions, ModuleFormat } from 'rollup'
 import glob from 'fast-glob'
 import consola from 'consola'
-import { plugins, join, output, pkgRoot, external, writeBundles } from './common'
+import { plugins, join, output, pkgRoot, moduleExternal as external, writeBundles } from './common'
 
 const buildConfig = {
   esm: {

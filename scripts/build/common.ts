@@ -23,6 +23,7 @@ export const output = join('dist')
 export const pkgRoot = join('src')
 // 排出的包
 export const external = []
+export const moduleExternal = []
 export const target = 'es2018'
 
 // 写 Bundles

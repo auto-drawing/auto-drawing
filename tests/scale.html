@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="../dist/auto-drawing.js"></script>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50rpx;
+      }
+
+      #div {
+        background-color: #000;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="div"></div>
+    </div>
+
+    <script>
+      const { createCanvas, createGroup, renderCanvas } = AutoDrawing
+
+      const width = 900
+      const height = 900
+      const basicPointSize = 20
+
+      const zr = createCanvas('div', {
+        width,
+        height
+      })
+      const gp = createGroup({
+        x: width / 2,
+        y: height / 2
+      })
+      const gp1 = createGroup({
+        x: width / 2,
+        y: height / 2
+      })
+
+      const data = [
+        {
+          type: 'group',
+          data: [
+            {
+              type: 'line',
+              x1: 32,
+              y1: 62,
+              x2: 168,
+              y2: 62,
+              stroke: '#f8f8b8'
+            },
+            {
+              type: 'line',
+              x1: 168,
+              y1: 62,
+              x2: 168,
+              y2: 139,
+              stroke: '#f8f8b8'
+            },
+            {
+              type: 'line',
+              x1: 168,
+              y1: 139,
+              x2: 32,
+              y2: 139,
+              stroke: '#f8f8b8'
+            },
+            {
+              type: 'line',
+              x1: 32,
+              y1: 139,
+              x2: 32,
+              y2: 62,
+              stroke: '#f8f8b8'
+            }
+          ]
+        },
+        {
+          type: 'rect',
+          zlevel: 0,
+          x: 26,
+          y: 76,
+          width: 40,
+          height: 50,
+          fill: '#ff8041',
+          stroke: '#ff8041'
+        },
+        {
+          type: 'rect',
+          zlevel: 0,
+          x: 135,
+          y: 76,
+          width: 40,
+          height: 50,
+          fill: '#00ff01',
+          stroke: '#00ff01'
+        },
+        {
+          type: 'line',
+          zlevel: 0,
+          x1: 96,
+          y1: 100,
+          x2: 104,
+          y2: 100,
+          stroke: '#f8f9b7'
+        },
+        {
+          type: 'line',
+          zlevel: 0,
+          x1: 100,
+          y1: 96,
+          x2: 100,
+          y2: 104,
+          stroke: '#f8f9b7'
+        }
+      ]
+
+      renderCanvas(zr, gp, data, {
+        scale: true,
+        translate: true
+      })
+
+      const data1 = [
+        {
+          type: 'line',
+          x1: -basicPointSize / 2,
+          y1: 0,
+          x2: basicPointSize / 2,
+          y2: 0,
+          stroke: '#fff'
+        },
+        {
+          type: 'line',
+          x1: 0,
+          y1: basicPointSize / 2,
+          x2: 0,
+          // y轴给出负的 坐标系装换
+          y2: -basicPointSize / 2,
+          stroke: '#fff'
+        }
+      ]
+      renderCanvas(zr, gp1, data1, {
+        scale: true,
+        translate: true
+      })
+
+      gp.attr('x', 0)
+      gp.attr('y', 0)
+
+      gp.attr('originX', width / 2)
+      gp.attr('originY', height / 2)
+      gp.attr('rotation', (Math.PI / 180) * (360 - 90))
+    </script>
+  </body>
+</html>
