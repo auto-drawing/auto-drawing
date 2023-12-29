@@ -45,15 +45,15 @@ export function scaleGroup(
     if (k < scaleMin || k > scaleMax) {
       return
     }
-    const { x = 0, y } = group
+    // const { x = 0, y } = group
     group.animateTo(
       {
-        originX: 0,
-        originY: 0,
+        // originX: 0,
+        // originY: 0,
         scaleX: scaleX * k,
-        scaleY: scaleY * k,
-        x: e.offsetX - (e.offsetX - x) * k,
-        y: e.offsetY - (e.offsetY - y) * k
+        scaleY: scaleY * k
+        // x: e.offsetX - (e.offsetX - x) * k,
+        // y: e.offsetY - (e.offsetY - y) * k
       },
       {
         duration: 100,

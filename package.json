@@ -48,7 +48,7 @@
   ],
   "dependencies": {
     "number-precision": "^1.6.0",
-    "zrender": "^5.4.3"
+    "zrender": "^5.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",

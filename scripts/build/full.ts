@@ -58,10 +58,10 @@ const fullBuilder = async (minify?: boolean) => {
       file: join(output, formatBundleFilename(pkg.name, minify, 'js')),
       exports: 'named',
       name: PKG_CAMEL_CASE_NAME,
-      sourcemap: false
-      // globals: {
-      //   zrender: 'zrender'
-      // }
+      sourcemap: false,
+      globals: {
+        zrender: 'zrender'
+      }
     },
     {
       format: 'esm',

@@ -23,6 +23,12 @@ export const output = join('dist')
 export const pkgRoot = join('src')
 // 排出的包
 export const external = []
+export const moduleExternal = [
+  'zrender',
+  'number-precision',
+  'zrender/lib/canvas/Painter',
+  'zrender/lib/svg/Painter'
+]
 export const target = 'es2018'
 
 // 写 Bundles
