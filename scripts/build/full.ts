@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any,@typescript-eslint/no-extra-semi */
-import { rollup, OutputOptions } from 'rollup'
+import { rollup, OutputOptions, InputPluginOption } from 'rollup'
 import { minify as minifyPlugin } from 'rollup-plugin-esbuild'
-import rollupTypescript from 'rollup-plugin-typescript2'
 import consola from 'consola'
 import {
   plugins as originPlugins,
   join,
-  output,
+  outputDist as output,
   pkgRoot,
   external,
   writeBundles,
@@ -16,61 +15,49 @@ import {
   target
 } from './common'
 
-import { cloneDeep } from '../../src/utils'
+import { cloneDeep } from '@auto-drawing/utils'
 
-const fullBuilder = async (minify?: boolean) => {
-  const plugins = cloneDeep(originPlugins) as any[]
-  plugins.splice(
-    3,
-    1,
-    rollupTypescript({
-      tsconfigOverride: {
-        compilerOptions: {
-          // Rollup don't use CommonJS by default.
-          module: 'ESNext',
-          sourceMap: true,
-          // Use the esm d.ts
-          declaration: false
-        }
-      }
-    })
-  )
-  // minify
-  if (minify) {
-    plugins.push(
-      minifyPlugin({
-        target: target,
-        sourceMap: false
-      })
-    )
-  }
+export const fullBuilder = async (minify?: boolean) => {
+  try {
+    const plugins = cloneDeep(originPlugins) as InputPluginOption[]
 
-  const bundle = await rollup({
-    input: join(pkgRoot, 'index.ts'),
-    treeshake: false,
-    external,
-    plugins
-  })
-
-  const fullOutput: OutputOptions[] = [
-    {
-      format: 'umd',
-      file: join(output, formatBundleFilename(pkg.name, minify, 'js')),
-      exports: 'named',
-      name: PKG_CAMEL_CASE_NAME,
-      sourcemap: false,
-      globals: {
-        zrender: 'zrender'
-      }
-    },
-    {
-      format: 'esm',
-      file: join(output, formatBundleFilename(pkg.name, minify, 'mjs')),
-      sourcemap: false
+    // minify
+    if (minify) {
+      plugins.push(
+        minifyPlugin({
+          target: target,
+          sourceMap: false
+        })
+      )
     }
-  ]
-  await writeBundles(bundle, fullOutput)
-  consola.success(`Successfully built into ${minify ? 'minify' : ''} full!`)
-}
 
-export { fullBuilder }
+    const bundle = await rollup({
+      input: join(pkgRoot, 'index.ts'),
+      treeshake: false,
+      external,
+      plugins
+    })
+
+    const fullOutput: OutputOptions[] = [
+      {
+        format: 'umd',
+        file: join(output, formatBundleFilename(pkg.name, minify, 'js')),
+        exports: 'named',
+        name: PKG_CAMEL_CASE_NAME,
+        sourcemap: false,
+        globals: {
+          zrender: 'zrender'
+        }
+      },
+      {
+        format: 'esm',
+        file: join(output, formatBundleFilename(pkg.name, minify, 'mjs')),
+        sourcemap: false
+      }
+    ]
+    await writeBundles(bundle, fullOutput)
+    consola.success(`Successfully built into ${minify ? 'minify ' : ''}full!`)
+  } catch (error: unknown) {
+    throw new Error((error as Error).message || 'Full Builder Error')
+  }
+}

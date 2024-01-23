@@ -60,7 +60,7 @@ async function publish(version: string) {
     await run('git', ['push'])
     step(`push version to ${version}\n`)
   } catch (error) {
-    throw new Error(error)
+    throw new Error((error as Error).message)
   }
 }
 

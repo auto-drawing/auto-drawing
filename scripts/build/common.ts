@@ -1,12 +1,12 @@
 import path from 'path'
 import fs from 'fs'
-import rollupTypescript from 'rollup-plugin-typescript2'
+import esbuild from 'rollup-plugin-esbuild'
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { eslint } from 'rollup-plugin-eslint'
 import { DEFAULT_EXTENSIONS } from '@babel/core'
-import { RollupBuild, OutputOptions, RollupOptions } from 'rollup'
+import { RollupBuild, OutputOptions, InputPluginOption } from 'rollup'
 import banner2 from 'rollup-plugin-banner2'
 import S from 'string'
 import replace from '@rollup/plugin-replace'
@@ -17,14 +17,24 @@ export const join = (...dir: string[]) => path.resolve(__dirname, '../../', ...d
 export const pkg = JSON.parse(fs.readFileSync(join('package.json'), 'utf-8'))
 // 库名称 大驼峰 AutoDrawing
 export const PKG_CAMEL_CASE_NAME = S(pkg.name).capitalize().camelize().toString()
+
+export const projRoot = join('./')
+
 // 输打包后文件路径
 export const output = join('dist')
+export const outputDist = join(output, 'dist')
 // 包源码地址
-export const pkgRoot = join('src')
-// 排出的包
+export const pkgRoot = join('packages')
+// 排除的包
 export const external = []
-export const moduleExternal = []
+export const moduleExternal = [
+  'number-precision',
+  'zrender',
+  'zrender/lib/canvas/Painter',
+  'zrender/lib/svg/Painter'
+]
 export const target = 'es2018'
+export const typesOutDir = path.resolve(output, 'types')
 
 // 写 Bundles
 export function writeBundles(bundle: RollupBuild, options: OutputOptions[]) {
@@ -35,8 +45,24 @@ export function formatBundleFilename(name: string, minify?: boolean, ext?: strin
   return `${name}${minify ? '.min' : ''}.${ext}`
 }
 
+const excludes = ['node_modules', '__tests__', 'dist', 'auto-drawing']
+
+export const excludeFiles = (files: string[]) => {
+  return files.filter(path => ![...excludes].some(exclude => path.includes(exclude)))
+}
+
+/**
+ * 替换 dts 中的别名
+ * @param id
+ * @returns
+ */
+export const pathRewriter = (id: string) => {
+  id = id.replaceAll(`@auto-drawing/types`, `../types`)
+  return id
+}
+
 // rollup 配置项
-export const plugins: RollupOptions['plugins'] = [
+export const plugins: InputPluginOption[] = [
   // 验证导入的文件
   eslint({
     throwOnError: true, // lint 结果有错误将会抛出异常
@@ -54,17 +80,7 @@ export const plugins: RollupOptions['plugins'] = [
       moduleDirectory: 'node_modules'
     }
   }),
-  rollupTypescript({
-    tsconfigOverride: {
-      compilerOptions: {
-        // Rollup don't use CommonJS by default.
-        module: 'ESNext',
-        sourceMap: true,
-        // Use the esm d.ts
-        declaration: true
-      }
-    }
-  }),
+  esbuild({ target }),
   babel({
     runtimeHelpers: true,
     // 只转换源代码，不运行外部依赖
