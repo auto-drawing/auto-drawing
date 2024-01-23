@@ -5,38 +5,18 @@
   "author": "xiaofei",
   "copyright": "xiaofei",
   "license": "MIT",
-  "main": "dist/lib/index.js",
-  "module": "dist/es/index.mjs",
-  "types": "dist/es/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/es/index.d.ts",
-      "import": "./dist/es/index.mjs",
-      "require": "./dist/lib/index.js"
-    },
-    "./es": "./dist/es/index.mjs",
-    "./lib": "./dist/lib/index.js",
-    "./es/*.mjs": "./dist/es/*.mjs",
-    "./es/*": "./dist/es/*.mjs",
-    "./lib/*.js": "./dist/lib/*.js",
-    "./lib/*": "./dist/lib/*.js",
-    "./*": "./dist/*"
-  },
-  "unpkg": "dist/auto-drawing.js",
-  "jsdelivr": "dist/auto-drawing.js",
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/l-x-f/auto-drawing.git"
   },
   "scripts": {
-    "dev": "tsx watch ./scripts/build/index.ts",
-    "build": "npm run clean && tsx ./scripts/build/index.ts",
-    "commit": "git-cz",
+    "dev": "cross-env NODE_ENV=development tsx watch ./scripts/build/index.ts",
+    "build": "cross-env NODE_ENV=production npm run clean && tsx ./scripts/build/index.ts",
+    "gitcz": "git-cz",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
     "release": "tsx ./scripts/release.ts",
+    "publish": "sh ./scripts/publish.sh",
+    "commit": "sh ./scripts/commit.sh",
     "clean": "rimraf dist",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0  -n changelog.config.js"
   },
@@ -51,10 +31,14 @@
     "zrender": "^5.4.4"
   },
   "devDependencies": {
+    "@auto-drawing/core": "workspace:*",
+    "@auto-drawing/types": "workspace:*",
+    "@auto-drawing/utils": "workspace:*",
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-replace": "^5.0.1",
     "@types/lodash-es": "^4.17.4",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
@@ -64,6 +48,7 @@
     "consola": "^3.1.0",
     "conventional-changelog-cli": "^2.2.2",
     "conventional-changelog-custom-config": "^0.3.1",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "cz-customizable": "^6.2.0",
     "enquirer": "^2.3.6",
@@ -77,14 +62,17 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "semver": "^7.3.7",
     "string": "^3.3.3",
+    "ts-morph": "^21.0.1",
     "tsx": "^3.12.7",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "vite": "^5.0.12"
   },
   "husky": {
     "hooks": {

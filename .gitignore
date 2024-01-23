@@ -12,3 +12,7 @@ dist
 *.ntvs*
 *.njsproj
 *.sln
+
+#docs
+.temp
+cache

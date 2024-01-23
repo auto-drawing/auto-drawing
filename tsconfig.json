@@ -1,19 +1,8 @@
 {
-  "compilerOptions": {
-    "target": "es2018",
-    "lib": ["dom", "esnext"],
-    "removeComments": false,
-    "module": "ESNext",
-    "declaration": true,
-    "sourceMap": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "baseUrl": ".",
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "skipLibCheck": true
-  },
-  "include": ["src/**/*.ts", "src/**.js"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.docs.json" }
+  ]
 }
