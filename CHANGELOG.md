@@ -1,3 +1,12 @@
+## [1.1.2](https://github.com/l-x-f/auto-drawing/compare/1.1.1...1.1.2) (2024-01-23)
+
+
+### 🐛 Bug Fixes
+
+* Cannot find module 'zrender/lib/canvas/Painter' ([1ebcada](https://github.com/l-x-f/auto-drawing/commit/1ebcada))
+
+
+
 ## [1.1.1](https://github.com/l-x-f/auto-drawing/compare/1.1.0...1.1.1) (2024-01-23)
 
 
