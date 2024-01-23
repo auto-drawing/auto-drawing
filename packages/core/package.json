@@ -1,0 +1,7 @@
+{
+  "name": "@auto-drawing/core",
+  "version": "0.0.1",
+  "private": true,
+  "description": "auto-drawing core",
+  "main": "index.ts"
+}

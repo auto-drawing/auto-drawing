@@ -1,0 +1,7 @@
+{
+  "name": "@auto-drawing/types",
+  "version": "0.0.1",
+  "private": true,
+  "description": "auto-drawing types",
+  "main": "index.ts"
+}

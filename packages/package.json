@@ -1,0 +1,44 @@
+{
+  "name": "auto-drawing",
+  "version": "0.0.0",
+  "description": "auto-drawing based zrender",
+  "author": "xiaofei",
+  "copyright": "xiaofei",
+  "license": "MIT",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.mjs",
+  "types": "dist/es/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/es/index.d.ts",
+      "import": "./dist/es/index.mjs",
+      "require": "./dist/lib/index.js"
+    },
+    "./es": "./dist/es/index.mjs",
+    "./lib": "./dist/lib/index.js",
+    "./es/*.mjs": "./dist/es/*.mjs",
+    "./es/*": "./dist/es/*.mjs",
+    "./lib/*.js": "./dist/lib/*.js",
+    "./lib/*": "./dist/lib/*.js",
+    "./*": "./dist/*"
+  },
+  "unpkg": "dist/auto-drawing.js",
+  "jsdelivr": "dist/auto-drawing.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/l-x-f/auto-drawing.git"
+  },
+  "keywords": [
+    "auto-drawing",
+    "canvas",
+    "2d",
+    "zrender"
+  ],
+  "dependencies": {
+    "number-precision": "^1.6.0",
+    "zrender": "^5.4.4"
+  }
+}

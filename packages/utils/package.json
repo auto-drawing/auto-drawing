@@ -1,0 +1,7 @@
+{
+  "name": "@auto-drawing/utils",
+  "version": "0.0.1",
+  "private": true,
+  "description": "auto-drawing utils",
+  "main": "index.ts"
+}
