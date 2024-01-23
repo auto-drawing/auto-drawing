@@ -13,8 +13,10 @@ import replace from '@rollup/plugin-replace'
 
 // 合并路径
 export const join = (...dir: string[]) => path.resolve(__dirname, '../../', ...dir)
+// 包源码地址
+export const pkgRoot = join('packages')
 // package 信息
-export const pkg = JSON.parse(fs.readFileSync(join('package.json'), 'utf-8'))
+export const pkg = JSON.parse(fs.readFileSync(join(pkgRoot, 'package.json'), 'utf-8'))
 // 库名称 大驼峰 AutoDrawing
 export const PKG_CAMEL_CASE_NAME = S(pkg.name).capitalize().camelize().toString()
 
@@ -23,15 +25,14 @@ export const projRoot = join('./')
 // 输打包后文件路径
 export const output = join('dist')
 export const outputDist = join(output, 'dist')
-// 包源码地址
-export const pkgRoot = join('packages')
+
 // 排除的包
 export const external = []
 export const moduleExternal = [
   'number-precision',
   'zrender',
-  'zrender/lib/canvas/Painter',
-  'zrender/lib/svg/Painter'
+  'zrender/lib/canvas/Painter.js',
+  'zrender/lib/svg/Painter.js'
 ]
 export const target = 'es2018'
 export const typesOutDir = path.resolve(output, 'types')
