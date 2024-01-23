@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/l-x-f/auto-drawing/compare/1.1.2...1.2.0) (2024-01-23)
+
+
+### 🐛 Bug Fixes
+
+* fix module issue ([7938dc6](https://github.com/l-x-f/auto-drawing/commit/7938dc6))
+
+
+
 ## [1.1.2](https://github.com/l-x-f/auto-drawing/compare/1.1.1...1.1.2) (2024-01-23)
 
 
