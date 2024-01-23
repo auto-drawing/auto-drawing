@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import CanvasPainter from 'zrender/lib/canvas/Painter'
-import SvgPainter from 'zrender/lib/svg/Painter'
+import CanvasPainter from 'zrender/lib/canvas/Painter.js'
+import SvgPainter from 'zrender/lib/svg/Painter.js'
 import { init, Group, GroupProps, registerPainter } from 'zrender'
 // 基本绘图方法
 import {
