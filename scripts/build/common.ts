@@ -30,12 +30,7 @@ export const outputDist = join(output, 'dist')
 
 // 排除的包
 export const external = []
-export const moduleExternal = [
-  'number-precision',
-  'zrender',
-  'zrender/lib/canvas/Painter.js',
-  'zrender/lib/svg/Painter.js'
-]
+export const moduleExternal = ['number-precision']
 export const target = 'es2018'
 export const typesOutDir = path.resolve(output, 'types')
 

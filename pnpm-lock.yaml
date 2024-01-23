@@ -148,8 +148,8 @@ importers:
         specifier: ^18.0.3
         version: 18.19.8
       auto-drawing:
-        specifier: npm:auto-drawing@latest
-        version: 1.1.0
+        specifier: ^1.1.2
+        version: 1.1.2
       axios:
         specifier: ^1.2.2
         version: 1.6.5
@@ -2978,8 +2978,8 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
-  /auto-drawing@1.1.0:
-    resolution: {integrity: sha512-GpJQ337Dvh2Fd1oh7We25Bg6M/0nb8BsJduoIE5sQDT7Gtq2pZbf6o1gyYefPl3qjtpjV2zfCSnIescjOXY9yQ==}
+  /auto-drawing@1.1.2:
+    resolution: {integrity: sha512-+uwe2FBUTsIGpXbhpeTBX/JKYcMrJQum2wlRKSBZaM1anhAOb7RiJJ+qXZtabG2miatJl7RN8fhtA5KiW5RBeQ==}
     dependencies:
       number-precision: 1.6.0
       zrender: 5.4.4
