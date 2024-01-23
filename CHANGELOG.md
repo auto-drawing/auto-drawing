@@ -1,3 +1,17 @@
+## [1.1.1](https://github.com/l-x-f/auto-drawing/compare/1.1.0...1.1.1) (2024-01-23)
+
+
+### ✨ Features
+
+* update package.json ([d0333b7](https://github.com/l-x-f/auto-drawing/commit/d0333b7))
+
+
+### 🐛 Bug Fixes
+
+* fix Painter issue ([b7db7e2](https://github.com/l-x-f/auto-drawing/commit/b7db7e2))
+
+
+
 # [1.1.0](https://github.com/l-x-f/auto-drawing/compare/1.0.10...1.1.0) (2024-01-23)
 
 
