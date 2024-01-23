@@ -10,7 +10,7 @@ import {
   external,
   writeBundles,
   formatBundleFilename,
-  pkg,
+  name,
   PKG_CAMEL_CASE_NAME,
   target
 } from './common'
@@ -41,7 +41,7 @@ export const fullBuilder = async (minify?: boolean) => {
     const fullOutput: OutputOptions[] = [
       {
         format: 'umd',
-        file: join(output, formatBundleFilename(pkg.name, minify, 'js')),
+        file: join(output, formatBundleFilename(name, minify, 'js')),
         exports: 'named',
         name: PKG_CAMEL_CASE_NAME,
         sourcemap: false,
@@ -51,7 +51,7 @@ export const fullBuilder = async (minify?: boolean) => {
       },
       {
         format: 'esm',
-        file: join(output, formatBundleFilename(pkg.name, minify, 'mjs')),
+        file: join(output, formatBundleFilename(name, minify, 'mjs')),
         sourcemap: false
       }
     ]

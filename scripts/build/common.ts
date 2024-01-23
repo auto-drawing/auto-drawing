@@ -11,14 +11,16 @@ import banner2 from 'rollup-plugin-banner2'
 import S from 'string'
 import replace from '@rollup/plugin-replace'
 
+export const name = 'auto-drawing'
+
 // 合并路径
 export const join = (...dir: string[]) => path.resolve(__dirname, '../../', ...dir)
 // 包源码地址
 export const pkgRoot = join('packages')
 // package 信息
-export const pkg = JSON.parse(fs.readFileSync(join(pkgRoot, 'package.json'), 'utf-8'))
+export const pkg = JSON.parse(fs.readFileSync(join('package.json'), 'utf-8'))
 // 库名称 大驼峰 AutoDrawing
-export const PKG_CAMEL_CASE_NAME = S(pkg.name).capitalize().camelize().toString()
+export const PKG_CAMEL_CASE_NAME = S(name).capitalize().camelize().toString()
 
 export const projRoot = join('./')
 
@@ -91,7 +93,7 @@ export const plugins: InputPluginOption[] = [
   }),
   banner2(
     () =>
-      `/*!\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * copyright: ${pkg.copyright}\n * license: ${pkg.license}\n */\n`
+      `/*!\n * name: ${name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * copyright: ${pkg.copyright}\n * license: ${pkg.license}\n */\n`
   ),
   replace({
     values: {
