@@ -1,3 +1,14 @@
+# [1.1.0](https://github.com/l-x-f/auto-drawing/compare/1.0.10...1.1.0) (2024-01-23)
+
+
+### ✨ Features
+
+* release 1.0.10 ([819affe](https://github.com/l-x-f/auto-drawing/commit/819affe))
+* support workspace ([6db5f7e](https://github.com/l-x-f/auto-drawing/commit/6db5f7e))
+* support workspace ([8ba0747](https://github.com/l-x-f/auto-drawing/commit/8ba0747))
+
+
+
 ## [1.0.10](https://github.com/l-x-f/auto-drawing/compare/1.0.9...1.0.10) (2023-12-29)
 
 
