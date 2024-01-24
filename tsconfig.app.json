@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "composite": true,
     "target": "es2018",
     "lib": ["dom", "esnext"],
     "removeComments": false,
@@ -14,6 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@auto-drawing/*": ["packages/*"]
     }

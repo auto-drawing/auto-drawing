@@ -76,3 +76,7 @@
     max-width: 1200px;
   }
 }
+
+.miit-link {
+  display: none;
+}

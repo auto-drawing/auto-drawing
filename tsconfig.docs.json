@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "composite": true,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
@@ -17,7 +18,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "docs/components/*.vue",

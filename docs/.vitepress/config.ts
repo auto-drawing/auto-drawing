@@ -31,7 +31,7 @@ export default defineConfig({
         href: 'https://cdn.bootcdn.net/ajax/libs/highlight.js/11.7.0/styles/monokai-sublime.min.css'
       }
     ],
-
+    ['script', { src: '/style.js' }],
     ['script', { src: '/hmt.js' }],
     ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/highlight.js/11.7.0/highlight.min.js' }]
   ],
@@ -120,7 +120,8 @@ export default defineConfig({
     },
     footer: {
       message: 'MIT Licensed.',
-      copyright: 'Copyright © 2021-present xiaofei'
+      copyright:
+        'Copyright © 2021-present xiaofei <a class="miit-link" style="color: var(--vp-c-brand);" href="https://beian.miit.gov.cn" class="fake-link black-70 ph1">陕ICP备2021003270号-3</a>'
     }
   },
   markdown: {
