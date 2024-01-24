@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import pkg from '../../package.json'
 
-export default defineConfig({ 
+export default defineConfig({
   title: 'AutoDrawing',
   lang: 'zh-CN',
   description: '基于zrender的自动json画图工具',
@@ -65,6 +65,10 @@ export default defineConfig({
       {
         text: 'Api',
         link: '/guide/api/'
+      },
+      {
+        text: '国内镜像',
+        link: 'http://auto-drawing.com'
       },
       {
         text: `v${pkg.version}`,

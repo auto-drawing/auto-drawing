@@ -30,7 +30,7 @@ yarn add  auto-drawing
 
 ## 文档
 
-[auto-drawing-doc](https://l-x-f.github.io/auto-drawing-doc/)
+[Documentation](https://auto-drawing.github.io/)| [国内镜像文档](https://auto-drawing.com)
 
 ## 友情链接
 

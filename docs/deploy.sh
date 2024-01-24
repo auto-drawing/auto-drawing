@@ -20,7 +20,7 @@ git commit -m 'deploy'
 git push -f https://github.com/auto-drawing/auto-drawing.github.io.git master:gh-pages
 
 # 部署到服务器
-# rsync -av --exclude=".*" ./  root@39.103.160.178:/root/blog/auto-drawing-doc
+# rsync -av --exclude=".*" ./  root@39.103.160.178:/root/auto-drawing
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages

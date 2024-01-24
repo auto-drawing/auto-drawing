@@ -28,9 +28,9 @@ yarn add  auto-drawing
 
 [https://cdn.jsdelivr.net/npm/auto-drawing@0.0.8/dist/auto-drawing.min.js](https://cdn.jsdelivr.net/npm/auto-drawing@0.0.4/dist/auto-drawing.min.js)
 
-## Document
+## Documentation
 
-[auto-drawing-doc](https://l-x-f.github.io/auto-drawing-doc/)
+[Documentation](https://auto-drawing.github.io/)| [国内镜像文档](https://auto-drawing.com/)
 
 ## Friendly Links
 

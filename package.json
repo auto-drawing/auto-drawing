@@ -17,7 +17,9 @@
     "publish": "sh ./scripts/publish.sh",
     "commit": "sh ./scripts/commit.sh",
     "clean": "rimraf dist",
-    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0  -n changelog.config.js"
+    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0  -n changelog.config.js",
+    "docs:dev": "pnpm run -C docs dev",
+    "docs:build": "pnpm run -C docs build"
   },
   "keywords": [
     "auto-drawing",
