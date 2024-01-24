@@ -1,0 +1,2229 @@
+[
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-3.750",
+      "Y": "5.700",
+      "Pin_ID": "1",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -57.6,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-3.750",
+          "Y": "5.700",
+          "Pin_ID": "1",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-3.250",
+      "Y": "5.700",
+      "Pin_ID": "2",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -50.1,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-3.250",
+          "Y": "5.700",
+          "Pin_ID": "2",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-2.750",
+      "Y": "5.700",
+      "Pin_ID": "3",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -42.6,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-2.750",
+          "Y": "5.700",
+          "Pin_ID": "3",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-2.250",
+      "Y": "5.700",
+      "Pin_ID": "4",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -35.1,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-2.250",
+          "Y": "5.700",
+          "Pin_ID": "4",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-1.750",
+      "Y": "5.700",
+      "Pin_ID": "5",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -27.6,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-1.750",
+          "Y": "5.700",
+          "Pin_ID": "5",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-1.250",
+      "Y": "5.700",
+      "Pin_ID": "6",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -20.1,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-1.250",
+          "Y": "5.700",
+          "Pin_ID": "6",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-0.750",
+      "Y": "5.700",
+      "Pin_ID": "7",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -12.6,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-0.750",
+          "Y": "5.700",
+          "Pin_ID": "7",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "-0.250",
+      "Y": "5.700",
+      "Pin_ID": "8",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -5.1,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "-0.250",
+          "Y": "5.700",
+          "Pin_ID": "8",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "0.250",
+      "Y": "5.700",
+      "Pin_ID": "9",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 2.4,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "0.250",
+          "Y": "5.700",
+          "Pin_ID": "9",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "0.750",
+      "Y": "5.700",
+      "Pin_ID": "10",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 9.9,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "0.750",
+          "Y": "5.700",
+          "Pin_ID": "10",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "1.250",
+      "Y": "5.700",
+      "Pin_ID": "11",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 17.4,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "1.250",
+          "Y": "5.700",
+          "Pin_ID": "11",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "1.750",
+      "Y": "5.700",
+      "Pin_ID": "12",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 24.9,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "1.750",
+          "Y": "5.700",
+          "Pin_ID": "12",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "2.250",
+      "Y": "5.700",
+      "Pin_ID": "13",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 32.4,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "2.250",
+          "Y": "5.700",
+          "Pin_ID": "13",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "2.750",
+      "Y": "5.700",
+      "Pin_ID": "14",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 39.9,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "2.750",
+          "Y": "5.700",
+          "Pin_ID": "14",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "3.250",
+      "Y": "5.700",
+      "Pin_ID": "15",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 47.4,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "3.250",
+          "Y": "5.700",
+          "Pin_ID": "15",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "0.000",
+      "X": "3.750",
+      "Y": "5.700",
+      "Pin_ID": "16",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 54.9,
+        "y": -96,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "0.000",
+          "X": "3.750",
+          "Y": "5.700",
+          "Pin_ID": "16",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "3.750",
+      "Y": "-5.700",
+      "Pin_ID": "17",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 54.9,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "3.750",
+          "Y": "-5.700",
+          "Pin_ID": "17",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "3.250",
+      "Y": "-5.700",
+      "Pin_ID": "18",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 47.4,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "3.250",
+          "Y": "-5.700",
+          "Pin_ID": "18",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "2.750",
+      "Y": "-5.700",
+      "Pin_ID": "19",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 39.9,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "2.750",
+          "Y": "-5.700",
+          "Pin_ID": "19",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "2.250",
+      "Y": "-5.700",
+      "Pin_ID": "20",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 32.4,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "2.250",
+          "Y": "-5.700",
+          "Pin_ID": "20",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "1.750",
+      "Y": "-5.700",
+      "Pin_ID": "21",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 24.9,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "1.750",
+          "Y": "-5.700",
+          "Pin_ID": "21",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "1.250",
+      "Y": "-5.700",
+      "Pin_ID": "22",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 17.4,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "1.250",
+          "Y": "-5.700",
+          "Pin_ID": "22",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "0.750",
+      "Y": "-5.700",
+      "Pin_ID": "23",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 9.9,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "0.750",
+          "Y": "-5.700",
+          "Pin_ID": "23",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "0.250",
+      "Y": "-5.700",
+      "Pin_ID": "24",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 2.4,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "0.250",
+          "Y": "-5.700",
+          "Pin_ID": "24",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-0.250",
+      "Y": "-5.700",
+      "Pin_ID": "25",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -5.1,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-0.250",
+          "Y": "-5.700",
+          "Pin_ID": "25",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-0.750",
+      "Y": "-5.700",
+      "Pin_ID": "26",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -12.6,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-0.750",
+          "Y": "-5.700",
+          "Pin_ID": "26",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-1.250",
+      "Y": "-5.700",
+      "Pin_ID": "27",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -20.1,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-1.250",
+          "Y": "-5.700",
+          "Pin_ID": "27",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-1.750",
+      "Y": "-5.700",
+      "Pin_ID": "28",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -27.6,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-1.750",
+          "Y": "-5.700",
+          "Pin_ID": "28",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-2.250",
+      "Y": "-5.700",
+      "Pin_ID": "29",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -35.1,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-2.250",
+          "Y": "-5.700",
+          "Pin_ID": "29",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-2.750",
+      "Y": "-5.700",
+      "Pin_ID": "30",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -42.6,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-2.750",
+          "Y": "-5.700",
+          "Pin_ID": "30",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-3.250",
+      "Y": "-5.700",
+      "Pin_ID": "31",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -50.1,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-3.250",
+          "Y": "-5.700",
+          "Pin_ID": "31",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "180.000",
+      "X": "-3.750",
+      "Y": "-5.700",
+      "Pin_ID": "32",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -57.6,
+        "y": 75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "180.000",
+          "X": "-3.750",
+          "Y": "-5.700",
+          "Pin_ID": "32",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "3.750",
+      "Pin_ID": "33",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -66.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "3.750",
+          "Pin_ID": "33",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "3.250",
+      "Pin_ID": "34",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -59.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "3.250",
+          "Pin_ID": "34",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "2.750",
+      "Pin_ID": "35",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -51.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "2.750",
+          "Pin_ID": "35",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "2.250",
+      "Pin_ID": "36",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -44.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "2.250",
+          "Pin_ID": "36",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "1.750",
+      "Pin_ID": "37",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -36.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "1.750",
+          "Pin_ID": "37",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "1.250",
+      "Pin_ID": "38",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -29.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "1.250",
+          "Pin_ID": "38",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "0.750",
+      "Pin_ID": "39",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -21.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "0.750",
+          "Pin_ID": "39",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "0.250",
+      "Pin_ID": "40",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -14.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "0.250",
+          "Pin_ID": "40",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-0.250",
+      "Pin_ID": "41",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": -6.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-0.250",
+          "Pin_ID": "41",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-0.750",
+      "Pin_ID": "42",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": 0.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-0.750",
+          "Pin_ID": "42",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-1.250",
+      "Pin_ID": "43",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": 8.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-1.250",
+          "Pin_ID": "43",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-1.750",
+      "Pin_ID": "44",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": 15.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-1.750",
+          "Pin_ID": "44",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-2.250",
+      "Pin_ID": "45",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": 23.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-2.250",
+          "Pin_ID": "45",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-2.750",
+      "Pin_ID": "46",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": 30.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-2.750",
+          "Pin_ID": "46",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-3.250",
+      "Pin_ID": "47",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": 38.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-3.250",
+          "Pin_ID": "47",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "90.000",
+      "X": "5.700",
+      "Y": "-3.750",
+      "Pin_ID": "48",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": 84.15,
+        "y": 45.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "90.000",
+          "X": "5.700",
+          "Y": "-3.750",
+          "Pin_ID": "48",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-3.750",
+      "Pin_ID": "49",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": 45.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-3.750",
+          "Pin_ID": "49",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-3.250",
+      "Pin_ID": "50",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": 38.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-3.250",
+          "Pin_ID": "50",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-2.750",
+      "Pin_ID": "51",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": 30.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-2.750",
+          "Pin_ID": "51",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-2.250",
+      "Pin_ID": "52",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": 23.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-2.250",
+          "Pin_ID": "52",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-1.750",
+      "Pin_ID": "53",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": 15.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-1.750",
+          "Pin_ID": "53",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-1.250",
+      "Pin_ID": "54",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": 8.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-1.250",
+          "Pin_ID": "54",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-0.750",
+      "Pin_ID": "55",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": 0.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-0.750",
+          "Pin_ID": "55",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "-0.250",
+      "Pin_ID": "56",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -6.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "-0.250",
+          "Pin_ID": "56",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "0.250",
+      "Pin_ID": "57",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -14.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "0.250",
+          "Pin_ID": "57",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "0.750",
+      "Pin_ID": "58",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -21.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "0.750",
+          "Pin_ID": "58",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "1.250",
+      "Pin_ID": "59",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -29.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "1.250",
+          "Pin_ID": "59",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "1.750",
+      "Pin_ID": "60",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -36.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "1.750",
+          "Pin_ID": "60",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "2.250",
+      "Pin_ID": "61",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -44.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "2.250",
+          "Pin_ID": "61",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "2.750",
+      "Pin_ID": "62",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -51.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "2.750",
+          "Pin_ID": "62",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "3.250",
+      "Pin_ID": "63",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -59.25,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "3.250",
+          "Pin_ID": "63",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "params": {
+      "Length": "0.180",
+      "PinAngle": "270.000",
+      "X": "-5.700",
+      "Y": "3.750",
+      "Pin_ID": "64",
+      "PadType": "2",
+      "Width": "1.400"
+    },
+    "data": [
+      {
+        "type": "rect",
+        "zlevel": 1000,
+        "x": -86.85,
+        "y": -66.75,
+        "width": 2.7,
+        "height": 21,
+        "fill": "none",
+        "lineWidth": 1,
+        "stroke": "yellow",
+        "params": {
+          "Length": "0.180",
+          "PinAngle": "270.000",
+          "X": "-5.700",
+          "Y": "3.750",
+          "Pin_ID": "64",
+          "PadType": "2",
+          "Width": "1.400"
+        }
+      }
+    ]
+  },
+  {
+    "type": "line",
+    "zlevel": 100,
+    "x1": -10,
+    "y1": 0,
+    "x2": 10,
+    "y2": 0,
+    "stroke": "red"
+  },
+  {
+    "type": "line",
+    "zlevel": 100,
+    "x1": 0,
+    "y1": 10,
+    "x2": 0,
+    "y2": -10,
+    "stroke": "red"
+  },
+  { "type": "group", "data": [] },
+  {
+    "type": "rect",
+    "x": -75,
+    "y": -75,
+    "width": 150,
+    "height": 150,
+    "stroke": "#fff",
+    "lineWidth": 0.5,
+    "zlevel": 100,
+    "lineDash": "dashed",
+    "params": { "BodyType": "0", "BodyLength": "10.000", "BodyWidth": "10.000" }
+  },
+  {},
+  {
+    "type": "circle",
+    "zlevel": 1500,
+    "cx": -60,
+    "cy": 60,
+    "r": 7.5,
+    "fill": "red",
+    "stroke": "red",
+    "opacity": 0.5,
+    "params": {
+      "Length": "0.000",
+      "PinAngle": "0.000",
+      "X": "-4.000",
+      "Y": "-4.000",
+      "Pin_ID": "1",
+      "PadType": "1",
+      "Width": "0.000"
+    }
+  }
+]

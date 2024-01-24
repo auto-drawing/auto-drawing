@@ -1,0 +1,78 @@
+.canvas-wrapper {
+  margin-top: 1rem;
+}
+
+:root {
+  --el-color-primary: #1756f6 !important;
+
+  --vp-layout-max-width: 1600px;
+}
+
+.el-card {
+  --el-card-padding: 12px !important;
+}
+
+.container .tagline {
+  color: var(--vp-home-hero-name-color);
+}
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: 500;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: #409eff;
+  border: 1px solid #409eff;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.tag {
+  background-color: #ecf5ff;
+  border-color: #409eff;
+  color: #409eff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  padding: 0 9px;
+  font-size: 12px;
+  line-height: 1;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.primary-button + .primary-button {
+  margin-left: 10px;
+}
+
+@media (min-width: 960px) {
+  #app .VPDoc .content {
+    max-width: 1920px;
+  }
+}
+
+#app .VPDoc.has-aside .content-container {
+  max-width: 1920px;
+}
+
+@media (min-width: 1440px) {
+  #app .VPDoc:not(.has-sidebar) .container[data-v-343c73d6] {
+    max-width: 1200px;
+  }
+}
