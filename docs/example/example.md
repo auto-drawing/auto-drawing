@@ -66,11 +66,11 @@
  <DotChart /> 
 </CodeCard>
 
-## PCB 图
+<!-- ## PCB 图
 
 <CodeCard fileName='CircuitBoard' title='百万级别数据,移除了缩放和平移功能' >
 <CircuitBoard />
-</CodeCard>
+</CodeCard> -->
 
 ## [更多示例](https://github.com/l-x-f/auto-drawing/tree/main/tests)
 
