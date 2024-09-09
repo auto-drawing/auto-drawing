@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+// @ts-ignore
 import pkg from '../../package.json'
 
 export default defineConfig({
@@ -44,7 +45,7 @@ export default defineConfig({
     returnToTopLabel: '返回顶部',
     outlineTitle: '本页导航',
     lastUpdatedText: '上次更新时间',
-    socialLinks: [{ icon: 'github', link: 'https://github.com/l-x-f/auto-drawing' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/auto-drawing/auto-drawing' }],
     docFooter: {
       prev: '上一页',
       next: '下一页'
@@ -75,11 +76,11 @@ export default defineConfig({
         items: [
           {
             text: '历史版本',
-            link: 'https://github.com/l-x-f/auto-drawing/releases'
+            link: 'https://github.com/auto-drawing/auto-drawing/releases'
           },
           {
             text: '更新日志',
-            link: 'https://github.com/l-x-f/auto-drawing/blob/main/CHANGELOG.md'
+            link: 'https://github.com/auto-drawing/auto-drawing/blob/main/CHANGELOG.md'
           }
         ]
       },
